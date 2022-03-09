@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PremierePage</string>
+    <string name="toast_msg">Bienvenu!</string>
+</resources>
