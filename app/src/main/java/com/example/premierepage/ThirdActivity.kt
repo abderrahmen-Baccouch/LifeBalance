@@ -6,10 +6,8 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
-import android.widget.DatePicker
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
+import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_third.*
@@ -20,6 +18,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
     private var cYear: Int? = null
     private var cAge: Int? = null
+    private var radio: String? = null
     private lateinit var etHauteur : EditText
     private lateinit var etPoids : EditText
     private lateinit var etage : TextView
@@ -52,46 +51,44 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
             val poids = etPoids.text.toString().trim()
             val age = etage.text.toString().trim()
             val cAge = cAge.toString().trim()
+            var radio: String? = "HOMME"
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
-            radioGroup.setOnCheckedChangeListener{ group,checkedId ->
-                if (checkedId == R.id.radio1)
-                    Toast.makeText(this,radio1.text.toString(), Toast.LENGTH_SHORT).show()
-                if (checkedId == R.id.radio2)
-                    Toast.makeText(this,radio2.text.toString(), Toast.LENGTH_SHORT).show()
-                if (radioGroup ==null) {
-                    radio1.error = "il faut choisir"
-                    radio2.error = "il faut choisir"
+            radioGroup.setOnCheckedChangeListener{ radioGroup,i ->
+               var rb = findViewById<RadioButton>(i)
+                if (rb!=null){
+                    Toast.makeText(this,rb.text.toString(), LENGTH_SHORT).show()
+                    radio = rb.text.toString()
                 }
-
-            }
+                  }
 
             if (age.format(Date()).isEmpty()){
                 etage.error="age est obligatoire";
-                Toast.makeText(this, "Age est Obligatoire!", Toast.LENGTH_SHORT).show()}
+                Toast.makeText(this, "Age est Obligatoire!", LENGTH_SHORT).show()}
             else if((currentYear - cYear!!)<15){
                 etage.error="age est invalide";
-                Toast.makeText(this, "Age minimale : 15 ans !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Age minimale : 15 ans !", LENGTH_SHORT).show()
             }
             else if(hauteur.isEmpty())  {
                 etHauteur.error = "Hauteur est obligatoire";
-                Toast.makeText(this, "Hauteur est obligatoire !", Toast.LENGTH_SHORT).show()}
+                Toast.makeText(this, "Hauteur est obligatoire !", LENGTH_SHORT).show()}
             else if (hauteur.toFloat()<1 || hauteur.toFloat()>3){
                 etHauteur.error ="Hauteur est Invalide"
-                Toast.makeText(this, "Hauteur est Invalide !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Hauteur est Invalide !", LENGTH_SHORT).show()
             }
             else if(poids.isEmpty() ) {
                 etPoids.error = "Poids est obligatoire";
-                Toast.makeText(this, "Poids est obligatoire !", Toast.LENGTH_SHORT).show()}
+                Toast.makeText(this, "Poids est obligatoire !", LENGTH_SHORT).show()}
             else if (poids.toFloat()>200 ||poids.toFloat()<10){
                 etPoids.error = "Poids est Invalide";
-                Toast.makeText(this, "Poids est Invalide !", Toast.LENGTH_SHORT).show()}
+                Toast.makeText(this, "Poids est Invalide !", LENGTH_SHORT).show()}
 
             else {
-                Toast.makeText(this, "Informations Collectées !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Informations Collectées !", LENGTH_SHORT).show()
                 val intent = Intent(this,FifthActivity::class.java)
                 intent.putExtra("poids",poids)
                 intent.putExtra("hauteur",hauteur)
                 intent.putExtra("age",cAge)
+                intent.putExtra("radio",radio)
                 startActivity(intent)
             }
 

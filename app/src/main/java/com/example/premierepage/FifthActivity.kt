@@ -14,6 +14,8 @@ class FifthActivity : AppCompatActivity() {
 var startPoint = 0
     var endPoint = 0
 
+
+
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
@@ -45,7 +47,9 @@ var startPoint = 0
 
          val poids = intent.getStringExtra("poids").toString().toDouble()
          val hauteur = intent.getStringExtra("hauteur").toString().toDouble()
-         val cAge = intent.getStringExtra("age").toString().toInt()
+
+         val cAge = intent.getStringExtra("age").toString().trim()
+         val radio = intent.getStringExtra("radio").toString().trim()
 
 
          imc.text = dec.format(poids/(hauteur*hauteur)).toString()
@@ -69,8 +73,13 @@ var startPoint = 0
 
 
       }
+
+
+
          diaryBalance_button.setOnClickListener {
          val intent = Intent(this,diaryBalanceActivity::class.java)
+             intent.putExtra("age",cAge)
+             intent.putExtra("radio",radio)
              startActivity(intent)
          }
     }

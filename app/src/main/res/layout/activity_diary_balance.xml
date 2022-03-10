@@ -9,7 +9,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/goToHome"
         android:layout_width="261dp"
         android:layout_height="58dp"
         android:background="@drawable/gotohome"
@@ -102,7 +102,42 @@
             android:text="Fat"
             android:textSize="22dp" />
 
-
+         <TextView
+             android:id="@+id/energie"
+             android:layout_width="100dp"
+             android:layout_height="50dp"
+             android:layout_marginLeft="20dp"
+             android:layout_marginTop="-20dp"
+             android:textSize="16dp"
+             android:textColor="@color/black"
+             />
+        <TextView
+            android:id="@+id/proteine"
+            android:layout_marginLeft="130dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="-60dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/carb"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="-50dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/fat"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="340dp"
+            android:layout_marginTop="-40dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            />
 
 
 

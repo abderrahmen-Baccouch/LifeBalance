@@ -3,6 +3,7 @@ package com.example.premierepage
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
@@ -11,9 +12,75 @@ import com.github.mikephil.charting.formatter.PercentFormatter
 import kotlinx.android.synthetic.main.activity_diary_balance.*
 
 class diaryBalanceActivity : AppCompatActivity() {
+
+    private lateinit var energie : TextView
+    private lateinit var proteine : TextView
+    private lateinit var carb : TextView
+    private lateinit var fat : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary_balance)
+
+        val intent = intent
+
+        val cAge = intent.getStringExtra("age").toString().trim()
+        val radio = intent.getStringExtra("radio").toString().trim()
+
+        energie= findViewById(R.id.energie)
+        proteine= findViewById(R.id.proteine)
+        carb= findViewById(R.id.carb)
+        fat= findViewById(R.id.fat)
+
+        if (radio == "HOMME"){
+            if (14<cAge.toInt() && cAge.toInt()<20){
+                energie.text ="3000kcal"
+                proteine.text="85g"
+                carb.text="375g"
+                fat.text="130g"
+            }
+            else if (19<cAge.toInt() && cAge.toInt()<31){
+                energie.text="2700lcal"
+                proteine.text="80g"
+                carb.text="340g"
+                fat.text="120g"
+            }
+            else if (30<cAge.toInt() && cAge.toInt()<51){
+                energie.text="260kcal"
+                proteine.text="70g"
+                carb.text="325g"
+                fat.text="80g"
+            }
+            else if (50<cAge.toInt()){
+                energie.text="2250kcal"
+                proteine.text="60g"
+                carb.text="280g"
+                fat.text="60g"
+            }
+        }
+        else if (radio == "FEMME") {
+            if (14 < cAge.toInt() && cAge.toInt() < 20) {
+                energie.text = "2400kcal"
+                proteine.text = "75g"
+                carb.text = "300g"
+                fat.text = "90g"
+            } else if (19 < cAge.toInt() && cAge.toInt() < 31) {
+                energie.text = "2100kcal"
+                proteine.text = "65g"
+                carb.text = "265g"
+                fat.text = "80g"
+            } else if (30 < cAge.toInt() && cAge.toInt() < 51) {
+                energie.text = "2000kcal"
+                proteine.text = "60g"
+                carb.text = "250g"
+                fat.text = "70g"
+            } else if (50 < cAge.toInt()) {
+                energie.text = "1800kcal"
+                proteine.text = "45g"
+                carb.text = "220g"
+                fat.text = "55g"
+            }
+        }
 
         setupPieChart()
 
@@ -54,8 +121,6 @@ class diaryBalanceActivity : AppCompatActivity() {
         pieChart.setUsePercentValues(true)
 
 
-
-
         // Setup PieCharts Values and Ui
         pieChart.description.isEnabled = false  // This is pie chart description that in below entries.
 
@@ -71,10 +136,19 @@ class diaryBalanceActivity : AppCompatActivity() {
         // Finally Setup the add Values in PieChart.
         pieChart.data = pieData
 
-
+        goToHome.setOnClickListener {
+            val intent = Intent(this,FifthActivity::class.java)
+            startActivity(intent)
+        }
         retour.setOnClickListener {
             val intent = Intent(this,FifthActivity::class.java)
             startActivity(intent)
         }
+
+
+
+
+
+
     }
 }
