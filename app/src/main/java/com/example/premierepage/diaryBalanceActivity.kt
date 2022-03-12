@@ -13,72 +13,66 @@ import kotlinx.android.synthetic.main.activity_diary_balance.*
 
 class diaryBalanceActivity : AppCompatActivity() {
 
-    private lateinit var energie : TextView
-    private lateinit var proteine : TextView
-    private lateinit var carb : TextView
-    private lateinit var fat : TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diary_balance)
 
         val intent = intent
+        val cAge = intent.getStringExtra("age")
+        val sexe = intent.getStringExtra("sexe").toString().trim()
 
-        val cAge = intent.getStringExtra("age").toString().trim()
-        val radio = intent.getStringExtra("radio").toString().trim()
+        val energie= findViewById<TextView>(R.id.energie)
+        val proteine= findViewById<TextView>(R.id.proteine)
+        val carb= findViewById<TextView>(R.id.carb)
+        val fat= findViewById<TextView>(R.id.fat)
 
-        energie= findViewById(R.id.energie)
-        proteine= findViewById(R.id.proteine)
-        carb= findViewById(R.id.carb)
-        fat= findViewById(R.id.fat)
-
-        if (radio == "HOMME"){
-            if (14<cAge.toInt() && cAge.toInt()<20){
-                energie.text ="3000kcal"
-                proteine.text="85g"
-                carb.text="375g"
-                fat.text="130g"
+        if (sexe == "HOMME"){
+            if (cAge!!.toInt() in 15..19){
+                energie.text ="3000 kcal"
+                proteine.text="85 g"
+                carb.text="375 g"
+                fat.text="130 g"
             }
-            else if (19<cAge.toInt() && cAge.toInt()<31){
-                energie.text="2700lcal"
-                proteine.text="80g"
-                carb.text="340g"
-                fat.text="120g"
+            else if (cAge.toInt() in 20..30){
+                energie.text="2700 kcal"
+                proteine.text="80 g"
+                carb.text="340 g"
+                fat.text="120 g"
             }
-            else if (30<cAge.toInt() && cAge.toInt()<51){
-                energie.text="260kcal"
-                proteine.text="70g"
-                carb.text="325g"
-                fat.text="80g"
+            else if (cAge.toInt() in 31..50){
+                energie.text="260 kcal"
+                proteine.text="70 g"
+                carb.text="325 g"
+                fat.text="80 g"
             }
             else if (50<cAge.toInt()){
-                energie.text="2250kcal"
-                proteine.text="60g"
-                carb.text="280g"
-                fat.text="60g"
+                energie.text="2250 kcal"
+                proteine.text="60 g"
+                carb.text="280 g"
+                fat.text="60 g"
             }
         }
-        else if (radio == "FEMME") {
-            if (14 < cAge.toInt() && cAge.toInt() < 20) {
-                energie.text = "2400kcal"
-                proteine.text = "75g"
-                carb.text = "300g"
-                fat.text = "90g"
-            } else if (19 < cAge.toInt() && cAge.toInt() < 31) {
-                energie.text = "2100kcal"
-                proteine.text = "65g"
-                carb.text = "265g"
-                fat.text = "80g"
-            } else if (30 < cAge.toInt() && cAge.toInt() < 51) {
-                energie.text = "2000kcal"
-                proteine.text = "60g"
-                carb.text = "250g"
-                fat.text = "70g"
+        else if (sexe == "FEMME") {
+            if (cAge!!.toInt() in 15..19) {
+                energie.text = "2400 kcal"
+                proteine.text = "75 g"
+                carb.text = "300 g"
+                fat.text = "90 g"
+            } else if (cAge.toInt() in 20..30) {
+                energie.text = "2100 kcal"
+                proteine.text = "65 g"
+                carb.text = "265 g"
+                fat.text = "80 g"
+            } else if (cAge.toInt() in 31..50) {
+                energie.text = "2000 kcal"
+                proteine.text = "60 g"
+                carb.text = "250 g"
+                fat.text = "70 g"
             } else if (50 < cAge.toInt()) {
-                energie.text = "1800kcal"
-                proteine.text = "45g"
-                carb.text = "220g"
-                fat.text = "55g"
+                energie.text = "1800 kcal"
+                proteine.text = "45 g"
+                carb.text = "220 g"
+                fat.text = "55 g"
             }
         }
 
@@ -88,9 +82,9 @@ class diaryBalanceActivity : AppCompatActivity() {
     private fun setupPieChart() {
         // Setup Pie Entries
         val pieEntries = arrayListOf<PieEntry>()
-        pieEntries.add(PieEntry(20f,"Fat"))
-        pieEntries.add(PieEntry(40f,"Protèine"))
-        pieEntries.add(PieEntry(70f,"Carb"))
+        pieEntries.add(PieEntry(30f,"Fat"))
+        pieEntries.add(PieEntry(20f,"Protèine"))
+        pieEntries.add(PieEntry(50f,"Carb"))
 
         // Setup Pie Chart Animation
         pieChart.animateXY(1500, 1500) // This 1000 is time that how much time piechart chreated
@@ -98,8 +92,8 @@ class diaryBalanceActivity : AppCompatActivity() {
         // Setup PicChart Colors
         val pieDataSet = PieDataSet(pieEntries, "")
         pieDataSet.setColors(
-            resources.getColor(R.color.teal_200),
-            resources.getColor(R.color.rose),
+            resources.getColor(R.color.pinky),
+            resources.getColor(R.color.blu),
             resources.getColor(R.color.green)
         )
 

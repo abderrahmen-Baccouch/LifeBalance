@@ -18,7 +18,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
     private var cYear: Int? = null
     private var cAge: Int? = null
-    private var radio: String? = null
+    private var sexe: String? = "HOMME"
     private lateinit var etHauteur : EditText
     private lateinit var etPoids : EditText
     private lateinit var etage : TextView
@@ -45,26 +45,30 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         etPoids = findViewById(R.id.Poids)
         etage = findViewById(R.id.age)
 
+        radioGroup.setOnCheckedChangeListener{ radioGroup,i ->
+            val rb = findViewById<RadioButton>(i)
+            if (rb!=null){
+                Toast.makeText(this,rb.text.toString(), LENGTH_SHORT).show()
+                sexe = rb.text.toString()
+            }
+        }
+
         valider.setOnClickListener{
 
             val hauteur = etHauteur.text.toString().trim()
             val poids = etPoids.text.toString().trim()
             val age = etage.text.toString().trim()
-            val cAge = cAge.toString().trim()
-            var radio: String? = "HOMME"
+
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
-            radioGroup.setOnCheckedChangeListener{ radioGroup,i ->
-               var rb = findViewById<RadioButton>(i)
-                if (rb!=null){
-                    Toast.makeText(this,rb.text.toString(), LENGTH_SHORT).show()
-                    radio = rb.text.toString()
-                }
-                  }
 
             if (age.format(Date()).isEmpty()){
                 etage.error="age est obligatoire";
                 Toast.makeText(this, "Age est Obligatoire!", LENGTH_SHORT).show()}
-            else if((currentYear - cYear!!)<15){
+            else if((currentYear - cYear!!)<15 ){
+                etage.error="age est invalide";
+                Toast.makeText(this, "Age minimale : 15 ans !", LENGTH_SHORT).show()
+            }
+            else if ( (currentYear - cYear!!)>75){
                 etage.error="age est invalide";
                 Toast.makeText(this, "Age minimale : 15 ans !", LENGTH_SHORT).show()
             }
@@ -83,13 +87,18 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 Toast.makeText(this, "Poids est Invalide !", LENGTH_SHORT).show()}
 
             else {
-                Toast.makeText(this, "Informations Collectées !", LENGTH_SHORT).show()
+
+                Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
+                Toast.makeText(this,sexe, LENGTH_SHORT).show()
                 val intent = Intent(this,FifthActivity::class.java)
+                val a = sexe.toString()
+                val b = cAge.toString()
                 intent.putExtra("poids",poids)
                 intent.putExtra("hauteur",hauteur)
-                intent.putExtra("age",cAge)
-                intent.putExtra("radio",radio)
+                intent.putExtra("age",b)
+                intent.putExtra("sexe",a)
                 startActivity(intent)
+
             }
 
         }
@@ -109,10 +118,11 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 month = mMonth
                 year = mYear
                 //set to textView
-                age.text= "$day/${month+1}/$year"
                 cYear=year
                 val currentYear = Calendar.getInstance().get(Calendar.YEAR)
                 cAge = currentYear - year
+                age.text= "${cAge.toString()} ans"
+
             },year,month,day)
 
             //Show dialog

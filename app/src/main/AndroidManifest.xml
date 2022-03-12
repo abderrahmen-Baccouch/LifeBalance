@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PremierePage">
         <activity
+            android:name=".ActivityExercices"
+            android:exported="false" />
+        <activity
             android:name=".weeklyGoal"
             android:exported="false" />
         <activity
