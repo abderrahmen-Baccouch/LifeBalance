@@ -10,19 +10,24 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
-private var ShowPass = false
+    private var retrofitInterface: RetrofitInterface? = null
+
+    private var ShowPass = false
 
     private val PASSWORD_PATTERN: Pattern = Pattern.compile(
         "^" +  //"(?=.*[0-9])" +         //at least 1 digit
                 //"(?=.*[a-z])" +         //at least 1 lower case letter
                 //"(?=.*[A-Z])" +         //at least 1 upper case letter
                 "(?=.*[a-zA-Z])" +  //any letter
-               // "(?=.*[@#$%^&+=])" +  //at least 1 special character
-              //  "(?=\\S+$)" +  //no white spaces
+                // "(?=.*[@#$%^&+=])" +  //at least 1 special character
+                //  "(?=\\S+$)" +  //no white spaces
                 ".{6,}" +  //at least 6 characters
                 "$"
     )
@@ -32,18 +37,26 @@ private var ShowPass = false
     private lateinit var etPassword : EditText
     private lateinit var btnValidate : Button
 
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
+        val i = Intent(this,ThirdActivity::class.java)
 
         showHidePassword.setOnClickListener{
             ShowPass = !ShowPass
             showPassword(ShowPass)
         }
         showPassword(ShowPass)
-       etEmail = findViewById(R.id.editTextTextEmailAddress)
+        etEmail = findViewById(R.id.editTextTextEmailAddress)
         etPassword = findViewById(R.id.editTextPassword)
-         btnValidate = findViewById(R.id.buttonLogin)
+        btnValidate = findViewById(R.id.buttonLogin)
 
         buttonLogin.setOnClickListener{
             val email = etEmail.text.toString().trim()
@@ -59,9 +72,61 @@ private var ShowPass = false
                 etPassword.setError("Mot de passe trop faible .. au moins 6 characteres")
             }
             else{
-                Toast.makeText(applicationContext, R.string.toast_msg, Toast.LENGTH_LONG).show()
-                val intent = Intent(this,ThirdActivity::class.java)
-                startActivity(intent)
+                val map = HashMap<String?, String?>()
+                map["email"] = email
+                map["password"] = password
+
+
+                val call = retrofitInterface!!.executeLogin(map)
+                call!!.enqueue(object : Callback<LoginResult?> {
+                    override fun onResponse(
+                        call: Call<LoginResult?>,
+                        response: Response<LoginResult?>
+                    ) {
+                        if (response.code() == 200) {
+                            val result = response.body()
+
+                            i.putExtra("token", result!!.getToken())
+                            Toast.makeText(
+                                this@MainActivity, result!!.getToken(),
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Toast.makeText(
+                                this@MainActivity, result!!.getMessage(),
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            startActivity(i)
+
+                        } else if (response.code() == 400) {
+                            val result = response.body()
+
+                            Toast.makeText(
+                                this@MainActivity, "Wrong Credentials",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            //si le compte n'est pas verifié
+                        }else if(response.code() == 401){
+                            val result = response.body()
+                            Toast.makeText(
+                                this@MainActivity,"verifier ton compte ",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResult?>, t: Throwable) {
+                        Toast.makeText(
+                            this@MainActivity, t.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+
+                    }
+                })
+
+
+
 
 
             }
@@ -70,13 +135,13 @@ private var ShowPass = false
 
 
         buttonSignUp.setOnClickListener{
-            val intent = Intent(this,SecondDesign::class.java)
+            val intent = Intent(this,SignupActivity::class.java)
             startActivity(intent)
         }
 
 
 
-        }
+    }
     private fun showPassword(isShow:Boolean){
         if(isShow){
             editTextPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
@@ -85,7 +150,7 @@ private var ShowPass = false
             editTextPassword.transformationMethod = PasswordTransformationMethod.getInstance()
             showHidePassword.setImageResource(R.drawable.ic_baseline_visibility)
         }
-           editTextPassword.setSelection(editTextPassword.text.toString().length)
+        editTextPassword.setSelection(editTextPassword.text.toString().length)
     }
 }
 

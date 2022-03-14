@@ -28,7 +28,7 @@
             android:name=".ThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondDesign"
+            android:name=".SignupActivity"
             android:exported="false" />
         <activity
             android:name=".FourthActivity"

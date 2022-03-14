@@ -11,10 +11,14 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_third.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
+    var retrofitInterface: RetrofitInterface? = null
 
     private var cYear: Int? = null
     private var cAge: Int? = null
@@ -24,15 +28,22 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
     private lateinit var etage : TextView
 
 
+
+
     @SuppressLint("SetTextI18n")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
 
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
 
         //get data from intent
         val intent = intent
+
+        val extras = intent.extras
         val username = intent.getStringExtra("username")
 
         // textView
@@ -54,12 +65,12 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
             var radio: String? = "HOMME"
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
             radioGroup.setOnCheckedChangeListener{ radioGroup,i ->
-               var rb = findViewById<RadioButton>(i)
+                var rb = findViewById<RadioButton>(i)
                 if (rb!=null){
                     Toast.makeText(this,rb.text.toString(), LENGTH_SHORT).show()
                     radio = rb.text.toString()
                 }
-                  }
+            }
 
             if (age.format(Date()).isEmpty()){
                 etage.error="age est obligatoire";
@@ -83,13 +94,57 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 Toast.makeText(this, "Poids est Invalide !", LENGTH_SHORT).show()}
 
             else {
-                Toast.makeText(this, "Informations Collectées !", LENGTH_SHORT).show()
-                val intent = Intent(this,FifthActivity::class.java)
-                intent.putExtra("poids",poids)
-                intent.putExtra("hauteur",hauteur)
-                intent.putExtra("age",cAge)
-                intent.putExtra("radio",radio)
-                startActivity(intent)
+                /* Toast.makeText(this, "Informations Collectées !", LENGTH_SHORT).show()
+                 val intent = Intent(this,FifthActivity::class.java)
+                 intent.putExtra("poids",poids)
+                 intent.putExtra("hauteur",hauteur)
+                 intent.putExtra("age",cAge)
+                 intent.putExtra("radio",radio)
+                 startActivity(intent)*/
+
+                val map = HashMap<String?, String?>()
+                val dates=cAge.format(Date())
+
+
+                map["poids"] = poids
+                map["taille"] = hauteur
+                /*  if(etFemme.isChecked())
+                      map["sexe"]="Femme"
+                  else
+                      map["sexe"]="Homme"
+                  map["date"]=dates*/
+                map["age"]=cAge
+
+
+
+                val call = retrofitInterface!!.executeSave(map, extras!!.getString("token"))
+                call!!.enqueue(object : Callback<Void?> {
+                    override fun onResponse(
+                        call: Call<Void?>,
+                        response: Response<Void?>
+                    ) {
+                        if (response.code() == 200) {
+                            Toast.makeText(
+                                this@ThirdActivity,
+                                " success", Toast.LENGTH_LONG
+                            ).show()
+
+
+                        } else if (response.code() == 400) {
+                            Toast.makeText(
+                                this@ThirdActivity,
+                                "error", Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Void?>, t: Throwable) {
+                        Toast.makeText(
+                            this@ThirdActivity, t.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                })
             }
 
         }
