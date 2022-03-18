@@ -12,6 +12,45 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PremierePage">
         <activity
+            android:name=".aliments"
+            android:exported="false" />
+        <activity
+            android:name=".workoutGoal"
+            android:exported="false" />
+        <activity
+            android:name=".customActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Tennis"
+            android:exported="false" />
+        <activity
+            android:name=".Yoga"
+            android:exported="false" />
+        <activity
+            android:name=".Skating"
+            android:exported="false" />
+        <activity
+            android:name=".Boxing"
+            android:exported="false" />
+        <activity
+            android:name=".Football"
+            android:exported="false" />
+        <activity
+            android:name=".Aerobic"
+            android:exported="false" />
+        <activity
+            android:name=".Abdominal"
+            android:exported="false" />
+        <activity
+            android:name=".Walking"
+            android:exported="false" />
+        <activity
+            android:name=".Running"
+            android:exported="false" />
+        <activity
+            android:name=".calculeKcalActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActivityExercices"
             android:exported="false" />
         <activity

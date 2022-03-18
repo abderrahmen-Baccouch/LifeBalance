@@ -31,6 +31,9 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         setContentView(R.layout.activity_third)
 
 
+
+
+
         //get data from intent
         val intent = intent
         val username = intent.getStringExtra("username")

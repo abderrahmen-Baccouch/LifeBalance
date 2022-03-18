@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".workoutGoal">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="204dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ellipse_1__3_"
+        tools:ignore="MissingConstraints" />
+
+    <com.mikhaellopez.circularprogressbar.CircularProgressBar
+        android:id="@+id/progress_circular_workout"
+        android:layout_width="235dp"
+        android:layout_height="207dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="-350dp"
+        android:textAlignment="center"
+        app:cpb_background_progressbar_color="#FFFFFF"
+        app:cpb_progressbar_width="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.456"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Goal"
+        android:layout_width="118dp"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/chew"
+        android:text="GOAL !"
+        android:textAlignment="center"
+        android:textColor="#D81B60"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.23"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/KcalConsumed"
+        android:layout_width="118dp"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/chew"
+        android:text="Kcal Consumed"
+        android:textAlignment="center"
+        android:textColor="#8A7D04"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/KcalNbr"
+        android:layout_width="118dp"
+        android:layout_height="71dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/lobsterr"
+        android:text="0 Kcal"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.041"
+        tools:ignore="MissingConstraints" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customActivity">
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="688dp"
+        android:layout_height="466dp"
+        android:layout_marginBottom="424dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/rectangle_3__12_" />
+
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="194dp"
+        android:layout_height="133dp"
+        android:layout_marginBottom="544dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/gym1" />
+
+    <EditText
+        android:id="@+id/duration"
+        android:layout_width="275dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="312dp"
+        android:background="@drawable/custom_input_duration2"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/suez_one"
+        android:hint=" Activity Name"
+        android:inputType="text"
+        android:onClick="true"
+        android:paddingStart="12dp"
+        android:paddingEnd="15dp"
+        android:textColorHint="#989191"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
+
+    <EditText
+        android:id="@+id/kcalParMinute"
+        android:layout_width="275dp"
+        android:layout_height="56dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="236dp"
+        android:background="@drawable/custom_input_duration2"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/patua_one"
+        android:hint=" Kcal per minute"
+        android:inputType="number"
+        android:onClick="true"
+        android:paddingStart="12dp"
+        android:paddingEnd="15dp"
+        android:textColorHint="#989191"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="263dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="136dp"
+        android:background="@drawable/button_save2"
+        android:fontFamily="@font/vidaloka"
+        android:text="ADD CUSTOM ACTIVITY"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -513,7 +513,7 @@
                      android:layout_height="40dp"
                      android:layout_marginLeft="8dp"
                      android:scaleType="centerCrop"
-                   -->  android:src="@drawable/activit_" />
+                    android:src="@drawable/activit_" />-->
 
                 <Button
                     android:id="@+id/exercice"
@@ -528,6 +528,215 @@
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="375dp"
+                android:layout_height="200dp"
+                android:paddingTop="100dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/breackfast" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Breakfast"
+                    android:textSize="25dp"
+                    android:textColor="#0C464E"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/galada"/>
+                <TextView
+                    android:id="@+id/addBreakFast"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="310dp"
+                    android:text="ADD"
+                    android:textSize="25dp"
+                    android:textColor="#04C2DA"
+                    android:fontFamily="@font/coda"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:text="392-585 Kcal recommended"
+                    android:textColor="#423E3E"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/galada"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"/>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/food3" />
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Add Your Food"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginLeft="130dp"
+                    android:fontFamily="@font/lobsterr"/>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="375dp"
+                android:layout_height="200dp"
+                android:paddingTop="100dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/lunch" />
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:text="579-772 Kcal recommended"
+                    android:textColor="#423E3E"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/galada"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Lunch"
+                    android:textSize="25dp"
+                    android:textColor="#0C464E"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/galada"/>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="310dp"
+                    android:text="ADD"
+                    android:textSize="25dp"
+                    android:textColor="#04C2DA"
+                    android:fontFamily="@font/coda"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/food2" />
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Add Your Food"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginLeft="130dp"
+                    android:fontFamily="@font/lobsterr"/>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="375dp"
+                android:layout_height="200dp"
+                android:paddingTop="100dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/dinner" />
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="50dp"
+                    android:text="289-482 Kcal recommended"
+                    android:textColor="#423E3E"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/galada"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"/>
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Dinner"
+                    android:textSize="25dp"
+                    android:textColor="#0C464E"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/galada"/>
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="310dp"
+                    android:text="ADD"
+                    android:textSize="25dp"
+                    android:textColor="#04C2DA"
+                    android:fontFamily="@font/coda"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="170dp"
+                    android:layout_marginTop="120dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/food5" />
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="30dp"
+                    android:text="Add Your Food"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginLeft="140dp"
+                    android:fontFamily="@font/lobsterr"/>
+            </androidx.cardview.widget.CardView>
+
 
         <!--  <androidx.cardview.widget.CardView
               android:layout_width="190dp"

@@ -2,15 +2,17 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
 
-        <item>@font/</item>
+
         <item>@font/allerta</item>
         <item>@font/candal</item>
         <item>@font/chewy</item>
         <item>@font/damion</item>
+        <item>@font/days_one</item>
         <item>@font/fredoka_one</item>
         <item>@font/kite_one</item>
         <item>@font/lobster</item>
         <item>@font/patua_one</item>
         <item>@font/qwigley</item>
+        <item>@font/ruthie</item>
     </array>
 </resources>

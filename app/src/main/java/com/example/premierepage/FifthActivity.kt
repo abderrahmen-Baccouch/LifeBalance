@@ -84,5 +84,13 @@ var startPoint = 0
              intent.putExtra("sexe",a)
              startActivity(intent)
          }
+         fab.setOnClickListener{
+             val intent = Intent(this,workoutGoal::class.java)
+             startActivity(intent)
+         }
+         addBreakFast.setOnClickListener {
+             val intent = Intent(this,aliments::class.java)
+             startActivity(intent)
+         }
     }
 }

@@ -26,6 +26,7 @@
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
         <ImageView
+            android:id="@+id/myCustomActivity"
             android:layout_width="80dp"
             android:layout_height="100dp"
             android:background="@drawable/gym"
@@ -102,6 +103,7 @@
      </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+            android:id="@+id/bicycling"
             android:layout_marginTop="300dp"
             android:layout_marginLeft="-370dp"
             android:layout_width="380dp"
@@ -128,7 +130,7 @@
                 <TextView
                     android:layout_width="150dp"
                     android:layout_height="40dp"
-                    android:text="275 kcal"
+                    android:text="270 kcal"
                     android:layout_marginLeft="290dp"
                     android:layout_marginTop="10dp"
                     android:textColor="#5C5454"
@@ -146,6 +148,7 @@
                     android:textSize="16dp"/>
             </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/running"
             android:layout_marginTop="390dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -192,12 +195,13 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/walking"
             android:layout_marginTop="480dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
             android:layout_height="70dp"
             app:cardElevation="10dp"
-            app:cardBackgroundColor="#E53935"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="20dp"
             android:layout_marginRight="10dp"
             >
@@ -238,6 +242,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/abdominal"
             android:layout_marginTop="570dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -284,6 +289,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/aerobic"
             android:layout_marginTop="660dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -329,6 +335,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/football"
             android:layout_marginTop="750dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -374,6 +381,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/tennis"
             android:layout_marginTop="840dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -419,6 +427,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/boxing"
             android:layout_marginTop="930dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -464,6 +473,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/skating"
             android:layout_marginTop="1020dp"
             android:layout_marginLeft="-390dp"
             android:layout_width="380dp"
@@ -509,6 +519,7 @@
                 android:textSize="16dp"/>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:id="@+id/yoga"
             android:layout_marginTop="1110dp"
             android:layout_marginLeft="-390dp"
             android:layout_marginBottom="15dp"
