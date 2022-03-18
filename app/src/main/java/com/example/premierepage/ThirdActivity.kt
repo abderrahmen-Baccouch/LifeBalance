@@ -20,6 +20,8 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
     var retrofitInterface: RetrofitInterface? = null
 
+
+
     private var cYear: Int? = null
     private var cAge: Int? = null
     private var radio: String? = null
@@ -40,8 +42,12 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
 
+
+
         //get data from intent
         val intent = intent
+
+
 
         val extras = intent.extras
         val username = intent.getStringExtra("username")
@@ -102,10 +108,15 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                  intent.putExtra("radio",radio)
                  startActivity(intent)*/
 
+
+
+
+
+
+
+
                 val map = HashMap<String?, String?>()
                 val dates=cAge.format(Date())
-
-
                 map["poids"] = poids
                 map["taille"] = hauteur
                 /*  if(etFemme.isChecked())
@@ -114,7 +125,6 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                       map["sexe"]="Homme"
                   map["date"]=dates*/
                 map["age"]=cAge
-
 
 
                 val call = retrofitInterface!!.executeSave(map, extras!!.getString("token"))
