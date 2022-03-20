@@ -40,6 +40,7 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes){
         /**set Dialog*/
 
 
+
         addsBtn.setOnClickListener {
 
 
@@ -49,18 +50,25 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes){
             /**set view*/
             val userName = v.findViewById<EditText>(R.id.userFood)
             val userNo = v.findViewById<EditText>(R.id.userKcal)
+            val userPro = v.findViewById<EditText>(R.id.proteines)
+            val userGlu = v.findViewById<EditText>(R.id.glucides)
+            val userLip = v.findViewById<EditText>(R.id.lipides)
             val addDialog = AlertDialog.Builder(this.context)
 
             addDialog.setView(v)
-            addDialog.setPositiveButton("Ok"){
+            addDialog.setPositiveButton("ADD"){
                     dialog,_->
                 val names = userName.text.toString()
                 val number = userNo.text.toString()
-                userList.add(UserData("Name: $names","Mobile No. : $number"))
+                val p = userPro.text.toString()
+                val g = userGlu.text.toString()
+                val l = userLip.text.toString()
+
+                userList.add(UserData("$names","$number  Kcal ","$p g","$g g","$l g"))
                 userAdapter.notifyDataSetChanged()
                 dialog.dismiss()
             }
-            addDialog.setNegativeButton("Cancel"){
+            addDialog.setNegativeButton("CANCEL"){
                     dialog,_->
                 dialog.dismiss()
 
@@ -81,10 +89,6 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes){
 
     }
 
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
 }
 

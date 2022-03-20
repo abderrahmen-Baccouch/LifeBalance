@@ -1,53 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="15dp">
     <LinearLayout
         android:orientation="vertical"
         android:paddingBottom="15dp"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp"
-        android:background="@drawable/shape_background"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            >
+
+            <EditText
+                android:id="@+id/userFood"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="-30dp"
+                android:background="@drawable/custom_input"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:hint="Food name"
+                android:inputType="text"
+                android:padding="15dp"
+                android:textColor="#2C2E2D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Food Information"
             android:textSize="19sp"
+            android:layout_marginBottom="100dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:paddingBottom="8dp"
-            android:paddingTop="8dp"
+            android:paddingTop="50dp"
             android:textColor="@color/white"
             android:fontFamily="@font/chewyy"
             android:background="@color/blu"
             android:layout_gravity="center"
             android:gravity="center"
             android:textAlignment="center"/>
-        <TextView
-            android:id="@+id/userFood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="name"
-            android:layout_margin="15dp"
-            android:textColor="@color/bleuCiel"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-        <TextView
+
+        <EditText
             android:id="@+id/userKcal"
-            android:layout_margin="15dp"
-            android:layout_width="match_parent"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="70dp"
+            android:padding="15dp"
+            android:background="@drawable/custom_input"
+            android:inputType="numberDecimal"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:hint="name"
-            android:textColor="@color/bleuCiel"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:hint="Kcal Number"
+            android:layout_marginLeft="160dp"
+            android:layout_marginRight="15dp"
+            android:textColor="#2C2E2D"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="Autofill" />
+            <EditText
+                android:id="@+id/proteines"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="130dp"
+                android:padding="15dp"
+                android:background="@drawable/custom_input"
+                android:inputType="numberDecimal"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Proteines"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="30dp"
+                android:textColor="#2C2E2D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+            <EditText
+                android:id="@+id/glucides"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="130dp"
+                android:padding="15dp"
+                android:background="@drawable/custom_input"
+                android:inputType="numberDecimal"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Glucides"
+                android:layout_marginLeft="105dp"
+                android:layout_marginRight="30dp"
+                android:textColor="#2C2E2D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
+            <EditText
+                android:id="@+id/lipides"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_marginTop="130dp"
+                android:padding="15dp"
+                android:background="@drawable/custom_input"
+                android:inputType="numberDecimal"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:hint="Lipides"
+                android:layout_marginLeft="210dp"
+                android:layout_marginRight="40dp"
+                android:textColor="#2C2E2D"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="Autofill" />
 
-
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 </LinearLayout>

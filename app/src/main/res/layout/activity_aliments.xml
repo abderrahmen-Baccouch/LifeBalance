@@ -18,7 +18,7 @@
         app:tabIndicatorGravity="center"
         app:tabIndicator="@drawable/circle"
         app:tabIndicatorFullWidth="true"
-        android:background="#0C4F51"
+        android:background="@drawable/rectangle_3__2_"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorAnimationDuration="@integer/material_motion_duration_long_2"
         app:tabTextAppearance="@style/TabLayoutTextStyle"

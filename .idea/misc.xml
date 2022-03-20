@@ -75,13 +75,15 @@
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/activity_weekly_goal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/activity_workout_goal.xml" value="0.4" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/activity_yoga.xml" value="0.23286467486818982" />
-        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/add_item.xml" value="0.19282511210762332" />
+        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/add_item.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/fragment_favourite.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/fragment_food.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/fragment_recipes.xml" value="0.2" />
-        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/list_item.xml" value="0.4" />
-        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/layout/list_item.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/abdo.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/bottom_menu.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2578125" />
+        <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/show_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
