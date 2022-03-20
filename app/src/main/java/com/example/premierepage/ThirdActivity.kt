@@ -11,10 +11,14 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_third.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
+    var retrofitInterface: RetrofitInterface? = null
 
     private var cYear: Int? = null
     private var cAge: Int? = null
@@ -30,12 +34,17 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
 
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
+
 
 
 
 
         //get data from intent
         val intent = intent
+        val extras = intent.extras
         val username = intent.getStringExtra("username")
 
         // textView
@@ -61,7 +70,8 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
             val hauteur = etHauteur.text.toString().trim()
             val poids = etPoids.text.toString().trim()
             val age = etage.text.toString().trim()
-
+            val cAge = cAge.toString().trim()
+            var radio: String? = "HOMME"
             val currentYear = Calendar.getInstance().get(Calendar.YEAR)
 
             if (age.format(Date()).isEmpty()){
@@ -91,7 +101,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
             else {
 
-                Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
+              /*  Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
                 Toast.makeText(this,sexe, LENGTH_SHORT).show()
                 val intent = Intent(this,FifthActivity::class.java)
                 val a = sexe.toString()
@@ -100,11 +110,59 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 intent.putExtra("hauteur",hauteur)
                 intent.putExtra("age",b)
                 intent.putExtra("sexe",a)
-                startActivity(intent)
+                startActivity(intent)*/
+
+                val map = HashMap<String?, String?>()
+                val dates=cAge.format(Date())
+
+                map["poids"] = poids
+                map["taille"] = hauteur
+                /*  if(etFemme.isChecked())
+                      map["sexe"]="Femme"
+                  else
+                      map["sexe"]="Homme"
+                  map["date"]=dates*/
+                map["age"]=cAge
+
+                val call = retrofitInterface!!.executeSave(map, extras!!.getString("token"))
+                call!!.enqueue(object : Callback<Void?> {
+                    override fun onResponse(
+                        call: Call<Void?>,
+                        response: Response<Void?>
+                    ) {
+                        if (response.code() == 200) {
+                            Toast.makeText(
+                                this@ThirdActivity,
+                                " success", Toast.LENGTH_LONG
+                            ).show()
+
+
+                        } else if (response.code() == 400) {
+                            Toast.makeText(
+                                this@ThirdActivity,
+                                "error", Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<Void?>, t: Throwable) {
+                        Toast.makeText(
+                            this@ThirdActivity, t.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                })
+
+
+
+
 
             }
 
         }
+
+
+
 
 
         //Calendar
@@ -112,6 +170,9 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         var year = c.get(Calendar.YEAR)
         var month = c.get(Calendar.MONTH)
         var day = c.get(Calendar.DAY_OF_MONTH)
+
+
+
 
         //button click to show DatePicker
         buttonDatePicker.setOnClickListener{

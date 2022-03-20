@@ -10,10 +10,14 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
+    private var retrofitInterface: RetrofitInterface? = null
 private var ShowPass = false
 
     private val PASSWORD_PATTERN: Pattern = Pattern.compile(
@@ -35,6 +39,11 @@ private var ShowPass = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
+        val i = Intent(this,ThirdActivity::class.java)
 
         showHidePassword.setOnClickListener{
             ShowPass = !ShowPass
@@ -59,9 +68,59 @@ private var ShowPass = false
                 etPassword.setError("Mot de passe trop faible .. au moins 6 characteres")
             }
             else{
-                Toast.makeText(applicationContext, R.string.toast_msg, Toast.LENGTH_LONG).show()
-                val intent = Intent(this,ThirdActivity::class.java)
-                startActivity(intent)
+                val map = HashMap<String?, String?>()
+                map["email"] = email
+                map["password"] = password
+
+                val call = retrofitInterface!!.executeLogin(map)
+                call!!.enqueue(object : Callback<LoginResult?> {
+                    override fun onResponse(
+                        call: Call<LoginResult?>,
+                        response: Response<LoginResult?>
+                    ) {
+                        if (response.code() == 200) {
+                            val result = response.body()
+
+                            i.putExtra("token", result!!.getToken())
+                            Toast.makeText(
+                                this@MainActivity, result!!.getToken(),
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Toast.makeText(
+                                this@MainActivity, result!!.getMessage(),
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            startActivity(i)
+
+                        } else if (response.code() == 400) {
+                            val result = response.body()
+
+                            Toast.makeText(
+                                this@MainActivity, "Wrong Credentials",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                            //si le compte n'est pas verifié
+                        }else if(response.code() == 401){
+                            val result = response.body()
+                            Toast.makeText(
+                                this@MainActivity,"verifier ton compte ",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+
+                    override fun onFailure(call: Call<LoginResult?>, t: Throwable) {
+                        Toast.makeText(
+                            this@MainActivity, t.message,
+                            Toast.LENGTH_LONG
+                        ).show()
+
+                    }
+                })
+
+
 
 
             }
@@ -70,7 +129,7 @@ private var ShowPass = false
 
 
         buttonSignUp.setOnClickListener{
-            val intent = Intent(this,SecondDesign::class.java)
+            val intent = Intent(this,SignupActivity::class.java)
             startActivity(intent)
         }
 
