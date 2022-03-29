@@ -1,24 +1,15 @@
 package com.example.premierepage
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.varunest.sparkbutton.SparkButton
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_second_design.*
-import kotlinx.android.synthetic.main.activity_second_design.showHide
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.util.regex.Pattern
-import android.widget.Button as Button
 
 class SignupActivity : AppCompatActivity() {
     private var retrofitInterface: RetrofitInterface? = null
@@ -53,7 +44,7 @@ class SignupActivity : AppCompatActivity() {
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-        val  intent = Intent(this,MainActivity::class.java)
+        val  intent = Intent(this,ThirdActivity::class.java)
 
         showHide.setOnClickListener{
             Show = !Show
@@ -99,7 +90,7 @@ class SignupActivity : AppCompatActivity() {
             }else if (password!=verif_password) {
                  etVerifyPassword.error ="Mot de passe incorrecte"}
             else {
-
+/*
                 //Service Signup
                 val map = HashMap<String?, String?>()
                 map["username"] = user
@@ -138,8 +129,9 @@ class SignupActivity : AppCompatActivity() {
 
                     }
                 })
-
+*/
             }
+            startActivity(intent)
     }
 
     }//fin OnCreate

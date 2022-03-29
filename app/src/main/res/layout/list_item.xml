@@ -17,7 +17,7 @@
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="10dp"
-    >
+    tools:ignore="MissingClass">
 <ImageView
     android:layout_width="80dp"
     android:layout_height="50dp"
@@ -69,7 +69,8 @@
             android:layout_marginLeft="-350dp"
             app:cardCornerRadius="20dp"
             app:cardBackgroundColor="#FFFFFF"
-            app:cardElevation="10dp">
+            app:cardElevation="10dp"
+            tools:ignore="MissingClass">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

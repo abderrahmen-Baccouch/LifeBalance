@@ -3,13 +3,20 @@ package com.example.premierepage
 import android.content.Intent
 import android.graphics.Color.*
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.SeekBar
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import kotlinx.android.synthetic.main.activity_fifth.*
 import java.text.DecimalFormat
-
 class FifthActivity : AppCompatActivity() {
+
+    lateinit var toggle : ActionBarDrawerToggle
 
 var startPoint = 0
     var endPoint = 0
@@ -18,6 +25,33 @@ var startPoint = 0
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
+
+       val  drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+         val imgMenu = findViewById<ImageView>(R.id.imgMenu)
+        val navView = findViewById<NavigationView>(R.id.navDrawar)
+         navView.itemIconTintList = null
+         imgMenu.setOnClickListener {
+             drawerLayout.openDrawer(GravityCompat.START)
+         }
+
+         //    toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+       //  drawerLayout.addDrawerListener(toggle)
+      //   toggle.syncState()
+
+      //   supportActionBar?.setDisplayHomeAsUpEnabled(true)
+      //   navView.setNavigationItemSelectedListener {
+       //      when(it.itemId){
+       //          R.id.nav_home -> Toast.makeText(applicationContext,"Clicked Home",Toast.LENGTH_SHORT).show()
+       //          R.id.nav_setting -> Toast.makeText(applicationContext,"Clicked Setting",Toast.LENGTH_SHORT).show()
+       //          R.id.nav_logout -> Toast.makeText(applicationContext,"Clicked LogOut",Toast.LENGTH_SHORT).show()
+       //          R.id.nav_share -> Toast.makeText(applicationContext,"Clicked Share",Toast.LENGTH_SHORT).show()
+       //          R.id.nav_rate_us -> Toast.makeText(applicationContext,"Clicked Rate Us",Toast.LENGTH_SHORT).show()
+
+         //    }
+          //   true
+       //  }
+
+
 
          volumeSeek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
              override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
@@ -71,6 +105,11 @@ var startPoint = 0
 
 
       }
+         defit_1.setOnClickListener {
+             val intent = Intent(this,Defit::class.java)
+             startActivity(intent)
+         }
+
          exercice.setOnClickListener {
              val intent = Intent(this,ActivityExercices::class.java)
              startActivity(intent)
@@ -92,5 +131,19 @@ var startPoint = 0
              val intent = Intent(this,aliments::class.java)
              startActivity(intent)
          }
+         addLunch.setOnClickListener {
+             val intent = Intent(this,aliments::class.java)
+             startActivity(intent)
+         }
+         addDinner.setOnClickListener {
+             val intent = Intent(this,aliments::class.java)
+             startActivity(intent)
+         }
+    }
+   override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)){
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -14,6 +14,21 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".calculePremierDefit"
+            android:exported="false" />
+        <activity
+            android:name=".FoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LancerDeuxiemeDefit"
+            android:exported="false" />
+        <activity
+            android:name=".LancerPremierDefit"
+            android:exported="false" />
+        <activity
+            android:name=".Defit"
+            android:exported="false" />
+        <activity
             android:name=".aliments"
             android:exported="false" />
         <activity

@@ -45,13 +45,6 @@ for(index in 0..tab.size-1){
 
 
 
-
-
-
-
-
-
-
 /**    if (arr[0]==0){
     arr.set(0,number)
     }else{

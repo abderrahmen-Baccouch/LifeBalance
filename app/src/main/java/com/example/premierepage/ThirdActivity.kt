@@ -11,9 +11,6 @@ import android.widget.Toast.LENGTH_SHORT
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_third.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.util.*
 
 class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
@@ -44,7 +41,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
         //get data from intent
         val intent = intent
-        val extras = intent.extras
+        //val extras = intent.extras
         val username = intent.getStringExtra("username")
 
         // textView
@@ -101,7 +98,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
             else {
 
-              /*  Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
+              Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
                 Toast.makeText(this,sexe, LENGTH_SHORT).show()
                 val intent = Intent(this,FifthActivity::class.java)
                 val a = sexe.toString()
@@ -110,9 +107,9 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 intent.putExtra("hauteur",hauteur)
                 intent.putExtra("age",b)
                 intent.putExtra("sexe",a)
-                startActivity(intent)*/
+                startActivity(intent)
 
-                val map = HashMap<String?, String?>()
+               /* val map = HashMap<String?, String?>()
                 val dates=cAge.format(Date())
 
                 map["poids"] = poids
@@ -151,7 +148,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                })
+                })*/
 
 
 

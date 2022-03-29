@@ -39,8 +39,6 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes){
         recv.adapter = userAdapter
         /**set Dialog*/
 
-
-
         addsBtn.setOnClickListener {
 
 
