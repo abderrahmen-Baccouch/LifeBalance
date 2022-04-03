@@ -3,6 +3,7 @@ package com.example.premierepage
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
+import android.content.SharedPreferences
 import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
@@ -12,10 +13,14 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_third.*
 import java.util.*
+import retrofit2.Callback
+import retrofit2.Call
+import retrofit2.Response
 
 class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
     var retrofitInterface: RetrofitInterface? = null
+    var myshared: SharedPreferences?=null
 
     private var cYear: Int? = null
     private var cAge: Int? = null
@@ -33,6 +38,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
 
 
 
@@ -97,41 +103,53 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 Toast.makeText(this, "Poids est Invalide !", LENGTH_SHORT).show()}
 
             else {
+                myshared=getSharedPreferences("myshared",0)
+                var token =myshared?.getString("token","")
 
-              Toast.makeText(this,"Informations Collèctées", LENGTH_SHORT).show()
-                Toast.makeText(this,sexe, LENGTH_SHORT).show()
-                val intent = Intent(this,FifthActivity::class.java)
+
                 val a = sexe.toString()
                 val b = cAge.toString()
-                intent.putExtra("poids",poids)
-                intent.putExtra("hauteur",hauteur)
-                intent.putExtra("age",b)
-                intent.putExtra("sexe",a)
-                startActivity(intent)
 
-               /* val map = HashMap<String?, String?>()
+
+                val map = HashMap<String?, String?>()
                 val dates=cAge.format(Date())
 
                 map["poids"] = poids
                 map["taille"] = hauteur
-                /*  if(etFemme.isChecked())
-                      map["sexe"]="Femme"
-                  else
-                      map["sexe"]="Homme"
-                  map["date"]=dates*/
+                map["sexe"]=sexe
                 map["age"]=cAge
 
-                val call = retrofitInterface!!.executeSave(map, extras!!.getString("token"))
+                val call = retrofitInterface!!.executeSave(map,token)
                 call!!.enqueue(object : Callback<Void?> {
                     override fun onResponse(
                         call: Call<Void?>,
                         response: Response<Void?>
                     ) {
                         if (response.code() == 200) {
+                            var editor: SharedPreferences.Editor=myshared!!.edit()
+                            editor.putString("poids",poids)
+                            editor.putString("hauteur",hauteur)
+                            val a = sexe.toString()
+                            val b = cAge.toString()
+                            editor.putString("age",b)
+                            editor.putString("sexe",a)
+                            editor.commit()
+
+                            Toast.makeText(
+                                this@ThirdActivity,
+                                response.body().toString(), Toast.LENGTH_LONG
+                            ).show()
+
                             Toast.makeText(
                                 this@ThirdActivity,
                                 " success", Toast.LENGTH_LONG
                             ).show()
+
+
+
+             val intent = Intent(this@ThirdActivity,FifthActivity::class.java)
+                            startActivity(intent)
+
 
 
                         } else if (response.code() == 400) {
@@ -148,7 +166,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                             Toast.LENGTH_LONG
                         ).show()
                     }
-                })*/
+                })
 
 
 

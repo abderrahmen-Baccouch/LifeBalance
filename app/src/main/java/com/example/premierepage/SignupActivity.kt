@@ -6,10 +6,14 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.varunest.sparkbutton.SparkButton
 import kotlinx.android.synthetic.main.activity_second_design.*
+import retrofit2.Call
 import java.util.regex.Pattern
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
     private var retrofitInterface: RetrofitInterface? = null
@@ -90,7 +94,7 @@ class SignupActivity : AppCompatActivity() {
             }else if (password!=verif_password) {
                  etVerifyPassword.error ="Mot de passe incorrecte"}
             else {
-/*
+
                 //Service Signup
                 val map = HashMap<String?, String?>()
                 map["username"] = user
@@ -99,10 +103,7 @@ class SignupActivity : AppCompatActivity() {
 
                 val call = retrofitInterface!!.executeSignup(map)
                 call!!.enqueue(object : Callback<Void?> {
-                    override fun onResponse(
-                        call: Call<Void?>,
-                        response: Response<Void?>
-                    ) {
+                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                         if (response.code() == 200) {
                             //zid code t7el inflater bech yaamel verification
                             Toast.makeText(
@@ -129,7 +130,7 @@ class SignupActivity : AppCompatActivity() {
 
                     }
                 })
-*/
+
             }
             startActivity(intent)
     }

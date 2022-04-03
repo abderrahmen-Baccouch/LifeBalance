@@ -1,6 +1,7 @@
 package com.example.premierepage
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -18,6 +19,7 @@ import java.util.regex.Pattern
 
 class MainActivity : AppCompatActivity() {
     private var retrofitInterface: RetrofitInterface? = null
+    var myshared:SharedPreferences?=null
 private var ShowPass = false
 
     private val PASSWORD_PATTERN: Pattern = Pattern.compile(
@@ -81,15 +83,10 @@ private var ShowPass = false
                         if (response.code() == 200) {
                             val result = response.body()
 
-                            i.putExtra("token", result!!.getToken())
-                            Toast.makeText(
-                                this@MainActivity, result!!.getToken(),
-                                Toast.LENGTH_LONG
-                            ).show()
-                            Toast.makeText(
-                                this@MainActivity, result!!.getMessage(),
-                                Toast.LENGTH_LONG
-                            ).show()
+                            myshared=getSharedPreferences("myshared",0)
+                            var editor: SharedPreferences.Editor=myshared!!.edit()
+                            editor.putString("token",result!!.getToken())
+                            editor.commit()
 
                             startActivity(i)
 

@@ -2,13 +2,14 @@
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="220dp"
+    android:layout_height="90dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     tools:ignore="Orientation">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/bicycling"
+        android:id="@+id/exerciceID"
         android:layout_width="380dp"
         android:layout_height="70dp"
         app:cardElevation="10dp"
@@ -23,7 +24,7 @@
             android:layout_marginTop="-10dp"
             android:background="@drawable/bicycling"/>
         <TextView
-            android:id="@+id/mTitle"
+            android:id="@+id/nomExercice"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="Exercice"
@@ -34,7 +35,7 @@
             android:textStyle="bold"
             android:textSize="22dp"/>
         <TextView
-            android:id="@+id/mSubtitle2"
+            android:id="@+id/calories"
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:text="Nbrs kcal"

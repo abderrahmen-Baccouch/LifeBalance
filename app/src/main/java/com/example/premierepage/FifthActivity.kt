@@ -1,11 +1,13 @@
 package com.example.premierepage
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color.*
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -16,6 +18,7 @@ import kotlinx.android.synthetic.main.activity_fifth.*
 import java.text.DecimalFormat
 class FifthActivity : AppCompatActivity() {
 
+    var myshared: SharedPreferences?=null
     lateinit var toggle : ActionBarDrawerToggle
 
 var startPoint = 0
@@ -77,12 +80,11 @@ var startPoint = 0
          //get data from intent
          val intent = intent
          val dec = DecimalFormat("#,###.00")
-
-         val poids = intent.getStringExtra("poids").toString().toDouble()
-         val hauteur = intent.getStringExtra("hauteur").toString().toDouble()
-         val cAge = intent.getStringExtra("age").toString().trim()
-         val sexe = intent.getStringExtra("sexe").toString().trim()
-
+         myshared=getSharedPreferences("myshared",0)
+         val poids =myshared?.getString("poids","").toString().toDouble()
+         val hauteur =myshared?.getString("hauteur","").toString().toDouble()
+         val cAge =myshared?.getString("age","").toString().trim()
+         val sexe =myshared?.getString("sexe","").toString().trim()
 
          imc.text = dec.format(poids/(hauteur*hauteur)).toString()
 
@@ -136,7 +138,7 @@ var startPoint = 0
              startActivity(intent)
          }
          addDinner.setOnClickListener {
-             val intent = Intent(this,aliments::class.java)
+             val intent = Intent(this,Tennis::class.java)
              startActivity(intent)
          }
     }

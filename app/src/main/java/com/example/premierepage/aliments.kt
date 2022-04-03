@@ -15,8 +15,8 @@ class aliments : AppCompatActivity() {
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(FoodFragment(),"REPAS")
-        fragmentAdapter.addFragment(RecipesFragment(),"MES ALIMENTS")
-        fragmentAdapter.addFragment(FavouriteFragment(),"MES FAVORIS")
+        fragmentAdapter.addFragment(AlimentsFragment(),"MES ALIMENTS")
+        fragmentAdapter.addFragment(NotreAlimentsFragment(),"NOTRE ALIMENTS")
 
 
        viewPager.adapter = fragmentAdapter
