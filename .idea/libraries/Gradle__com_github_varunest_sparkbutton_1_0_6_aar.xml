@@ -7,6 +7,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/46ec2b0c8c75feba3ecd2ed82bdeef82/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/46ec2b0c8c75feba3ecd2ed82bdeef82/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/46ec2b0c8c75feba3ecd2ed82bdeef82/transformed/jetified-sparkbutton-1.0.6/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

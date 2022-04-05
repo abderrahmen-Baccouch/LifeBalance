@@ -7,63 +7,67 @@
     <string name="close">Close</string>
 
 
+    <string name="pose1">    :- Commencez en position push-up avec vos bras complètement tendus et directement sous vos épaules.\n\n
+                             :- Votre corps doit former une ligne droite de vos épaules à vos chevilles. \n\n
+                             :- Serrez vos abdominaux, soulevez un pied du sol et ramenez votre genou vers votre poitrine tout en gardant votre corps aussi droit que possible. \n\n
+                             :- Revenez à la position de départ et répétez le mouvement avec votre jambe opposée..
+    </string>
+    <string name="pose2">    :- Allongez-vous sur votre tapis avec les genoux pliés et les pieds sur le tapis. Mains à la base de votre tête et coudes pointés. En utilisant vos abdominaux, dégagez votre tête et vos épaules du tapis et montez dans un crunch, puis abaissez avec contrôle.
+    </string>
+    <string name="pose3">   :- Ce mouvement séffectue avec un banc et un marchepied.\n\n
+                             :- Placez un banc derrière vous et reposez vous dessus avec vos mains. Placez vos jambes droites devant vous. Vous pouvez également les placer à un niveau élevé comme indiqué ci dessus.\n\n
+                             :- Commencez avec les bras complètement rentrés. Pliez lentement vos coudes en gardant le reste de votre corps droit. Assurez-vous de garder vos coudes en arrière et rapprochés.\n\n
+                             :- Descendez jusqu à ce que vos bras forment un angle de 90 degrés et que vous sentiez un étirement dans les triceps.\n\n
+                             :- Étendez lentement vos bras en soulevant votre corps. Faites une pause et contractez vos muscles triceps en haut. Faites une pause et répétez le mouvement.
+    </string>
 
-    <string name="pose1">    Step 1:- Start in the push-up position with your arms completely straight and directly beneath your shoulders.\n\n
-                             Step 2:- Your body should form a straight line from your shoulders to your ankles. \n\n
-                             Step 3:- Squeeze your abs, lift one foot off the floor and bring your knee up towards your chest while keeping your body in as straight of a line as possible. \n\n
-                             Step 4:- Return to the starting position and repeat the movement with your opposite leg.. </string>
-    <string name="pose2">    Step 1:- Lie flat on your mat with knees bent and feet on the mat. Hands at the base ofyour head and elbows pointed out. Using your abdominals bring your head and shoulders off the mat and come up into a crunch, then lower with control. </string>
-    <string name="pose3">    Step 1:- This movement is performed with a bench and a foot stool.\n\n
-                             Step 2:- Place a bench behind yourself and rest on it with your hands. Place your legs straight out in front of you. You may also place them at an elevated level as shown above.\n\n
-                             Step 3:- Begin with arms in a fully. Slowly bend at your elbows keeping the rest of your body straight. Be sure to keep your elbows back and close together.\n\n
-                             Step 4:- Dip down until your arms form a 90 degree angle and you feel a stretch in the triceps.\n\n
-                             Step 5:- Slowly extend your arms raising your body back up. Pause and contract your triceps muscles at the top. Pause and repeat the movement.</string>
-    <string name="pose4">    Step 1:- Lie flat on the floor with your lower back pressed to the ground (pull your navel in to also target your deep abs). \n\n
-                             Step 2:- Put your hands behind your head, then bring your knees in towards your Chest and lift your shoulder blades off the ground, but be sure not to pull on your neck.\n\n
-                             Step 3:-Straighten your right leg out to about a 4S-degree angle to the ground while turning your upper body to the left, bringing your right elbow towards the left knee.\n\n
-                             Step 4:- Make sure your rib cage is moving and hotjust your elbows. Now switch sides and do the same motion on the other side to complete onerep. </string>
-    <string name="pose5">   Step 1:- Lay down with your hands to your sides for support. \n\n
-                             Step 2:- Raise your legs so they are off the ground, keeping the abdominals tight.\n\n
-                             Step 3:- Slowly raise your legs 90 degrees, contracting the abdominal muscles. Slowly return to starting position. Do not touch the floor with your feet.\n\n
+
+    <string name="pose4">    :- Allongez-vous à plat sur le sol avec le bas du dos appuyé contre le sol (rentrez votre nombril pour cibler également vos abdominaux profonds). \n\n
+                             :- Mettez vos mains derrière votre tête, puis ramenez vos genoux vers votre poitrine et soulevez vos omoplates du sol, mais assurez-vous de ne pas tirer sur votre cou.\n\n
+                             :- Redressez votre jambe droite à un angle d environ 4 degrés par rapport au sol tout en tournant le haut de votre corps vers la gauche, en ramenant votre coude droit vers le genou gauche.\n\n
+                             :- Assurez-vous que votre cage thoracique bouge et pas seulement vos coudes. Maintenant, changez de côté et faites le même mouvement de l autre côté pour terminer une répétition. </string>
+    <string name="pose5">   :- Allongez-vous avec vos mains sur les côtés pour vous soutenir. \n\n
+                             :- Soulevez vos jambes pour quelles ne touchent pas le sol, en gardant les abdominaux serrés.\n\n
+                             :- Soulevez lentement vos jambes à 90 degrés, en contractant les muscles abdominaux. Revenez lentement à la position de départ. Ne touchez pas le sol avec vos pieds.\n\n
                             </string>
 
 
-    <string name="pose6">    Step 1:- Lie on your back on an exercise mat. With your arms straight at your sides, bend your knees and place your feet flat on the floor between18 and 24 inches apart.\n\n
-                             Step 2:- Breathing out, crunch your ab slightly upward and sideways to the right a couple of inches until your right hand touches your right heel.\n\n
-                             Step 3:- Hold brief|y and then return to your starting position while inhaling. Repeat on the left side. </string>
-    <string name="pose7">    Step 1:- You can perform straight-leg crunches by lying face up on the floor with your legs straight and then moving your upper body as you would for a standard bent-knee crunch.\n\n
-                             Step 2:- Alternatively, lie on your back, raise your legs so they are perpendicular to the floor and then perform the standard crunching motion with your torso.
+    <string name="pose6">    :- Allongez-vous sur le dos sur un tapis d exercice. Avec vos bras tendus à vos côtés, pliez vos genoux et placez vos pieds à plat sur le sol entre 18 et 24 pouces de distance.\n\n
+                             :- En expirant, contractez vos abdominaux légèrement vers le haut et latéralement vers la droite sur quelques centimètres jusqu à ce que votre main droite touche votre talon droit.\n\n
+                             :- Tenez brièvement|y puis revenez à votre position de départ tout en inspirant. Répétez sur le côté gauche. </string>
+    <string name="pose7">    :- Vous pouvez effectuer des crunchs avec les jambes droites en vous allongeant sur le sol, les jambes droites, puis en déplaçant le haut de votre corps comme vous le feriez pour un crunch standard avec les genoux pliés..\n\n
+                             :- Alternativement, allongez-vous sur le dos, levez vos jambes afin qu elles soient perpendiculaires au sol, puis effectuez le mouvement de craquement standard avec votre torse.
                              </string>
-    <string name="pose8">    Step 1:- Lie down on the floor placing your feet either under something that Will not move or by having a partner hold them. Your legs should be bent at the kneesPlace your hands behind your head and lock them together by claspihg your fingers. This is the starting position.\n\n
-                             Step 2:- Elevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.\n\n
-                             Step 3:- Once you feel the contraction for a second, lower your upper body back down to the starting position while inhahng. \n\n
-                             Step 4:- Repeat for the recommended amount of repetitions.
+    <string name="pose8">    :- Allongez-vous sur le sol en plaçant vos pieds sous quelque chose qui ne bougera pas ou en demandant à un partenaire de les tenir. Vos jambes doivent être pliées au niveau des genoux, placez vos mains derrière votre tête et verrouillez-les en joignant vos doigts. C est la position de départ.\n\n
+                             :- Élevez le haut de votre corps afin qu il crée une forme de V imaginaire avec vos cuisses. Expirez lorsque vous effectuez cette partie de l exercice.\n\n
+                             :- Une fois que vous sentez la contraction pendant une seconde, abaissez le haut de votre corps jusqu à la position de départ tout en inspirant.. \n\n
+                             :- Répétez pour la quantité recommandée de répétitions.
                             </string>
-    <string name="pose9">    Step 1:- Lying on the back,lift stright leg,extend opposite hand to touch toe. \n\n
-                             Step 2:- Please,return,alternate inhale down,exhale up at toe touch.
+    <string name="pose9">    :- Allongé sur le dos, levez la jambe tendue, tendez une main opposée pour toucher l orteil. \n\n
+                             :- S il vous plaît, revenez, inspirez alternativement vers le bas, expirez vers le haut au toucher des orteils.
                             </string>
-    <string name="pose10">    Step 1:- High Plank position then slowly rotate your torso to the side raising your arm till it gets ihlihe with the other one. \n\n
-                             Step 2:- Then return to the initial position.
+    <string name="pose10">   :- Position de la planche haute, puis faites pivoter lentement votre torse sur le côté en levant le bras jusqu à ce qu il se lie avec l autre. \n\n
+                             :- Puis revenez à la position initiale.
                             </string>
-    <string name="pose11">    Step 1:- Lie on the floor with elbows directly beneath your shoulders and legs fully extended.\n\n
-                             Step 2:- Raise your torso into the air until it makes a straight line from your shoulders to your ankles. Tighten your stomach, squeeze your butt.
+    <string name="pose11">   :- Allongez-vous sur le sol avec les coudes directement sous vos épaules et les jambes complètement tendues.\n\n
+                             :- Soulevez votre torse dans les airs jusqu à ce qu il forme une ligne droite de vos épaules à vos chevilles. Serrez votre ventre, serrez vos fesses.
                             </string>
-    <string name="pose12">    Step 1:- Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees. Elevate your upper body so that it creates an imaginary V-shape with your thighs. \n\n
-                             Step 2:- Your arms should be fully extended in front of you perpendicular to your torso and with the hands clasped. This is the starting position.\n\n
-                             Step 3:- This is the starting position. Twist your torso to the right side until your arms are parallel with the floor while breathing out. \n\n
-                             Step 4:- Hold the contraction for a second and move back to the starting position while breathing out. Now move to the opposite side performing the same techniques you applied to the right side. Repeat for the recommended amount of repetitions.
+    <string name="pose12">   :- Allongez-vous sur le sol en plaçant vos pieds sous quelque chose qui ne bouge pas ou en demandant à un partenaire de les tenir. Vos jambes doivent être pliées au niveau des genoux. Élevez le haut de votre corps afin qu il crée une forme de V imaginaire avec vos cuisses. \n\n
+                             :- Vos bras doivent être complètement étendus devant vous perpendiculairement à votre torse et avec vos mains jointes. C est la position de départ.\n\n
+                             :- C est la position de départ. Tournez votre torse vers la droite jusqu à ce que vos bras soient parallèles au sol tout en expirant. \n\n
+                             :- Maintenez la contraction pendant une seconde et revenez à la position de départ tout en expirant. Maintenant, déplacez-vous du côté opposé en exécutant les mêmes techniques que vous avez appliquées sur le côté droit. Répétez pour la quantité recommandée de répétitions.
                             </string>
-    <string name="pose13">    Step 1:- Lie on your back with your knees bent, feet flat and hip width. \n\n
-                             Step 2:- Lower your pelvis 2 inches from the floor. Squeeze your glutes and lift your pelvis back to bridge position.
+    <string name="pose13">   :- Allongez-vous sur le dos, les genoux pliés, les pieds à plat et à la largeur des hanches. \n\n
+                             :- Abaissez votre bassin à 2 pouces du sol. Serrez vos fessiers et soulevez votre bassin en position de pont.
 
                             </string>
-    <string name="pose14">    Step 1:- Lie facedown on the floor with your arms extended in front of you and your leg extended behind you. \n\n
-                             Step 2:- In one movement,engage your glutes and lower back to raise your arms,legs,and chest off the floor.\n\n
-                             Step 3:- Hold for a count,then slowly return to the starting position.
+    <string name="pose14">   :- Allongez-vous face contre terre sur le sol avec vos bras tendus devant vous et votre jambe tendue derrière vous. \n\n
+                             :- En un seul mouvement, engagez vos fessiers et le bas de votre dos pour soulever vos bras, vos jambes et votre poitrine du sol.\n\n
+                             :- Tenez pendant un compte, puis revenez lentement à la position de départ.
                             </string>
-    <string name="pose15">   Step 1:- Stand, extend arms 90° to sides, bend forward 90° at waist.\n\n
-                             Step 2:- Looking at the floor, rotate torso to touch hand to foot, rotate for other hand. \n\n
-                             Step 3:- Head will follow chest action. *
+    <string name="pose15">   :- Debout, étendez les bras à 90° sur les côtés, penchez-vous en avant à 90° au niveau de la taille.\n\n
+                             :- En regardant le sol, tournez le torse pour toucher la main au pied, tournez pour les autres mains. \n\n
+                             :- La tête suivra l action de la poitrine.
     </string>
 
 </resources>

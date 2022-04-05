@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#B0FFFFFF"
+    android:orientation="vertical"
+    tools:context="Defit2">
+
+
+
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/burpee"/>
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:text="Pour Les Professionnels"
+        android:textSize="30dp"
+        android:fontFamily="@font/chewyy"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:textColor="@color/pinky"/>
+    <com.varunest.sparkbutton.SparkButton
+        android:id="@+id/sp_btn"
+        android:layout_width="159dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="-88dp"
+        android:layout_marginLeft="220dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951"
+        app:sparkbutton_activeImage="@drawable/icon_start"
+        app:sparkbutton_iconSize="70dp"
+        app:sparkbutton_inActiveImage="@drawable/icon_start"
+        app:sparkbutton_primaryColor="@color/ciel"
+        app:sparkbutton_secondaryColor="@color/pink"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+
+
+
+</LinearLayout>

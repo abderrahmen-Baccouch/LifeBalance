@@ -12,7 +12,7 @@ import com.spark.submitbutton.SubmitButton
 import java.util.*
 
 
-class calculePremierDefit : AppCompatActivity() {
+class calculeDeuxiemeDefit : AppCompatActivity() {
 
     /**
     private lateinit var countDownTimer: CountDownTimer
@@ -23,7 +23,7 @@ class calculePremierDefit : AppCompatActivity() {
     private var MtimeLeftinmills: Long = 0
 
      */
-    private val START_TIME_IN_MILLIS: Long = 60000
+    private val START_TIME_IN_MILLIS: Long = 180000
 
     private var mTextViewCountDown: TextView? = null
     private var mButtonStartPause: SubmitButton? = null
@@ -36,7 +36,7 @@ class calculePremierDefit : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calcule_premier_defit)
+        setContentView(R.layout.activity_calcule_deuxieme_defit)
 
         val intent = intent
         val buttonvalue = intent.getStringExtra("value")
