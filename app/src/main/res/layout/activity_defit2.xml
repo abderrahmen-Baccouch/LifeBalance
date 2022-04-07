@@ -8,10 +8,6 @@
     android:orientation="vertical"
     tools:context="Defit2">
 
-
-
-
-
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="fill_parent"
         android:layout_height="200dp"

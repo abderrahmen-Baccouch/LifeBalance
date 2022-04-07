@@ -98,10 +98,16 @@ var startPoint = 0
          val bottomNavigationView = findViewById<BottomNavigationView>(R.id.BottomNavMenu)
          bottomNavigationView.setOnNavigationItemSelectedListener {
              when(it.itemId){
-                 R.id.rappel -> Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
+                 R.id.rappel -> {
+                     Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
+                 }
                  R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
                  R.id.profile -> Toast.makeText(this,"profile",Toast.LENGTH_SHORT).show()
-                 R.id.setting -> Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show()
+                 R.id.setting -> {
+                     Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show()
+                     val intent = Intent(this,DietType::class.java)
+                     startActivity(intent)
+                 }
              }
              true
          }
