@@ -31,7 +31,7 @@ tools:ignore="Orientation">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cétogène à Faible Teneur En Glucides"
+            android:text="Cétogène Facile à Faible Teneur En Glucides"
             android:textSize="38dp"
             android:textColor="#FFFFFF"
             android:textAlignment="center"
@@ -76,7 +76,7 @@ tools:ignore="Orientation">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="un régime pauvre en glucides "
+            android:text="un régime pauvre en glucides."
             android:textSize="22dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
@@ -94,7 +94,7 @@ tools:ignore="Orientation">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="en réduisant l'apport en glucides, la glycémie est contrôlée et les niveaux d'insuline sont minimisés"
+            android:text="en réduisant l'apport en glucides, la glycémie est contrôlée et les niveaux d'insuline sont minimisés."
             android:textSize="22dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="30dp"
@@ -112,7 +112,7 @@ tools:ignore="Orientation">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="les régimes à faible teneur en glucides réduisent votre appétit"
+            android:text="les régimes à faible teneur en glucides réduisent votre appétit."
             android:textSize="22dp"
             android:layout_marginLeft="80dp"
             android:layout_marginTop="90dp"
