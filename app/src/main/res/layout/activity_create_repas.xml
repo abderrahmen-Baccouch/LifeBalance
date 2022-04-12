@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".create_repas">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/repasRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100sp" />
+
+        <EditText
+            android:layout_width="346dp"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/custom_food_icon"
+            android:drawablePadding="12dp"
+            android:ems="10"
+            android:textSize="20dp"
+            android:layout_marginTop="-280dp"
+            android:layout_marginLeft="35dp"
+            android:fontFamily="@font/patrick_hand"
+            android:hint="Nom du repas"
+            android:inputType="text"
+            android:paddingStart="12dp"
+            android:paddingEnd="15dp"
+            tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="200dp"
+            android:layout_height="61dp"
+            android:background="@drawable/food_bg_button"
+            android:fontFamily="@font/chewyy"
+            android:text="Add aliments"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_marginTop="250dp"
+            android:layout_marginLeft="110dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.897" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

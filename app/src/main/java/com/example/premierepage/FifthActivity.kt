@@ -3,6 +3,7 @@ package com.example.premierepage
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.graphics.Color.*
 import android.net.Uri
 import android.os.Bundle
@@ -147,6 +148,7 @@ var startPoint = 0
          imc.text = dec.format(poids/(hauteur*hauteur)).toString()
 
 
+
       progress_circular.apply {
           progress = 100f
           setProgressWithAnimation(30f,3000)
@@ -171,6 +173,10 @@ var startPoint = 0
          }
          defit_2.setOnClickListener {
              val intent = Intent(this,Defit2::class.java)
+             startActivity(intent)
+         }
+         defit_3.setOnClickListener {
+             val intent = Intent(this,Defit3::class.java)
              startActivity(intent)
          }
 

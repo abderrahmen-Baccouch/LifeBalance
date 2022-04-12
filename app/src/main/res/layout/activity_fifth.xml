@@ -431,6 +431,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/defit_3"
                         android:layout_width="200dp"
                         android:layout_height="150dp"
                         android:layout_marginRight="10dp"

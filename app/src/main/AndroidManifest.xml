@@ -14,6 +14,42 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".create_repas"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up5"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up4"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up3"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up2"
+            android:exported="false" />
+        <activity
+            android:name=".dips"
+            android:exported="false" />
+        <activity
+            android:name=".legRaise"
+            android:exported="false" />
+        <activity
+            android:name=".handstand"
+            android:exported="false" />
+        <activity
+            android:name=".burpees"
+            android:exported="false" />
+        <activity
+            android:name=".muscleUp"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up"
+            android:exported="false" />
+        <activity
+            android:name=".Defit3"
+            android:exported="false" />
+        <activity
             android:name=".keto_medium"
             android:exported="false" />
         <activity
