@@ -179,6 +179,10 @@ var startPoint = 0
              val intent = Intent(this,Defit3::class.java)
              startActivity(intent)
          }
+         defit_4.setOnClickListener {
+             val intent = Intent(this,dietPlans::class.java)
+             startActivity(intent)
+         }
 
          exercice.setOnClickListener {
              val intent = Intent(this,ActivityExercices::class.java)

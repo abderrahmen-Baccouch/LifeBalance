@@ -56,6 +56,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.897" />
+        <Button
+            android:id="@+id/save"
+            android:layout_width="100dp"
+            android:layout_height="61dp"
+            android:background="@drawable/food_bg_button"
+            android:fontFamily="@font/chewyy"
+            android:text="save"
+            android:textColor="@color/pinky"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.897" />
+        <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="61dp"
+        android:background="@drawable/food_bg_button"
+        android:fontFamily="@font/chewyy"
+        android:text="cancel"
+        android:textColor="@color/pinky"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="-60dp"
+        android:layout_marginLeft="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.897" />
 
     </LinearLayout>
 

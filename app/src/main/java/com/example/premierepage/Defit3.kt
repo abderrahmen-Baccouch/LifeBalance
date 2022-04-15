@@ -31,35 +31,31 @@ class Defit3 : AppCompatActivity() {
             val intent = Intent(this,warming_up5::class.java)
             startActivity(intent)
         }
-       /*
-
-
-
 
         skills_pro1.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up6::class.java)
             startActivity(intent)
         }
         skills_pro2.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up7::class.java)
             startActivity(intent)
         }
         skills_pro3.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up8::class.java)
             startActivity(intent)
         }
         skills_pro4.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up9::class.java)
             startActivity(intent)
         }
         skills_pro5.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up10::class.java)
             startActivity(intent)
         }
         skills_pro6.setOnClickListener {
-            val intent = Intent(this,warming_up::class.java)
+            val intent = Intent(this,warming_up11::class.java)
             startActivity(intent)
-        }*/
+        }
 
     }
 }

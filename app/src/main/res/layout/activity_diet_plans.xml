@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDECEC"
+    tools:context=".dietPlans">
+
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="-190dp"
+        android:layout_marginTop="-560dp"
+        android:text="Breakfast Recipes"
+        android:textColor="#040404"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/galada"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="70dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast1"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avocadoandblackbeaneggs" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="468 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast2"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/beetroot_hummus_toast_with_olives_and_mint" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="340 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast3"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/poached_eggs_avocado_and_feta_toast" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="686 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast4"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="340dp"
+                    android:layout_marginTop="-50dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/vegetarianclub" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="456 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast5"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/matcha_breakfast_bowl" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="257 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast6"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/smached_white_bean_avocado_and_bacon_panini" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="1034 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast7"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/oatmeal_wth_cheddar_and_scallion" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="363 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast8"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/spinach_pear_andwalnut_panini_feta" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="432 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast9"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/fruit_abd_nut_yaurt" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="503 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast10"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avocado_on_toast" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="1147 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast11"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/strawberry_banana_almond_milk_smothie_recipe" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="57 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast12"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/easy_pancakes" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="109 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast13"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/open_faced_heirloom_tomato_sandwiches_recipes" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="373 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast14"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/toast_with_refried_beans_and_avocado_recipe" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="370 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast15"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/superfruit_smoothies" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="111 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast16"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/awsome_almond_smoothie" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="110 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast17"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/superfood_quinoa_breakfast_bowl_recipes" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="454 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast18"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/citrus_and_berry_salad_with_yoghurt" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="247 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast19"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avocado_and_kiwi_smoothie_recipes" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="312 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Breakfast20"
+                android:layout_width="230dp"
+                android:layout_height="250dp"
+                android:layout_marginRight="10dp"
+                app:cardBackgroundColor="@color/ciel"
+                app:cardCornerRadius="20dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/quick_and_easy_raw___vegan_breakfast_pudding_recipes" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/background_color3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/orbitron"
+                        android:textAlignment="center"
+                        android:text="178 kcal"
+                        android:layout_marginTop="7dp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -84,7 +84,7 @@
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="10x"
+                    android:text="5x"
                     android:textSize="20dp"
                     android:fontFamily="@font/chewyy"
                     android:layout_marginTop="125dp"
@@ -96,7 +96,7 @@
                     android:fontFamily="@font/chewyy"
                     android:layout_marginTop="185dp"
                     android:layout_marginLeft="-50dp"
-                    android:text="4x"/>
+                    android:text="2x"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="50dp"

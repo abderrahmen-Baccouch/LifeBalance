@@ -12,7 +12,7 @@ class warming_up3 : AppCompatActivity() {
         setContentView(R.layout.activity_warming_up3)
         btn = findViewById(R.id.button)
         btn.setOnClickListener {
-            val intent = Intent(this,burpees::class.java)
+            val intent = Intent(this,handstand::class.java)
             startActivity(intent)
         }
     }
