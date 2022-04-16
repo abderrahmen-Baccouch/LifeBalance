@@ -18,11 +18,11 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="387dp"
-                android:layout_marginLeft="-25dp"
+                android:layout_width="699dp"
+                android:layout_height="389dp"
+                android:layout_marginLeft="-170dp"
                 android:layout_marginTop="-60dp"
-                android:src="@drawable/dips_femme"
+                android:src="@drawable/man_workout"
                 app:layout_constraintBottom_toTopOf="@+id/linearLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="10x"
+                    android:text="8x"
                     android:textSize="20dp"
                     android:fontFamily="@font/chewyy"
                     android:layout_marginTop="125dp"
@@ -95,7 +95,7 @@
                     android:fontFamily="@font/chewyy"
                     android:layout_marginTop="185dp"
                     android:layout_marginLeft="-50dp"
-                    android:text="4x"/>
+                    android:text="2x"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="50dp"

@@ -20,9 +20,9 @@
         <ImageView
             android:layout_width="432dp"
             android:layout_height="392dp"
-            android:layout_marginLeft="-20dp"
+            android:layout_marginLeft="-10dp"
             android:layout_marginTop="-80dp"
-            android:src="@drawable/pull"
+            android:src="@drawable/pull_ups_for_bigger_back"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
         <TextView
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:text="10x"
+            android:text="7x"
             android:textSize="20dp"
             android:fontFamily="@font/chewyy"
             android:layout_marginTop="125dp"
@@ -95,7 +95,7 @@
             android:fontFamily="@font/chewyy"
             android:layout_marginTop="185dp"
             android:layout_marginLeft="-50dp"
-            android:text="4x"/>
+            android:text="2x"/>
         <ImageView
             android:layout_width="30dp"
             android:layout_height="50dp"

@@ -14,7 +14,103 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".AlimentsListe"
+            android:name=".breakfast20"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast19"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast18"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast17"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast16"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast15"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast14"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast13"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast12"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast11"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast10"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast9"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast8"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast7"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast6"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast5"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast4"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast3"
+            android:exported="false" />
+        <activity
+            android:name=".breakfast2"
+            android:exported="false" />
+        <activity
+            android:name=".Breakfast1"
+            android:exported="false" />
+        <activity
+            android:name=".dietPlans"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up11"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up10"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up9"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up8"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up7"
+            android:exported="false" />
+        <activity
+            android:name=".warming_up6"
+            android:exported="false" />
+        <activity
+            android:name=".handstand_pro"
+            android:exported="false" />
+        <activity
+            android:name=".orteilsBarre_pro"
+            android:exported="false" />
+        <activity
+            android:name=".pompe_pro"
+            android:exported="false" />
+        <activity
+            android:name=".muscle_up_pro"
+            android:exported="false" />
+        <activity
+            android:name=".gainage"
+            android:exported="false" />
+        <activity
+            android:name=".dips_pro"
             android:exported="false" />
         <activity
             android:name=".create_repas"
