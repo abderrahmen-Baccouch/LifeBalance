@@ -50,15 +50,17 @@ class ActivityExercices : AppCompatActivity() {
                            override fun onItemClick(position: Int) {
                                val i =Intent(this@ActivityExercices,Yoga::class.java)
                                Toast.makeText(this@ActivityExercices,
-                                   listExercice?.get(position)?.nomExercice,Toast.LENGTH_LONG).show()
+                                   listExercice?.get(position)?._id,Toast.LENGTH_LONG).show()
                               i.putExtra("nomExercice",listExercice?.get(position)?.nomExercice)
                              i.putExtra("calories",listExercice?.get(position)?.calories)
+                               i.putExtra("id",listExercice?.get(position)?._id)
                               startActivity(i)
 
                            }
 
 
-                       })
+                       }/*object:ExerciceAdapter.onItemClickListener{
+                           override fun onItemClick(position: Int) {}}*/)
                     }
 
 

@@ -13,6 +13,7 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
         <EditText
+            android:id="@+id/nomRecetteET"
             android:layout_width="346dp"
             android:layout_height="59dp"
             android:layout_alignParentStart="true"
@@ -40,7 +41,7 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/addAlimentBtn"
             android:layout_width="200dp"
             android:layout_height="61dp"
             android:background="@drawable/food_bg_button"

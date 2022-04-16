@@ -2,6 +2,7 @@ package com.example.premierepage
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.model.Aliments
 import com.example.premierepage.view.AlimentAdapter
+import com.example.premierepage.view.ExerciceAdapter
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
@@ -44,27 +46,9 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         var token =myshared?.getString("token","")
 
 
-        //5edmet l affichage mte3 les aliments
-        val call = retrofitInterface!!.executeAllAliments(token)
-        call.enqueue(object :Callback<MutableList<Aliments>>{
-            override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
-                if (response.code()==200){
-                    Toast.makeText(context, "aa", Toast.LENGTH_LONG).show()
-                    recv.apply {
-                        recv.layoutManager = LinearLayoutManager(activity)
-                        adapter=AlimentAdapter(context,response.body()!!)
-                    }
-                }else if (response.code()==400){
-
-                }
-            }
-            override fun onFailure(call: Call<MutableList<Aliments>>, t: Throwable) {
-                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-            }
-
-        })
 
 
+        getAliments(token!!)
 
         addsBtn.setOnClickListener {
             val inflter = LayoutInflater.from(this.context)
@@ -104,6 +88,7 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
                                /**to93ed fama mochkla : ki tzid aliment yetzed fil base
                                 * ama mayetzedech fil front lazem to5rej mel activty w t3awed tod5ol bech yetra tzed*/
 
+                               getAliments(token!!)
                                dialog.dismiss()
                            } else if (response.code() == 401) {
                                Toast.makeText(context, "aliment existe", Toast.LENGTH_LONG).show()
@@ -126,6 +111,34 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
             addDialog.create()
             addDialog.show()
         }
+
+    }
+
+    fun getAliments(t:String){
+        //5edmet l affichage mte3 les aliments
+        val call = retrofitInterface!!.executeAllAliments(t)
+        call.enqueue(object :Callback<MutableList<Aliments>>{
+            override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
+                if (response.code()==200){
+
+                    recv.apply {
+                        recv.layoutManager = LinearLayoutManager(activity)
+                        adapter=AlimentAdapter(context,response.body()!!,object: ExerciceAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                val i = Intent(context,FifthActivity::class.java)
+                                startActivity(i)
+                            }
+                        })
+                    }
+                }else if (response.code()==400){
+
+                }
+            }
+            override fun onFailure(call: Call<MutableList<Aliments>>, t: Throwable) {
+                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
     }
     override fun onCreateView(
         inflater: LayoutInflater,

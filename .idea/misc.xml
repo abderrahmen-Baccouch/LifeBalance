@@ -186,26 +186,51 @@
         <entry key="..\:/pfe android git/first-commit3/app/src/main/res/menu/show_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_abdominal.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_aerobic.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_aliments.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_aliments_liste.xml" value="0.13020833333333334" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_balanced_diet.xml" value="0.25416666666666665" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_bow.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_boxing.xml" value="0.10462962962962963" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_bridge.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_calcule_premier_defit.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_calculekcal.xml" value="0.10462962962962963" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_chair.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_child.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_cobbler.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_cow.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_create_repas.xml" value="0.25416666666666665" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_crunches.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_custom.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_defit.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_diary_balance.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_exercices.xml" value="0.2342007434944238" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_fifth.xml" value="0.264" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_food.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_football.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_pauseji.xml" value="0.10462962962962963" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_plank.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_play_ji.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_rotation.xml" value="0.10462962962962963" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_running.xml" value="0.10462962962962963" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_situp.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_skating.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_tennis.xml" value="0.16770833333333332" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_third.xml" value="0.10462962962962963" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_workout_goal.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/activity_yoga.xml" value="0.16770833333333332" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/add_item.xml" value="0.13020833333333334" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/fragment_aliments.xml" value="0.15217391304347827" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/fragment_food.xml" value="0.13020833333333334" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/fragment_notrealiments.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/item_aliment.xml" value="0.25416666666666665" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/item_exercice.xml" value="0.176" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/item_repas.xml" value="0.25416666666666665" />
         <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/list_item.xml" value="0.24954710144927536" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/nav_drawar.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/layout/nav_header.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/menu/nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/reserve 3/first-commit3/app/src/main/res/menu/show_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

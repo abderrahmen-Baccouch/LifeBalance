@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.premierepage.R
 import com.example.premierepage.RetrofitInterface
 import com.example.premierepage.model.Exercices
@@ -36,6 +38,9 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
         val newList = exercicesList[position]
         holder.nomExerciceTV.text = newList.nomExercice
         holder.caloriesTV.text = newList.calories
+        Glide.with(c).load(newList.imageURL).into(holder.imageIV)
+        //Glide.with(c).load("https://lh6.ggpht.com/9SZhHdv4URtBzRmXpnWxZcYhkgTQurFuuQ8OR7WZ3R7fyTmha77dYkVvcuqMu3DLvMQ=w300").into(holder.imageIV)
+
     }
 
     override fun getItemCount(): Int {
@@ -45,6 +50,7 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
     class ExerciceViewHolder(v: View,listener:onItemClickListener): RecyclerView.ViewHolder(v) {
         var nomExerciceTV: TextView=v.findViewById<TextView>(R.id.nomExercice)
         var caloriesTV: TextView=v.findViewById<TextView>(R.id.calories)
+        var imageIV:ImageView=v.findViewById<ImageView>(R.id.imageExercice)
 
         init {
             v.setOnClickListener{

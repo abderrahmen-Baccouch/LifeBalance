@@ -17,10 +17,6 @@ import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
     private var retrofitInterface: RetrofitInterface? = null
-
-
-
-
     private var Show = false
     private val PASSWORD_PATTERN: Pattern = Pattern.compile(
         "^" +  //"(?=.*[0-9])" +         //at least 1 digit
@@ -32,23 +28,20 @@ class SignupActivity : AppCompatActivity() {
                 ".{6,}" +  //at least 6 characters
                 "$"
     )
-
     private lateinit var etUsername : EditText
     private lateinit var etEmail : EditText
     private lateinit var etPassword : EditText
     private lateinit var etVerifyPassword : EditText
     private lateinit var btnValidate : SparkButton
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_design)
 
-
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-        val  intent = Intent(this,ThirdActivity::class.java)
+        val  intent = Intent(this,MainActivity::class.java)
 
         showHide.setOnClickListener{
             Show = !Show
@@ -62,16 +55,11 @@ class SignupActivity : AppCompatActivity() {
         etVerifyPassword = findViewById(R.id.verifyPassword)
         btnValidate = findViewById(R.id.spark_button)
 
-
-
-
         spark_button.setOnClickListener{
             val email = etEmail.text.toString().trim()
             val user = etUsername.text.toString().trim()
             val password = etPassword.text.toString().trim()
             val verif_password = etVerifyPassword.text.toString().trim()
-
-
 
             if(user.isEmpty()) {
                 etUsername.error = "Nom d'utilisateur est obligatoire";
@@ -105,32 +93,16 @@ class SignupActivity : AppCompatActivity() {
                 call!!.enqueue(object : Callback<Void?> {
                     override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                         if (response.code() == 200) {
-                            //zid code t7el inflater bech yaamel verification
-                            Toast.makeText(
-                                this@SignupActivity,
-                                "Signed up successfully", Toast.LENGTH_LONG
-                            ).show()
                             //intent.putExtra("username",user)
                             startActivity(intent)
-
                         } else if (response.code() == 400) {
-                            Toast.makeText(
-                                this@SignupActivity,
-                                "Already registered", Toast.LENGTH_LONG
-                            ).show()
+                            Toast.makeText(this@SignupActivity, "Already registered", Toast.LENGTH_LONG).show()
                         }
                     }
-
-
                     override fun onFailure(call: Call<Void?>, t: Throwable) {
-                        Toast.makeText(
-                            this@SignupActivity, t.message,
-                            Toast.LENGTH_LONG
-                        ).show()
-
+                        Toast.makeText(this@SignupActivity, t.message, Toast.LENGTH_LONG).show()
                     }
                 })
-
             }
             startActivity(intent)
     }

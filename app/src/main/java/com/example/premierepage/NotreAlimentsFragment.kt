@@ -1,6 +1,7 @@
 package com.example.premierepage
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.model.Aliments
 import com.example.premierepage.view.AlimentAdapter
+import com.example.premierepage.view.ExerciceAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +26,7 @@ class NotreAlimentsFragment : Fragment(R.layout.fragment_notrealiments) {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        recv = view!!.findViewById(R.id.mRecycler)
+       recv = view!!.findViewById(R.id.mRecycler)
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
@@ -33,10 +35,15 @@ class NotreAlimentsFragment : Fragment(R.layout.fragment_notrealiments) {
         call.enqueue(object : Callback<MutableList<Aliments>> {
             override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
                 if (response.code()==200){
-                    Toast.makeText(context, "bb", Toast.LENGTH_LONG).show()
+                    Toast.makeText(context, "aaaaa", Toast.LENGTH_LONG).show()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= AlimentAdapter(context,response.body()!!)
+                        adapter= AlimentAdapter(context,response.body()!!,object: ExerciceAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                val i = Intent(context,FifthActivity::class.java)
+
+                            }
+                        })
                     }
                 }else if (response.code()==400){
                     Toast.makeText(context, "400", Toast.LENGTH_LONG).show()

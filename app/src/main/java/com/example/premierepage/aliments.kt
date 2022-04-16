@@ -21,5 +21,6 @@ class aliments : AppCompatActivity() {
 
        viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
+
     }
 }

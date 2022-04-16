@@ -1,15 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.varunest:sparkbutton:1.0.6@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9e00fa758a750568c3d1949ed5513191/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9e00fa758a750568c3d1949ed5513191/transformed/jetified-sparkbutton-1.0.6/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9e00fa758a750568c3d1949ed5513191/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/69985835133946a443ac5437ce0fd926/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d20565c2d6928aa7e3b3f37177525f0d/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d20565c2d6928aa7e3b3f37177525f0d/transformed/jetified-sparkbutton-1.0.6/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d20565c2d6928aa7e3b3f37177525f0d/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7eeea08dce62421a11303ba95ce340c9/transformed/jetified-sparkbutton-1.0.6/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7eeea08dce62421a11303ba95ce340c9/transformed/jetified-sparkbutton-1.0.6/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7eeea08dce62421a11303ba95ce340c9/transformed/jetified-sparkbutton-1.0.6/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

@@ -39,12 +39,6 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-
-
-
-
-
-
         //get data from intent
         val intent = intent
         //val extras = intent.extras
@@ -60,6 +54,8 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         etPoids = findViewById(R.id.Poids)
         etage = findViewById(R.id.age)
 
+
+
         radioGroup.setOnCheckedChangeListener{ radioGroup,i ->
             val rb = findViewById<RadioButton>(i)
             if (rb!=null){
@@ -69,7 +65,6 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         }
 
         valider.setOnClickListener{
-
 
             val hauteur = etHauteur.text.toString().trim()
             val poids = etPoids.text.toString().trim()
@@ -105,101 +100,49 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
             else {
                 myshared=getSharedPreferences("myshared",0)
-                var editor: SharedPreferences.Editor=myshared!!.edit()
-                editor.putString("poids",poids)
-                editor.putString("hauteur",hauteur)
-                val a = sexe.toString()
-                val b = cAge.toString()
-                editor.putString("age",b)
-                editor.putString("sexe",a)
-                editor.commit()
-                val intent = Intent(this@ThirdActivity,FifthActivity::class.java)
-                startActivity(intent)
-                /*
-                myshared=getSharedPreferences("myshared",0)
                 var token =myshared?.getString("token","")
-                               val a = sexe.toString()
-                               val b = cAge.toString()
+
+                val map = HashMap<String?, String?>()
+                map["poids"] = poids
+                map["taille"] = hauteur
+                map["sexe"]=sexe
+                map["age"]=cAge
+                val call = retrofitInterface!!.executeSave(map,token)
+                call!!.enqueue(object : Callback<Void?> {
+                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                        if (response.code() == 200) {
+                            var editor: SharedPreferences.Editor=myshared!!.edit()
+                            editor.putString("poids",poids)
+                            editor.putString("hauteur",hauteur)
+                            val a = sexe.toString()
+                            val b = cAge.toString()
+                            editor.putString("age",b)
+                            editor.putString("sexe",a)
+                            editor.commit()
 
 
-                               val map = HashMap<String?, String?>()
-                               val dates=cAge.format(Date())
-
-                               map["poids"] = poids
-                               map["taille"] = hauteur
-                               map["sexe"]=sexe
-                               map["age"]=cAge
-
-                               val call = retrofitInterface!!.executeSave(map,token)
-                              call!!.enqueue(object : Callback<Void?> {
-                                   override fun onResponse(
-                                       call: Call<Void?>,
-                                       response: Response<Void?>
-                                   ) {
-                                       if (response.code() == 200) {
-                                           var editor: SharedPreferences.Editor=myshared!!.edit()
-                                           editor.putString("poids",poids)
-                                           editor.putString("hauteur",hauteur)
-                                           val a = sexe.toString()
-                                           val b = cAge.toString()
-                                           editor.putString("age",b)
-                                           editor.putString("sexe",a)
-                                           editor.commit()
-
-                                           Toast.makeText(
-                                               this@ThirdActivity,
-                                               response.body().toString(), Toast.LENGTH_LONG
-                                           ).show()
-
-                                           Toast.makeText(
-                                               this@ThirdActivity,
-                                               " success", Toast.LENGTH_LONG
-                                           ).show()
-
-
-
+                            etPoids.setText(poids)
+                            Toast.makeText(this@ThirdActivity, " success", Toast.LENGTH_LONG).show()
                             val intent = Intent(this@ThirdActivity,FifthActivity::class.java)
-                                           startActivity(intent)
+                            startActivity(intent)
 
+                        } else if (response.code() == 400) {
+                            Toast.makeText(this@ThirdActivity, "error", Toast.LENGTH_LONG).show()
+                        }
+                    }
 
-
-                                       } else if (response.code() == 400) {
-                                           Toast.makeText(
-                                               this@ThirdActivity,
-                                               "error", Toast.LENGTH_LONG
-                                           ).show()
-                                       }
-                                   }
-
-                                   override fun onFailure(call: Call<Void?>, t: Throwable) {
-                                       Toast.makeText(
-                                           this@ThirdActivity, t.message,
-                                           Toast.LENGTH_LONG
-                                       ).show()
-                                   }
-                               })*/
-
-
-
-
-
+                    override fun onFailure(call: Call<Void?>, t: Throwable) {
+                        Toast.makeText(this@ThirdActivity, t.message, Toast.LENGTH_LONG).show()
+                    }
+                })
             }
-
-
         }
-
-
-
-
 
         //Calendar
         val c = Calendar.getInstance()
         var year = c.get(Calendar.YEAR)
         var month = c.get(Calendar.MONTH)
         var day = c.get(Calendar.DAY_OF_MONTH)
-
-
-
 
         //button click to show DatePicker
         buttonDatePicker.setOnClickListener{
@@ -213,9 +156,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 val currentYear = Calendar.getInstance().get(Calendar.YEAR)
                 cAge = currentYear - year
                 age.text= "${cAge.toString()} ans"
-
             },year,month,day)
-
             //Show dialog
             dpd.show()
         }

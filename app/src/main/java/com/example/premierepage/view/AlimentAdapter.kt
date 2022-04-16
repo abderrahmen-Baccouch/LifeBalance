@@ -16,10 +16,15 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
+class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val mListener: ExerciceAdapter.onItemClickListener) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
     private var retrofitInterface: RetrofitInterface? = null
 
-    inner  class UserViewHolder(val v: View):RecyclerView.ViewHolder(v){
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+
+    inner  class UserViewHolder(val v: View,listener: ExerciceAdapter.onItemClickListener):RecyclerView.ViewHolder(v){
         var nomAlimentTV: TextView
         var caloriesTV : TextView
         var proteinesTV : TextView
@@ -34,6 +39,9 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>) : R
             lipidesTV = v.findViewById<TextView>(R.id.lipides)
             mMenus = v.findViewById(R.id.mMenus)
             mMenus.setOnClickListener { popupMenus(it) }
+            v.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
         }
 
        @SuppressLint("DiscouragedPrivateApi", "NotifyDataSetChanged")
@@ -49,28 +57,34 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>) : R
                     R.id.editText ->{
                         val v = LayoutInflater.from(c).inflate(R.layout.add_item,null)
 
-                        val nomAliment = v.findViewById<EditText>(R.id.nomAliment)
-                        val calories = v.findViewById<EditText>(R.id.calories)
-                        val proteines = v.findViewById<EditText>(R.id.proteines)
-                        val glucides = v.findViewById<EditText>(R.id.glucides)
-                        val lipides = v.findViewById<EditText>(R.id.lipides)
+                        val nomAlimentET = v.findViewById<EditText>(R.id.nomAliment)
+                        val caloriesET = v.findViewById<EditText>(R.id.calories)
+                        val proteinesET = v.findViewById<EditText>(R.id.proteines)
+                        val glucidesET = v.findViewById<EditText>(R.id.glucides)
+                        val lipidesET = v.findViewById<EditText>(R.id.lipides)
+
+                        nomAlimentET.setText(position.nomAliment)
+                        caloriesET.setText(position.calories)
+                        proteinesET.setText(position.proteines)
+                        glucidesET.setText(position.glucides)
+                        lipidesET.setText(position.lipides)
 
                         AlertDialog.Builder(c)
                             .setView(v)
                             .setPositiveButton("Update"){
                                 dialog,_->
-                                position.nomAliment = nomAliment.text.toString()
-                                position.calories = calories.text.toString()+"  Kcal"
-                                position.proteines = proteines.text.toString()+" g"
-                                position.glucides = glucides.text.toString()+" g"
-                                position.lipides = lipides.text.toString()+" g"
+                                position.nomAliment = nomAlimentET.text.toString()
+                                position.calories = caloriesET.text.toString()+"  Kcal"
+                                position.proteines = proteinesET.text.toString()+" g"
+                                position.glucides = glucidesET.text.toString()+" g"
+                                position.lipides = lipidesET.text.toString()+" g"
                                 val map = HashMap<String?, String?>()
 
-                                map["nomAliment"] = nomAliment.text.toString()
-                                map["calories"] = calories.text.toString()
-                                map["proteines"] =proteines.text.toString()
-                                map["glucides"] = glucides.text.toString()
-                                map["lipides"] = lipides.text.toString()
+                                map["nomAliment"] = nomAlimentET.text.toString()
+                                map["calories"] = caloriesET.text.toString()
+                                map["proteines"] =proteinesET.text.toString()
+                                map["glucides"] = glucidesET.text.toString()
+                                map["lipides"] = lipidesET.text.toString()
                                val call = retrofitInterface!!.executeUpdateAliment(map,position._id)
                                call!!.enqueue(object : Callback<Void?>{
                                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
@@ -155,16 +169,16 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>) : R
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val v = inflater.inflate(R.layout.list_item,parent,false)
-        return UserViewHolder(v)
+        val v = inflater.inflate(R.layout.item_aliment,parent,false)
+        return UserViewHolder(v,mListener)
     }
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val newList = alimentsList[position]
         holder.nomAlimentTV.text = newList.nomAliment
-        holder.caloriesTV.text = newList.calories
-        holder.proteinesTV.text = newList.proteines
-        holder.glucidesTV.text = newList.glucides
-        holder.lipidesTV.text = newList.lipides
+        holder.caloriesTV.text = newList.calories+" Kcal"
+        holder.proteinesTV.text = newList.proteines+" g"
+        holder.glucidesTV.text = newList.glucides+" g"
+        holder.lipidesTV.text = newList.lipides+" g"
 
     }
     override fun getItemCount(): Int {
