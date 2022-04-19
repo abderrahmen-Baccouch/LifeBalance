@@ -8,8 +8,8 @@
         />
 
    <item
-        android:id="@+id/profile"
-        android:icon="@drawable/people_user"
+        android:id="@+id/recipe"
+        android:icon="@drawable/resto1"
         tools:ignore="MenuTitle" />
 
      <item

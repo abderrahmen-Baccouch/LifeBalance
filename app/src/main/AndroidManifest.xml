@@ -14,6 +14,102 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".QuantiteAliment"
+            android:exported="false" />
+        <activity
+            android:name=".personnelSetting"
+            android:exported="false" />
+        <activity
+            android:name=".dinner15"
+            android:exported="false" />
+        <activity
+            android:name=".dinner14"
+            android:exported="false" />
+        <activity
+            android:name=".dinner13"
+            android:exported="false" />
+        <activity
+            android:name=".dinner12"
+            android:exported="false" />
+        <activity
+            android:name=".dinner11"
+            android:exported="false" />
+        <activity
+            android:name=".dinner10"
+            android:exported="false" />
+        <activity
+            android:name=".dinner9"
+            android:exported="false" />
+        <activity
+            android:name=".dinner8"
+            android:exported="false" />
+        <activity
+            android:name=".dinner7"
+            android:exported="false" />
+        <activity
+            android:name=".dinner6"
+            android:exported="false" />
+        <activity
+            android:name=".dinner5"
+            android:exported="false" />
+        <activity
+            android:name=".dinner4"
+            android:exported="false" />
+        <activity
+            android:name=".dinner3"
+            android:exported="false" />
+        <activity
+            android:name=".dinner2"
+            android:exported="false" />
+        <activity
+            android:name=".dinner1"
+            android:exported="false" />
+        <activity
+            android:name=".lunch15"
+            android:exported="false" />
+        <activity
+            android:name=".lunch14"
+            android:exported="false" />
+        <activity
+            android:name=".lunch13"
+            android:exported="false" />
+        <activity
+            android:name=".lunch12"
+            android:exported="false" />
+        <activity
+            android:name=".lunch11"
+            android:exported="false" />
+        <activity
+            android:name=".lunch10"
+            android:exported="false" />
+        <activity
+            android:name=".lunch9"
+            android:exported="false" />
+        <activity
+            android:name=".lunch8"
+            android:exported="false" />
+        <activity
+            android:name=".lunch7"
+            android:exported="false" />
+        <activity
+            android:name=".lunch6"
+            android:exported="false" />
+        <activity
+            android:name=".lunch5"
+            android:exported="false" />
+        <activity
+            android:name=".lunch4"
+            android:exported="false" />
+        <activity
+            android:name=".lunch3"
+            android:exported="false" />
+        <activity
+            android:name=".lunch2"
+            android:exported="false" />
+        <activity
+            android:name=".lunch1"
+            android:exported="false" />
+        <activity
             android:name=".breakfast20"
             android:exported="false" />
         <activity

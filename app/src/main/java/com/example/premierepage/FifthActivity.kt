@@ -114,9 +114,18 @@ class FifthActivity : AppCompatActivity() {
              when(it.itemId){
                  R.id.rappel -> {
                      Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
+                     val cAge =myshared?.getString("poids","").toString().trim()
+                     val intent = Intent(this,personnelSetting::class.java)
+                     val a = cAge.toString()
+                     intent.putExtra("poids",a)
+                     startActivity(intent)
                  }
                  R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
-                 R.id.profile -> Toast.makeText(this,"profile",Toast.LENGTH_SHORT).show()
+                 R.id.recipe -> {
+                     Toast.makeText(this,"recettes",Toast.LENGTH_SHORT).show()
+                     val intent = Intent(this,dietPlans::class.java)
+                     startActivity(intent)
+                 }
                  R.id.setting -> {
                      Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show()
                      val intent = Intent(this,DietType::class.java)

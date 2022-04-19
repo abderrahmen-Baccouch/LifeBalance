@@ -83,6 +83,7 @@
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/FirstDesign/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2578125" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/activate_btn.xml" value="0.1225" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/activate_btn2.xml" value="0.227" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/background_color.xml" value="0.239" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/background_color2.xml" value="0.185" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/background_color3.xml" value="0.118" />
@@ -98,6 +99,9 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/button_save.xml" value="0.227" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_email_icon.xml" value="0.2595" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_food_icon.xml" value="0.2075" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_food_icon2.xml" value="0.2" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_input.xml" value="0.2085" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_input2.xml" value="0.2085" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_progress_bg.xml" value="0.2005" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_progress_bg2.xml" value="0.2005" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/custom_progress_bg3.xml" value="0.2005" />
@@ -110,7 +114,7 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_balanced_diet.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_bow.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_boxing.xml" value="0.16576086956521738" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast1.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast1.xml" value="0.16291161178509533" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast10.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast11.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast12.xml" value="0.25416666666666665" />
@@ -136,13 +140,29 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_child.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_cobbler.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_cow.xml" value="0.12335359675785208" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_create_repas.xml" value="0.1" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_create_repas.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_crunches.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_defit1.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_defit2.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_defit3.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_diary_balance.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_diet_plans.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_diet_type.xml" value="0.4" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner1.xml" value="0.21490467937608318" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner10.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner11.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner12.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner13.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner14.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner15.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner2.xml" value="0.2" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner3.xml" value="0.2" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner4.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner5.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner6.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner7.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner8.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner9.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dips.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dips_pro.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_fifth.xml" value="0.264" />
@@ -156,13 +176,30 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_deuxieme_defit.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_premier_defit.xml" value="0.16576086956521738" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_leg_raise.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch1.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch10.xml" value="0.21081081081081082" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch11.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch12.xml" value="0.21081081081081082" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch13.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch14.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch15.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch3.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch4.xml" value="0.2" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch5.xml" value="0.2" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch6.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch7.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch8.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch9.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_muscle_up.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_muscle_up_pro.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_orteils_barre_pro.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_pauseji.xml" value="0.1" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_personnel_setting.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_plank.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_pompe_pro.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_quantite_aliment.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_rotation.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_situp.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_third.xml" value="0.23324275362318841" />

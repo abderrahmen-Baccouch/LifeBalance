@@ -15,7 +15,7 @@ class keto_easy : AppCompatActivity() {
         out = findViewById(R.id.out)
         activer= findViewById(R.id.activer)
         activer.setOnClickListener {
-            val intent = Intent(this,diaryBalanceActivity::class.java)
+            val intent = Intent(this,dietPlans::class.java)
             startActivity(intent)
         }
         out.setOnClickListener {
