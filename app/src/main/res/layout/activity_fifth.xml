@@ -462,7 +462,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/fitness7" />
+                            android:src="@drawable/fitness6" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -477,7 +477,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/fitness6" />
+                            android:src="@drawable/fitness7" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView

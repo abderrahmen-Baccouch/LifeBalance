@@ -14,6 +14,12 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".QuantiteAliment"
+            android:exported="false" />
+        <activity
+            android:name=".personnelSetting"
+            android:exported="false" />
+        <activity
             android:name=".dinner15"
             android:exported="false" />
         <activity

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".personnelSetting">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="370dp"
+        android:layout_height="270dp"
+        app:cardElevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.069"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/mesure" />
+
+        <TextView
+            android:layout_width="197dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="5dp"
+            android:fontFamily="@font/chewyy"
+            android:text="Votre Poids"
+            android:textColor="#F8025C"
+            android:textSize="35dp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/moins"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/_79396" />
+
+        <ImageView
+            android:id="@+id/plus"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="245dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/aa179402" />
+
+        <TextView
+            android:id="@+id/poids"
+            android:layout_width="125dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/chewyy"
+            android:inputType="numberDecimal"
+            android:text="74,00"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/patrick_hand"
+            android:text="Kg"
+            android:paddingRight="10dp"
+            android:textAlignment="center"
+            android:textColor="#676565"
+            android:textSize="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/activer"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="195dp"
+            android:background="@drawable/activate_btn2"
+            android:fontFamily="@font/chewyy"
+            android:text="Modifier"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
