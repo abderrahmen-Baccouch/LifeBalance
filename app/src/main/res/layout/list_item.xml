@@ -45,13 +45,13 @@
             android:fontFamily="@font/lobsterr"
             android:textStyle="bold"
             android:layout_margin="6dp"/>
-     <!--   <ImageView
+      <ImageView
             android:id="@+id/mMenus"
             android:layout_width="35sp"
             android:layout_height="35dp"
-            android:layout_marginLeft="305dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/ic_more"/>-->
+            android:layout_marginLeft="315dp"
+            android:layout_marginTop="45dp"
+            android:background="@drawable/ic_more"/>
         <!--<ImageView
             android:id="@+id/arrowDown"
             android:layout_width="50dp"
