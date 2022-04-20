@@ -9,7 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="360dp"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
@@ -36,8 +36,8 @@
         <TextView
             android:id="@+id/mSubtitle"
             android:text="Subtitle"
-            android:paddingTop="50sp"
-            android:paddingLeft="20dp"
+            android:paddingTop="15sp"
+            android:paddingLeft="280dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#595656"
@@ -45,13 +45,13 @@
             android:fontFamily="@font/lobsterr"
             android:textStyle="bold"
             android:layout_margin="6dp"/>
-        <ImageView
+     <!--   <ImageView
             android:id="@+id/mMenus"
             android:layout_width="35sp"
             android:layout_height="35dp"
             android:layout_marginLeft="305dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/ic_more"/>
+            android:background="@drawable/ic_more"/>-->
         <!--<ImageView
             android:id="@+id/arrowDown"
             android:layout_width="50dp"
@@ -59,54 +59,39 @@
            android:src="@drawable/ic_arrow_down"
             android:layout_marginLeft="260dp"
             android:layout_marginTop="30dp"/> -->
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        app:cardMaxElevation="100dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginLeft="-340dp"
-        app:cardCornerRadius="20dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardElevation="20dp"
-        android:elevation="50dp"
-        tools:ignore="MissingClass">
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
             android:text="Proteine"
-            android:paddingTop="15dp"
-            android:paddingLeft="10dp"
+            android:paddingLeft="15dp"
             android:background="@color/white"
             android:layout_marginLeft="10dp"
             android:textColor="#000000"
             android:textSize="18dp"
+            android:layout_marginTop="50dp"
             android:textStyle="bold"
             android:fontFamily="@font/chewyy"/>
         <TextView
             android:id="@+id/mProteines"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
             android:text=""
-            android:paddingTop="10dp"
-            android:layout_marginLeft="28dp"
-            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:layout_marginLeft="25dp"
+            android:paddingLeft="15dp"
             android:background="@color/white"
             android:textColor="#D81B60"
             android:textSize="18dp"
-            android:layout_marginTop="35dp"
-            android:textStyle="bold"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/chewyy"/>
-
         <TextView
             android:textStyle="bold"
             android:layout_marginLeft="115dp"
-            android:paddingLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:paddingTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:paddingTop="0dp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
             android:text="Glucides"
             android:background="@color/white"
             android:textColor="#000000"
@@ -114,46 +99,43 @@
             android:fontFamily="@font/chewyy"/>
         <TextView
             android:id="@+id/mGlucides"
-            android:textStyle="bold"
-            android:layout_marginLeft="125dp"
-            android:paddingLeft="5dp"
-            android:paddingTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
             android:text=""
+            android:paddingTop="5dp"
+            android:layout_marginLeft="125dp"
+            android:paddingLeft="15dp"
             android:background="@color/white"
             android:textColor="#D81B60"
             android:textSize="18dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/chewyy"/>
         <TextView
             android:textStyle="bold"
-            android:paddingTop="10dp"
+            android:paddingTop="0dp"
             android:layout_marginLeft="220dp"
-            android:paddingLeft="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
             android:text="Lipides"
             android:background="@color/white"
             android:textColor="#050505"
             android:textSize="18dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/chewyy"/>
         <TextView
             android:id="@+id/mLipides"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:layout_marginLeft="229dp"
-            android:paddingLeft="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
             android:text=""
+            android:paddingTop="5dp"
+            android:layout_marginLeft="229dp"
+            android:paddingLeft="15dp"
             android:background="@color/white"
             android:textColor="#D81B60"
             android:textSize="18dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="70dp"
             android:fontFamily="@font/chewyy"/>
     </androidx.cardview.widget.CardView>
-
 
 </LinearLayout>
