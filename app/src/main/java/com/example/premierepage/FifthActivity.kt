@@ -8,7 +8,12 @@ import android.graphics.Color.*
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.*
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -26,12 +31,37 @@ class FifthActivity : AppCompatActivity() {
     var startPoint = 0
     var endPoint = 0
 
-
+    private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
+    private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
+    private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
+    private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
+    private var clicked = false
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
 
-         /* navView1.setNavigationItemSelectedListener {
+         fab.setOnClickListener {
+             onAddButtonClicked()
+         }
+         edit_btn.setOnClickListener {
+             Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
+             val cAge =myshared?.getString("poids","").toString().trim()
+             val intent = Intent(this,personnelSetting::class.java)
+             val a = cAge.toString()
+             intent.putExtra("poids",a)
+             startActivity(intent)
+         }
+         image_btn.setOnClickListener {
+             Toast.makeText(this,"Image Button Clicked",Toast.LENGTH_SHORT).show()
+             val intent = Intent(this,DietType::class.java)
+             startActivity(intent)
+         }
+
+
+
+
+
+        /* navView1.setNavigationItemSelectedListener {
              when(it.itemId){
                  R.id.rappel -> Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
              }
@@ -39,12 +69,8 @@ class FifthActivity : AppCompatActivity() {
          }*/
 
          val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
-        // val navHeader=findViewById<LinearLayout>(R.id.navH)
          val imgMenu = findViewById<ImageView>(R.id.imgMenu)
          val navView = findViewById<NavigationView>(R.id.navDrawar)
-
-
-
          navView.itemIconTintList = null
          imgMenu.setOnClickListener {
              drawerLayout.openDrawer(GravityCompat.START)
@@ -55,16 +81,7 @@ class FifthActivity : AppCompatActivity() {
            toggle.syncState()
 
       supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-         //   Toast.makeText(this, username, Toast.LENGTH_SHORT).show()
-         //   Toast.makeText(this, usernameTV.text, Toast.LENGTH_SHORT).show()
         navView.setNavigationItemSelectedListener {
-
-            val usernameTV = findViewById<TextView>(R.id.usernameTVV)
-            myshared=getSharedPreferences("myshared",0)
-            var username =myshared?.getString("username","")
-            usernameTV.setText(username)
-
             when(it.itemId){
                 R.id.nav_home -> {
                     Toast.makeText(applicationContext,"Home",Toast.LENGTH_SHORT).show()
@@ -73,10 +90,6 @@ class FifthActivity : AppCompatActivity() {
 
                 R.id.nav_setting -> Toast.makeText(applicationContext,"Clicked Setting",Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
-                    /**********logout***********************/
-                    myshared?.edit()!!.remove("token").commit()
-                    val i=Intent(this,App::class.java)
-                    startActivity(i)
                     Toast.makeText(applicationContext,"Clicked LogOut",Toast.LENGTH_SHORT).show()
 
                 }
@@ -219,10 +232,10 @@ class FifthActivity : AppCompatActivity() {
              intent.putExtra("sexe",a)
              startActivity(intent)
          }
-         fab.setOnClickListener{
+        /* fab.setOnClickListener{
              val intent = Intent(this,workoutGoal::class.java)
              startActivity(intent)
-         }
+         }*/
          addBreakFast.setOnClickListener {
              val intent = Intent(this,aliments::class.java)
              startActivity(intent)
@@ -232,13 +245,51 @@ class FifthActivity : AppCompatActivity() {
              startActivity(intent)
          }
          addDinner.setOnClickListener {
-             val intent = Intent(this,ThirdActivity::class.java)
+             val intent = Intent(this,Tennis::class.java)
              startActivity(intent)
          }
 
     }
 
-   override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    private fun onAddButtonClicked() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked = !clicked
+    }
+
+    private fun setAnimation(clicked: Boolean) {
+        if(!clicked){
+            edit_btn.startAnimation(fromBottom)
+            image_btn.startAnimation(fromBottom)
+            fab.startAnimation(rotateOpen)
+        }else{
+            edit_btn.startAnimation(toBottom)
+            image_btn.startAnimation(toBottom)
+            fab.startAnimation(rotateClose)
+        }
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if(!clicked){
+            edit_btn.visibility = View.VISIBLE
+            image_btn.visibility = View.VISIBLE
+        }else{
+            edit_btn.visibility = View.INVISIBLE
+            image_btn.visibility = View.INVISIBLE
+        }
+    }
+    private fun setClickable(clicked: Boolean){
+        if(!clicked){
+            edit_btn.isClickable = true
+            image_btn.isClickable = true
+        }else{
+            edit_btn.isClickable = false
+            image_btn.isClickable = false
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){
             return true
         }

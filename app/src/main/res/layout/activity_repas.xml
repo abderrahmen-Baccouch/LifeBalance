@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Repas">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="@drawable/background_color6"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintStart_toStartOf="parent"
+       tools:ignore="MissingConstraints"
+       tools:layout_editor_absoluteY="16dp">
+
+      <TextView
+          android:id="@+id/nomRepas"
+          android:layout_width="298dp"
+          android:layout_height="78dp"
+          android:layout_marginLeft="50dp"
+          android:layout_marginTop="0dp"
+          android:fontFamily="@font/chewyy"
+          android:text="Lazania"
+          android:textAlignment="center"
+          android:textColor="@color/black"
+          android:textSize="35dp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.495"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.067"
+          tools:ignore="MissingConstraints" />
+   </LinearLayout>
+
+   <Button
+       android:id="@+id/button"
+       android:layout_width="200dp"
+       android:layout_height="61dp"
+       android:background="@drawable/food_bg_button2"
+       android:fontFamily="@font/patrick_hand"
+       android:text="Add aliments"
+       android:textColor="@color/white"
+       android:textSize="22dp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.497"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.224" />
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="210dp"
+       android:layout_marginBottom="140dp"
+       app:layout_constraintBottom_toTopOf="@+id/button2"
+       app:layout_constraintTop_toBottomOf="@+id/button" />
+
+   <Button
+
+       android:layout_width="133dp"
+       android:layout_height="58dp"
+       android:background="@drawable/food_bg"
+       android:fontFamily="@font/patrick_hand"
+       android:text="Petit Dej"
+       android:textColor="@color/white"
+       android:textSize="22dp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="0.0"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.906" />
+
+
+
+   <Button
+
+       android:id="@+id/button2"
+       android:layout_width="133dp"
+       android:layout_height="58dp"
+       android:background="@drawable/food_bg"
+       android:fontFamily="@font/patrick_hand"
+       android:text="Dejeuner"
+       android:textColor="@color/white"
+       android:textSize="22dp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.905" />
+
+
+
+   <Button
+
+       android:layout_width="133dp"
+       android:layout_height="58dp"
+       android:background="@drawable/food_bg"
+       android:fontFamily="@font/patrick_hand"
+       android:text="Dinner"
+       android:textColor="@color/white"
+       android:textSize="22dp"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintHorizontal_bias="1.0"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintVertical_bias="0.903" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
