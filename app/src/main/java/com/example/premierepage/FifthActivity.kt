@@ -8,6 +8,9 @@ import android.graphics.Color.*
 import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.Toast
@@ -25,14 +28,37 @@ class FifthActivity : AppCompatActivity() {
 
     var myshared: SharedPreferences?=null
     lateinit var toggle : ActionBarDrawerToggle
-
-var startPoint = 0
+    var startPoint = 0
     var endPoint = 0
 
-
+    private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
+    private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
+    private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
+    private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
+    private var clicked = false
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
+
+         fab.setOnClickListener {
+             onAddButtonClicked()
+         }
+         edit_btn.setOnClickListener {
+             Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
+             val cAge =myshared?.getString("poids","").toString().trim()
+             val intent = Intent(this,personnelSetting::class.java)
+             val a = cAge.toString()
+             intent.putExtra("poids",a)
+             startActivity(intent)
+         }
+         image_btn.setOnClickListener {
+             Toast.makeText(this,"Image Button Clicked",Toast.LENGTH_SHORT).show()
+             val intent = Intent(this,DietType::class.java)
+             startActivity(intent)
+         }
+
+
+
 
 
         /* navView1.setNavigationItemSelectedListener {
@@ -206,10 +232,10 @@ var startPoint = 0
              intent.putExtra("sexe",a)
              startActivity(intent)
          }
-         fab.setOnClickListener{
+        /* fab.setOnClickListener{
              val intent = Intent(this,workoutGoal::class.java)
              startActivity(intent)
-         }
+         }*/
          addBreakFast.setOnClickListener {
              val intent = Intent(this,aliments::class.java)
              startActivity(intent)
@@ -224,7 +250,46 @@ var startPoint = 0
          }
 
     }
-   override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+    private fun onAddButtonClicked() {
+        setVisibility(clicked)
+        setAnimation(clicked)
+        setClickable(clicked)
+        clicked = !clicked
+    }
+
+    private fun setAnimation(clicked: Boolean) {
+        if(!clicked){
+            edit_btn.startAnimation(fromBottom)
+            image_btn.startAnimation(fromBottom)
+            fab.startAnimation(rotateOpen)
+        }else{
+            edit_btn.startAnimation(toBottom)
+            image_btn.startAnimation(toBottom)
+            fab.startAnimation(rotateClose)
+        }
+    }
+
+    private fun setVisibility(clicked: Boolean) {
+        if(!clicked){
+            edit_btn.visibility = View.VISIBLE
+            image_btn.visibility = View.VISIBLE
+        }else{
+            edit_btn.visibility = View.INVISIBLE
+            image_btn.visibility = View.INVISIBLE
+        }
+    }
+    private fun setClickable(clicked: Boolean){
+        if(!clicked){
+            edit_btn.isClickable = true
+            image_btn.isClickable = true
+        }else{
+            edit_btn.isClickable = false
+            image_btn.isClickable = false
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (toggle.onOptionsItemSelected(item)){
             return true
         }

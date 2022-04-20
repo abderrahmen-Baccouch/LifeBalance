@@ -5,8 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignupActivity"
-    android:background="@drawable/background2">
+    android:background="@color/white">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="483dp"
+        android:layout_height="161dp"
+        android:src="@drawable/alimentacion_saludable_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/username"
@@ -14,11 +21,11 @@
         android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/secondesign_edit"
         android:ems="10"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Username"
         android:inputType="text"
+        android:background="@drawable/custom_input5"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,15 +34,16 @@
         app:layout_constraintVertical_bias="0.351"
         tools:ignore="MissingConstraints" />
 
+
     <EditText
         android:id="@+id/email"
         android:layout_width="293dp"
         android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/secondesign_edit"
         android:ems="10"
         android:hint="Email"
+        android:background="@drawable/custom_input5"
         android:fontFamily="sans-serif-condensed-medium"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
@@ -52,9 +60,9 @@
         android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/secondesign_edit"
         android:ems="10"
         android:hint="Password"
+        android:background="@drawable/custom_input5"
         android:inputType="textPassword"
         android:fontFamily="sans-serif-condensed-medium"
         android:textAlignment="center"
@@ -86,10 +94,10 @@
         android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/secondesign_edit"
         android:ems="10"
         android:hint="Verify Password"
         android:inputType="textPassword"
+        android:background="@drawable/custom_input5"
         android:fontFamily="sans-serif-condensed-medium"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +107,7 @@
         app:layout_constraintVertical_bias="0.738"
         tools:ignore="MissingConstraints" />
 
-    <ImageView
+  <!--  <ImageView
         android:id="@+id/imageWoman"
         android:layout_width="110dp"
         android:layout_height="102dp"
@@ -110,9 +118,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.052"
         app:srcCompat="@drawable/undraw_yoga__248_n_1"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" />-->
 
-    <ImageView
+   <!-- <ImageView
         android:id="@+id/imageView6"
         android:layout_width="136dp"
         android:layout_height="47dp"
@@ -123,7 +131,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageWoman"
         app:layout_constraintVertical_bias="0.19"
         app:srcCompat="@drawable/sign_up"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" />-->
 
     <com.varunest.sparkbutton.SparkButton
         android:id="@+id/spark_button"

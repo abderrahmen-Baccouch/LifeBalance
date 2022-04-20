@@ -108,6 +108,9 @@
         android:layout_height="wrap_content"
         android:contentDescription="TODO"
         android:src="@drawable/ic_add"
+        android:focusable="true"
+        android:tint="@color/white"
+        android:backgroundTint="@color/bleuCiel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.909"
@@ -116,6 +119,41 @@
         app:layout_constraintVertical_bias="0.819"
         tools:ignore="MissingConstraints" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/image_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="465dp"
+        android:focusable="true"
+        android:visibility="invisible"
+        android:tint="@color/white"
+        android:backgroundTint="#D81B60"
+        app:layout_constraintBottom_toTopOf="@+id/fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/resto1"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/edit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="405dp"
+        android:backgroundTint="#D81B60"
+        android:clickable="true"
+        android:visibility="invisible"
+        android:focusable="true"
+        android:tint="@color/white"
+        android:layout_marginLeft="305dp"
+        app:layout_constraintBottom_toTopOf="@+id/image_btn"
+        app:layout_constraintEnd_toEndOf="@+id/image_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/personne"
+        tools:ignore="MissingConstraints" />
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavMenu"
         android:layout_width="match_parent"
@@ -534,7 +572,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="350dp"
                 android:layout_height="180dp"
-                android:layout_marginLeft="24dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="25dp"
                 android:paddingTop="100dp"
@@ -589,7 +627,7 @@
                 android:layout_width="375dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="9dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
@@ -666,7 +704,7 @@
                 android:layout_width="375dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="9dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="20dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
@@ -742,7 +780,7 @@
                 android:layout_width="375dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="9dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="20dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
@@ -852,8 +890,8 @@
                 android:layout_width="350dp"
                 android:layout_height="180dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="0dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20dp"
@@ -937,6 +975,8 @@
 
 
             </androidx.cardview.widget.CardView>
+
+
 
 
         </LinearLayout>
