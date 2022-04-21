@@ -51,6 +51,10 @@ class FifthActivity : AppCompatActivity() {
              intent.putExtra("poids",a)
              startActivity(intent)
          }
+         workout.setOnClickListener {
+             val intent = Intent(this,Defit3::class.java)
+             startActivity(intent)
+         }
          image_btn.setOnClickListener {
              Toast.makeText(this,"Image Button Clicked",Toast.LENGTH_SHORT).show()
              val intent = Intent(this,DietType::class.java)
@@ -214,10 +218,10 @@ class FifthActivity : AppCompatActivity() {
              val intent = Intent(this,Defit3::class.java)
              startActivity(intent)
          }
-         defit_4.setOnClickListener {
+        /* defit_4.setOnClickListener {
              val intent = Intent(this,dietPlans::class.java)
              startActivity(intent)
-         }
+         }*/
 
          exercice.setOnClickListener {
              val intent = Intent(this,ActivityExercices::class.java)
@@ -262,10 +266,12 @@ class FifthActivity : AppCompatActivity() {
         if(!clicked){
             edit_btn.startAnimation(fromBottom)
             image_btn.startAnimation(fromBottom)
+            workout.startAnimation(fromBottom)
             fab.startAnimation(rotateOpen)
         }else{
             edit_btn.startAnimation(toBottom)
             image_btn.startAnimation(toBottom)
+            workout.startAnimation(toBottom)
             fab.startAnimation(rotateClose)
         }
     }
@@ -274,18 +280,22 @@ class FifthActivity : AppCompatActivity() {
         if(!clicked){
             edit_btn.visibility = View.VISIBLE
             image_btn.visibility = View.VISIBLE
+            workout.visibility = View.VISIBLE
         }else{
             edit_btn.visibility = View.INVISIBLE
             image_btn.visibility = View.INVISIBLE
+            workout.visibility = View.INVISIBLE
         }
     }
     private fun setClickable(clicked: Boolean){
         if(!clicked){
             edit_btn.isClickable = true
             image_btn.isClickable = true
+            workout.isClickable = true
         }else{
             edit_btn.isClickable = false
             image_btn.isClickable = false
+            workout.isClickable = false
         }
     }
 
