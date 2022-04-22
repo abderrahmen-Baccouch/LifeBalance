@@ -45,10 +45,19 @@ class FifthActivity : AppCompatActivity() {
          }
          edit_btn.setOnClickListener {
              Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
-             val cAge =myshared?.getString("poids","").toString().trim()
+             val poids =myshared?.getString("poids","").toString().trim()
+             val hauteur =myshared?.getString("hauteur","").toString().toDouble()
+             val age =myshared?.getString("age","").toString().trim()
+             val sexe =myshared?.getString("sexe","").toString().trim()
              val intent = Intent(this,personnelSetting::class.java)
-             val a = cAge.toString()
+             val a = poids.toString()
+             val b = hauteur.toString()
+             val c = age.toString()
+             val d = sexe.toString()
              intent.putExtra("poids",a)
+             intent.putExtra("hauteur",b)
+             intent.putExtra("age",c)
+             intent.putExtra("sexe",d)
              startActivity(intent)
          }
          workout.setOnClickListener {

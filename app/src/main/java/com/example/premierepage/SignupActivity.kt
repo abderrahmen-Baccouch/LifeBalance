@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.varunest.sparkbutton.SparkButton
@@ -37,8 +39,8 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var etEmail : EditText
     private lateinit var etPassword : EditText
     private lateinit var etVerifyPassword : EditText
-    private lateinit var btnValidate : SparkButton
-
+    private lateinit var btnValidate : Button
+    private lateinit var signIn : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +63,13 @@ class SignupActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.password)
         etVerifyPassword = findViewById(R.id.verifyPassword)
         btnValidate = findViewById(R.id.spark_button)
+        signIn = findViewById(R.id.signIn)
+
+
+        signIn.setOnClickListener {
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
@@ -144,6 +153,6 @@ class SignupActivity : AppCompatActivity() {
             password.transformationMethod = PasswordTransformationMethod.getInstance()
             showHide.setImageResource(R.drawable.ic_baseline_visibility)
         }
-        password.setSelection(password.text.toString().length)
+      password.setSelection(password.text.toString().length)
     }
 }

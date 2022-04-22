@@ -5,152 +5,255 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignupActivity"
-    android:background="@color/white">
+    android:background="#FFFFFF">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="483dp"
-        android:layout_height="161dp"
-        android:src="@drawable/alimentacion_saludable_2"
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        android:layout_marginTop="-60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        tools:ignore="MissingConstraints">
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="293dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="Username"
-        android:inputType="text"
-        android:background="@drawable/custom_input5"
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="username"
+            android:textSize="18sp"
+            android:inputType="text"
+            android:background="@null"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="15dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/calque_5"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="email"
+            android:textSize="18sp"
+            android:background="@null"
+            android:inputType="textEmailAddress"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:padding="15dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/calq1"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="password"
+            android:background="@null"
+            android:textSize="18sp"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:inputType="textPassword"
+            android:padding="15dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/calc3"/>
+
+        <ImageView
+            android:id="@+id/showHide"
+            android:layout_width="25dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_baseline_visibility"
+            tools:ignore="MissingConstraints" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="20dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:id="@+id/verifyPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Verify Password"
+            android:textSize="18sp"
+            android:background="@null"
+            android:layout_marginLeft="50dp"
+            android:fontFamily="sans-serif-medium"
+            android:inputType="textPassword"
+            android:padding="15dp"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/calc3"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <!--  <ImageView
+          android:id="@+id/imageWoman"
+          android:layout_width="110dp"
+          android:layout_height="102dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.498"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintVertical_bias="0.052"
+          app:srcCompat="@drawable/undraw_yoga__248_n_1"
+          tools:ignore="MissingConstraints" />-->
+
+    <!-- <ImageView
+         android:id="@+id/imageView6"
+         android:layout_width="136dp"
+         android:layout_height="47dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.498"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="@+id/imageWoman"
+         app:layout_constraintVertical_bias="0.19"
+         app:srcCompat="@drawable/sign_up"
+         tools:ignore="MissingConstraints" />-->
+
+
+    <TextView
+
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/courgette"
+        android:text="Sign In"
         android:textAlignment="center"
+        android:textColor="#A5A3A3"
+        android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.351"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.116" />
 
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="293dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:hint="Email"
-        android:background="@drawable/custom_input5"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:inputType="textEmailAddress"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="201dp"
+        android:layout_height="66dp"
+        android:fontFamily="@font/courgette"
+        android:text="Sign Up"
         android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="45dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.067" />
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="293dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:hint="Password"
-        android:background="@drawable/custom_input5"
-        android:inputType="textPassword"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/showHide"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:src="@drawable/ic_baseline_visibility"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/verifyPassword"
-        android:layout_width="293dp"
-        android:layout_height="58dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:ems="10"
-        android:hint="Verify Password"
-        android:inputType="textPassword"
-        android:background="@drawable/custom_input5"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738"
-        tools:ignore="MissingConstraints" />
-
-  <!--  <ImageView
-        android:id="@+id/imageWoman"
-        android:layout_width="110dp"
-        android:layout_height="102dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
-        app:srcCompat="@drawable/undraw_yoga__248_n_1"
-        tools:ignore="MissingConstraints" />-->
-
-   <!-- <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="136dp"
-        android:layout_height="47dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageWoman"
-        app:layout_constraintVertical_bias="0.19"
-        app:srcCompat="@drawable/sign_up"
-        tools:ignore="MissingConstraints" />-->
-
-    <com.varunest.sparkbutton.SparkButton
+    <Button
         android:id="@+id/spark_button"
-        android:layout_width="129dp"
-        android:layout_height="107dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_bg3"
+        android:text="Create Account"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:sparkbutton_activeImage="@drawable/tiik"
-        app:sparkbutton_iconSize="70dp"
-        app:sparkbutton_inActiveImage="@drawable/login_icon_in_trendy"
-        app:sparkbutton_primaryColor="@color/ciel"
-        app:sparkbutton_secondaryColor="@color/pink"
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.804"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/courgette"
+        android:paddingLeft="65dp"
+        android:text="already have an account?"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/signIn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/courgette"
+        android:paddingLeft="275dp"
+        android:text="Sign In"
+        android:textColor="@color/one"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

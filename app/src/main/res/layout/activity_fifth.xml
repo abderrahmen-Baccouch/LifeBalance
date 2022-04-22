@@ -338,13 +338,7 @@
                         android:elevation="16dp"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/imgMenu"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="10dp"
-                            android:src="@drawable/menu" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -492,7 +486,7 @@
                 android:fontFamily="@font/coda"
                 android:text="Les Défits"
                 android:textColor="#655D5D"
-                android:textSize="22dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <HorizontalScrollView
@@ -618,14 +612,13 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="180dp"
-                android:layout_marginLeft="20dp"
+                android:layout_width="370dp"
+                android:layout_height="200dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="25dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="20dp"
                 app:cardElevation="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -662,7 +655,7 @@
                     android:layout_width="200dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="80dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="120dp"
                     android:background="@drawable/button_workout"
                     android:fontFamily="sans-serif-medium"
                     android:text="MY WORKOUT GOAL"
@@ -1028,24 +1021,22 @@
     android:layout_width="130dp"
     android:layout_height="70dp"
     android:text="Calories Brûlées"
-    android:layout_marginTop="-1950dp"
+    android:layout_marginTop="-1960dp"
     android:textColor="#000000"
     android:textSize="22dp"
-    android:textStyle="bold"
     android:layout_marginLeft="-12dp"
     android:textAlignment="center"
     android:fontFamily="@font/galada"/>
 
             <TextView
-                android:layout_width="150dp"
+                android:layout_width="140dp"
                 android:layout_height="70dp"
-                android:text="Calories Consommées"
+                android:text="Calories Gagnées"
                 android:textColor="#000000"
                 android:textSize="22dp"
-                android:textStyle="bold"
                 android:layout_marginTop="-70dp"
                 android:textAlignment="center"
-                android:layout_marginLeft="255dp"
+                android:layout_marginLeft="260dp"
                 android:fontFamily="@font/galada"/>
 
             <TextView
@@ -1093,6 +1084,15 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <ImageView
+                android:id="@+id/imgMenu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="-150dp"
+                android:layout_marginLeft="-170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/menu"
+                tools:ignore="MissingConstraints" />
 
 
         </LinearLayout>
