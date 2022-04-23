@@ -22,6 +22,7 @@
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:src="@drawable/burger"/>
+
         <TextView
             android:id="@+id/mTitle"
             android:text="title"

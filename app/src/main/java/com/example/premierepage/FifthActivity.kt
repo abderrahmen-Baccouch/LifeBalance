@@ -140,10 +140,7 @@ class FifthActivity : AppCompatActivity() {
              when(it.itemId){
                  R.id.rappel -> {
                      Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
-                     val cAge =myshared?.getString("poids","").toString().trim()
-                     val intent = Intent(this,personnelSetting::class.java)
-                     val a = cAge.toString()
-                     intent.putExtra("poids",a)
+                     val intent = Intent(this,PageAdmin::class.java)
                      startActivity(intent)
                  }
                  R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
