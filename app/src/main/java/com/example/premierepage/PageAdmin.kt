@@ -37,13 +37,20 @@ class PageAdmin : AppCompatActivity() {
                 val intent = Intent(this,GestionExerciceAdmin::class.java)
                 startActivity(intent)}
 
-                R.id.nav_repas -> Toast.makeText(applicationContext,"repas", Toast.LENGTH_SHORT).show()
-                /*R.id.nav_logout -> {
+                R.id.nav_repas -> {
+
+                    Toast.makeText(applicationContext, "repas", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,GestionRepasAdmin::class.java)
+                    startActivity(intent)
+                }
+                    /*R.id.nav_logout -> {
                     Toast.makeText(applicationContext,"Clicked LogOut", Toast.LENGTH_SHORT).show()
 
                 }*/
                 R.id.nav_aliments -> {
                     Toast.makeText(applicationContext,"aliments", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,GestionAlimentAdmin::class.java)
+                    startActivity(intent)
                 }
 
             }

@@ -123,6 +123,7 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/round_corner_top.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/secondesign_edit.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/drawable/warming_bg_button.xml" value="0.2595" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_ajouter_aliment_admin.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_ajouter_exercice_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_ajouter_repas_admin.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_aliments.xml" value="0.25416666666666665" />
@@ -183,6 +184,7 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_fifth.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_food.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gainage.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_aliment_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_exercice_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_repas_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_handstand.xml" value="0.25416666666666665" />
