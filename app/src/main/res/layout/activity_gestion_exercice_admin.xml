@@ -21,13 +21,14 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/ajouter"
         android:layout_width="150dp"
         android:layout_height="60dp"
         android:background="@drawable/button_bg4"
         android:text="ajouter exercice"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:fontFamily="@font/carter_one"
+        android:fontFamily="@font/salsa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

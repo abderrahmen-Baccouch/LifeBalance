@@ -34,7 +34,7 @@ class PageAdmin : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_sport -> {
                     Toast.makeText(applicationContext,"sport", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this,PageAdmin::class.java)
+                val intent = Intent(this,GestionExerciceAdmin::class.java)
                 startActivity(intent)}
 
                 R.id.nav_repas -> Toast.makeText(applicationContext,"repas", Toast.LENGTH_SHORT).show()

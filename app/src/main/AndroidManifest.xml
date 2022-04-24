@@ -14,6 +14,12 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AjouterRepasAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".AjouterExerciceAdmin"
+            android:exported="false" />
+        <activity
             android:name=".GestionExerciceAdmin"
             android:exported="false" />
         <activity

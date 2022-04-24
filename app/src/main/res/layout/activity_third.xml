@@ -7,7 +7,6 @@
     android:background="@drawable/back_color"
     tools:context=".ThirdActivity">
 
-
     <ImageView
         android:id="@+id/imageFitness"
         android:layout_width="170dp"
