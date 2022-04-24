@@ -119,7 +119,7 @@ class SignupActivity : AppCompatActivity() {
                                 this@SignupActivity,
                                 "Signed up successfully", Toast.LENGTH_LONG
                             ).show()
-                            //intent.putExtra("username",user)
+                            intent.putExtra("username",user)
                             startActivity(intent)
 
                         } else if (response.code() == 400) {

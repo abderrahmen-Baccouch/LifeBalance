@@ -28,6 +28,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
     private lateinit var etHauteur : EditText
     private lateinit var etPoids : EditText
     private lateinit var etage : TextView
+    private lateinit var resultview : TextView
 
 
     @SuppressLint("SetTextI18n")
@@ -41,17 +42,13 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
 
 
 
-
-
-
-
         //get data from intent
         val intent = intent
         //val extras = intent.extras
         val username = intent.getStringExtra("username")
 
         // textView
-        val resultview = findViewById<TextView>(R.id.username)
+         resultview = findViewById(R.id.username)
         //setText
         resultview.text = username
 
@@ -212,7 +209,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 cYear=year
                 val currentYear = Calendar.getInstance().get(Calendar.YEAR)
                 cAge = currentYear - year
-                age.text= "${cAge.toString()} ans"
+                age.text= "${cAge.toString()}"
 
             },year,month,day)
 
