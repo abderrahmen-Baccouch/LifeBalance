@@ -12,7 +12,6 @@
     </menu>
     </item>
 
-
     <item android:title="Diet">
         <menu>
             <item
@@ -24,6 +23,14 @@
                 android:icon="@drawable/iconrestaurant"
                 android:title="Gestion des Aliments"/>
 
+        </menu>
+    </item>
+    <item android:title="Deconnexion">
+        <menu>
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Terminer"
+                android:icon="@drawable/ic_baseline_logout_31" />
         </menu>
     </item>
 

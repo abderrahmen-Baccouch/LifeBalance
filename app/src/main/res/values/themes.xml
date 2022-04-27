@@ -3,7 +3,7 @@
     <style name="Theme.PremierePage" parent="Theme.AppCompat.DayNight.NoActionBar" >
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/pinky</item>
-        <item name="colorPrimaryVariant">#00897B</item>
+        <item name="colorPrimaryVariant">#00FFE5</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>

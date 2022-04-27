@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulaire_Repas_Admin"
+    android:background="#FFFFFF">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:text="PROTEINE"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                tools:ignore="MissingConstraints" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/proteine"
+        android:layout_width="200dp"
+        android:layout_height="59dp"
+        app:cardCornerRadius="25dp"
+        android:layout_marginLeft="-190dp"
+        android:layout_marginTop="50dp"
+        app:cardElevation="15dp"
+        tools:ignore="MissingConstraints">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:hint="Proteine"
+            android:textColorHint="#9F9E9E"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            android:textSize="19sp" />
+    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            app:cardCornerRadius="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="55dp"
+            app:cardElevation="15dp"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/courgette"
+                android:paddingTop="7dp"
+                android:textStyle="bold"
+                android:text="g"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="-25dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="GLUCIDE"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Glucide"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Glucide"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="-25dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="LIPIDE"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lipide"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Lipide"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="-25dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="SUCRE"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sucre"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Sucre"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="-25dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="FIBRE"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fibre"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Fibre"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="GRAS SATURÉ"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/gras_sature"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Gras Saturé"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="210dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="GRAISSE INSATURÉ"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/graisse_insature"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-200dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Graisse Insaturé"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="240dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="GRAISSE MONOSATURÉ"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/graisse_monosature"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-230dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Graisse Monosaturé"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="g"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="CHOLESTEROL"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cholesterol"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Cholesterol"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="mg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="SODIUM"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sodium"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Sodium"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="mg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="CALCIUM"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/calcium"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Calcium"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="mg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:fontFamily="@font/knewavee"
+                android:text="FER"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:paddingLeft="30dp"
+                tools:ignore="MissingConstraints" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fer"
+                android:layout_width="200dp"
+                android:layout_height="59dp"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="-190dp"
+                android:layout_marginTop="50dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:hint="Fer"
+                    android:textColorHint="#9F9E9E"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    android:textSize="19sp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                app:cardCornerRadius="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="55dp"
+                app:cardElevation="15dp"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/courgette"
+                    android:paddingTop="7dp"
+                    android:textStyle="bold"
+                    android:text="mg"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                app:cardElevation="10dp">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="22sp"
+                    android:text="ENREGISTRER"
+                    android:textColor="@color/white"
+                    android:background="#00E3FF"
+                    android:fontFamily="@font/patrick_hand"
+                    android:textStyle="bold"/>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

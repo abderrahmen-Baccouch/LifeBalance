@@ -11,12 +11,26 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.activity_page_admin.*
 
 class PageAdmin : AppCompatActivity() {
     lateinit var toggle : ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_admin)
+
+        G_al.setOnClickListener {
+            val intent = Intent(this,GestionAlimentAdmin::class.java)
+            startActivity(intent)
+        }
+        G_ex.setOnClickListener {
+            val intent = Intent(this,GestionExerciceAdmin::class.java)
+            startActivity(intent)
+        }
+        G_re.setOnClickListener {
+            val intent = Intent(this,GestionRepasAdmin::class.java)
+            startActivity(intent)
+        }
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val imgMenu = findViewById<ImageView>(R.id.imgMenu)
         val navView = findViewById<NavigationView>(R.id.navDrawer_admin)
@@ -43,10 +57,10 @@ class PageAdmin : AppCompatActivity() {
                     val intent = Intent(this,GestionRepasAdmin::class.java)
                     startActivity(intent)
                 }
-                    /*R.id.nav_logout -> {
-                    Toast.makeText(applicationContext,"Clicked LogOut", Toast.LENGTH_SHORT).show()
-
-                }*/
+                    R.id.nav_logout -> {
+                        Toast.makeText(applicationContext, "Clicked LogOut", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 R.id.nav_aliments -> {
                     Toast.makeText(applicationContext,"aliments", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this,GestionAlimentAdmin::class.java)
@@ -56,5 +70,6 @@ class PageAdmin : AppCompatActivity() {
             }
             true
         }
+
     }
 }

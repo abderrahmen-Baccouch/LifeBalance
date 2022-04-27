@@ -14,6 +14,21 @@
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DinnerAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".DejeunerAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".PetitDejAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".DietPlans0"
+            android:exported="false" />
+        <activity
+            android:name=".Formulaire_Repas_Admin"
+            android:exported="false" />
+        <activity
             android:name=".AjouterAlimentAdmin"
             android:exported="false" />
         <activity

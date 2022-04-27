@@ -49,16 +49,18 @@ class personnelSetting : AppCompatActivity() {
 
         }
 
-      /*  poids.addTextChangedListener{
-            img.text  =  dec.format(1.20 * a).toString()
-            /*val b =  dec.format(0.23 * age.toDouble()).toString()
+       poids.addTextChangedListener{
+            img.text  =  "22 %"
+
+             /*
+            val b =  dec.format(0.23 * age.toDouble()).toString()
             val c = -16.2
             val d = a.toDouble()+b.toDouble()+c*/
-            /*
+             /*
             else if (sexe == "FEMME"){
                 img.text =  dec.format((1.20 * imc2.toString().toDouble()+(0.23 * age.toDouble())-5.4)).toString()
-            }*/
+            } */
 
-        }*/
+        }
     }
 }
