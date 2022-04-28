@@ -32,7 +32,7 @@ class SignupActivity : AppCompatActivity() {
     private lateinit var etEmail : EditText
     private lateinit var etPassword : EditText
     private lateinit var etVerifyPassword : EditText
-    private lateinit var btnValidate : SparkButton
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,10 +50,14 @@ class SignupActivity : AppCompatActivity() {
         showPassword(Show)
 
         etUsername = findViewById(R.id.username)
+
         etEmail = findViewById(R.id.email)
+
         etPassword = findViewById(R.id.password)
+
         etVerifyPassword = findViewById(R.id.verifyPassword)
-        btnValidate = findViewById(R.id.spark_button)
+
+
 
         spark_button.setOnClickListener{
             val email = etEmail.text.toString().trim()

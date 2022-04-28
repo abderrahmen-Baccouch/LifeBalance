@@ -16,7 +16,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val mListener: ExerciceAdapter.onItemClickListener) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
+class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val mListener:onItemClickListener) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
     private var retrofitInterface: RetrofitInterface? = null
 
     interface onItemClickListener{
@@ -24,7 +24,7 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
     }
 
 
-    inner  class UserViewHolder(val v: View,listener: ExerciceAdapter.onItemClickListener):RecyclerView.ViewHolder(v){
+    inner  class UserViewHolder(val v: View,listener:onItemClickListener):RecyclerView.ViewHolder(v){
         var nomAlimentTV: TextView
         var caloriesTV : TextView
         var proteinesTV : TextView

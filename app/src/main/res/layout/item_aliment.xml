@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="125dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="Orientation">
@@ -22,8 +22,9 @@
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:src="@drawable/burger"/>
+
         <TextView
-            android:id="@+id/mTitle"
+            android:id="@+id/nomAliment"
             android:text="title"
             android:paddingLeft="80sp"
             android:paddingTop="7dp"
@@ -34,7 +35,7 @@
             android:fontFamily="@font/chewyy"
             android:layout_margin="6dp"/>
         <TextView
-            android:id="@+id/mSubtitle"
+            android:id="@+id/calories"
             android:text="Subtitle"
             android:paddingTop="15sp"
             android:paddingLeft="280dp"
@@ -72,7 +73,7 @@
             android:textStyle="bold"
             android:fontFamily="@font/chewyy"/>
         <TextView
-            android:id="@+id/mProteines"
+            android:id="@+id/proteines"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:text=""
@@ -98,7 +99,7 @@
             android:textSize="18dp"
             android:fontFamily="@font/chewyy"/>
         <TextView
-            android:id="@+id/mGlucides"
+            android:id="@+id/glucides"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:text=""
@@ -124,7 +125,7 @@
             android:layout_marginTop="50dp"
             android:fontFamily="@font/chewyy"/>
         <TextView
-            android:id="@+id/mLipides"
+            android:id="@+id/lipides"
             android:layout_width="70dp"
             android:layout_height="40dp"
             android:text=""

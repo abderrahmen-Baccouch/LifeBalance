@@ -15,6 +15,7 @@ class aliments : AppCompatActivity() {
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(FoodFragment(),"REPAS")
+       fragmentAdapter.addFragment(NotreRepas(),"NOTRE REPAS")
         fragmentAdapter.addFragment(AlimentsFragment(),"MES ALIMENTS")
         fragmentAdapter.addFragment(NotreAlimentsFragment(),"NOTRE ALIMENTS")
 

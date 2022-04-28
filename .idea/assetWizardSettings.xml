@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/fitness_center/baseline_fitness_center_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/restaurant/baseline_restaurant_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +33,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="fitness" />
+                            <entry key="color" value="0e2f4f" />
+                            <entry key="outputName" value="iconrestaurant" />
                             <entry key="sourceFile" value="C:\Users\Abdou\Desktop\first-commit" />
                           </map>
                         </option>

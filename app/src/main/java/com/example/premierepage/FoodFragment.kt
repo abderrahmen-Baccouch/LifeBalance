@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.model.Aliments
 import com.example.premierepage.model.RecetteX
+import com.example.premierepage.view.NotreRepasAdapter
 import com.example.premierepage.view.RecetteAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import retrofit2.Call
@@ -54,10 +55,21 @@ class FoodFragment : Fragment() {
         val call = retrofitInterface!!.executeAllRecettes(t)
         call.enqueue(object : Callback<MutableList<RecetteX>> {
             override fun onResponse(call: Call<MutableList<RecetteX>>, response: Response<MutableList<RecetteX>>) {
+                var listRepas=response.body()!!
                 if (response.code()==200){
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= RecetteAdapter(context,response.body()!!)
+                        adapter= RecetteAdapter(context,response.body()!!,object: RecetteAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                val i = Intent(context,Repas::class.java)
+                                Toast.makeText(context,"aa",Toast.LENGTH_LONG).show()
+                                i.putExtra("nomRecette",listRepas.get(position).nomRecette)
+                                i.putExtra("idRecette",listRepas.get(position)._id)
+                               // i.putExtra("calories",listRepas.get(position).calories)
+
+                                startActivity(i)
+                            }
+                        })
                     }
                 }else if (response.code()==400){
 
@@ -68,6 +80,15 @@ class FoodFragment : Fragment() {
             }
 
         })
+    }
+
+    //wala onRestar w t7ot feha getRecettes
+    override fun onResume() {
+        super.onResume()
+        /**bech njibou token mel fichier myshared */
+        myshared=context?.getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
+        getRecettes(token!!)
     }
 
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <item android:title="Education Physique">
+    <menu>
+    <item
+        android:id="@+id/nav_sport"
+        android:title="Gestion de Sport"
+        android:icon="@drawable/iconfitness" />
+    </menu>
+    </item>
+
+
+    <item android:title="Diet">
+        <menu>
+            <item
+                android:id="@+id/nav_repas"
+                android:icon="@drawable/iconfood"
+                android:title="Gestion des Repas"/>
+            <item
+                android:id="@+id/nav_aliments"
+                android:icon="@drawable/iconrestaurant"
+                android:title="Gestion des Aliments"/>
+
+        </menu>
+    </item>
+
+
+</menu>

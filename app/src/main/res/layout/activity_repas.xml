@@ -19,7 +19,7 @@
        tools:layout_editor_absoluteY="16dp">
 
       <TextView
-          android:id="@+id/nomRepas"
+          android:id="@+id/nomRecette"
           android:layout_width="298dp"
           android:layout_height="78dp"
           android:layout_marginLeft="50dp"
@@ -40,7 +40,7 @@
    </LinearLayout>
 
    <Button
-       android:id="@+id/button"
+       android:id="@+id/addAlimentBtn"
        android:layout_width="200dp"
        android:layout_height="61dp"
        android:background="@drawable/food_bg_button2"
@@ -61,11 +61,11 @@
        android:layout_height="match_parent"
        android:layout_marginTop="210dp"
        android:layout_marginBottom="140dp"
-       app:layout_constraintBottom_toTopOf="@+id/button2"
-       app:layout_constraintTop_toBottomOf="@+id/button" />
+       app:layout_constraintBottom_toTopOf="@+id/addDejeuner"
+       app:layout_constraintTop_toBottomOf="@+id/addAlimentBtn" />
 
    <Button
-
+       android:id="@+id/addBreakFast"
        android:layout_width="133dp"
        android:layout_height="58dp"
        android:background="@drawable/food_bg"
@@ -85,7 +85,7 @@
 
    <Button
 
-       android:id="@+id/button2"
+       android:id="@+id/addDejeuner"
        android:layout_width="133dp"
        android:layout_height="58dp"
        android:background="@drawable/food_bg"
@@ -103,7 +103,7 @@
 
 
    <Button
-
+         android:id="@+id/addDinner"
        android:layout_width="133dp"
        android:layout_height="58dp"
        android:background="@drawable/food_bg"

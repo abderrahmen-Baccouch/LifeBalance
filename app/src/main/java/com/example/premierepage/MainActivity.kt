@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etPassword : EditText
     private lateinit var btnValidate : Button
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -44,6 +46,7 @@ class MainActivity : AppCompatActivity() {
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
         val i = Intent(this,App::class.java)
+        val i2 = Intent(this,PageAdmin::class.java)
 
         showHidePassword.setOnClickListener{
             ShowPass = !ShowPass
@@ -55,7 +58,9 @@ class MainActivity : AppCompatActivity() {
         etPassword = findViewById(R.id.editTextPassword)
         btnValidate = findViewById(R.id.buttonLogin)
 
-        buttonLogin.setOnClickListener{
+
+        btnValidate.setOnClickListener{
+
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
             if(email.isEmpty()){
@@ -83,7 +88,11 @@ class MainActivity : AppCompatActivity() {
                             editor.putString("token",result!!.getToken())
                             editor.putString("username",result!!.getUsername())
                             editor.commit()
-                            startActivity(i)
+                            if(result!!.getRole()==0) {
+                                startActivity(i)
+                            }else if(result!!.getRole()==1){
+                                startActivity(i2)
+                            }
                         } else if (response.code() == 400) {
                             Toast.makeText(this@MainActivity, "Wrong Credentials", Toast.LENGTH_LONG).show()
                         //si le compte n'est pas verifié
@@ -100,6 +109,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonSignUp.setOnClickListener{
+            Toast.makeText(this,"button signup clicked",Toast.LENGTH_LONG).show()
             val intent = Intent(this,SignupActivity::class.java)
             startActivity(intent)
         }

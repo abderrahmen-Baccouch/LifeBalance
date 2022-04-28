@@ -38,7 +38,7 @@ class NotreAlimentsFragment : Fragment(R.layout.fragment_notrealiments) {
                     Toast.makeText(context, "aaaaa", Toast.LENGTH_LONG).show()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= AlimentAdapter(context,response.body()!!,object: ExerciceAdapter.onItemClickListener{
+                        adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i = Intent(context,FifthActivity::class.java)
 

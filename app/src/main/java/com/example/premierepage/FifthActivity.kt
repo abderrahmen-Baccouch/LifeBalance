@@ -18,11 +18,17 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.premierepage.model.BreakfastX
+import com.example.premierepage.model.Exercices
+import com.example.premierepage.view.ExerciceAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.api.AnnotationsProto.http
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import kotlinx.android.synthetic.main.activity_fifth.*
+import retrofit2.Call
+import retrofit2.Response
 import java.text.DecimalFormat
 class FifthActivity : AppCompatActivity() {
 
@@ -30,6 +36,7 @@ class FifthActivity : AppCompatActivity() {
     lateinit var toggle : ActionBarDrawerToggle
     var startPoint = 0
     var endPoint = 0
+    private var retrofitInterface: RetrofitInterface? = null
 
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
     private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
@@ -39,16 +46,27 @@ class FifthActivity : AppCompatActivity() {
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
-
+         val retrofit = RetrofitClient.getInstance()
+         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+         myshared=getSharedPreferences("myshared",0)
          fab.setOnClickListener {
              onAddButtonClicked()
          }
          edit_btn.setOnClickListener {
              Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
-             val cAge =myshared?.getString("poids","").toString().trim()
+             val poids =myshared?.getString("poids","").toString().trim()
+             val hauteur =myshared?.getString("hauteur","").toString().toDouble()
+             val age =myshared?.getString("age","").toString().trim()
+             val sexe =myshared?.getString("sexe","").toString().trim()
              val intent = Intent(this,personnelSetting::class.java)
-             val a = cAge.toString()
+             val a = poids.toString()
+             val b = hauteur.toString()
+             val c = age.toString()
+             val d = sexe.toString()
              intent.putExtra("poids",a)
+             intent.putExtra("hauteur",b)
+             intent.putExtra("age",c)
+             intent.putExtra("sexe",d)
              startActivity(intent)
          }
          workout.setOnClickListener {
@@ -90,11 +108,18 @@ class FifthActivity : AppCompatActivity() {
                 R.id.nav_home -> {
                     Toast.makeText(applicationContext,"Home",Toast.LENGTH_SHORT).show()
                     val intent = Intent(this,FifthActivity::class.java)
-                    startActivity(intent)}
-
+                    startActivity(intent)
+                }
                 R.id.nav_setting -> Toast.makeText(applicationContext,"Clicked Setting",Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
+                    /**---------------Logout----------*/
+                  /*  var editor: SharedPreferences.Editor=myshared!!.edit()
+                    editor.remove("token")
+                    editor.commit()*/
                     Toast.makeText(applicationContext,"Clicked LogOut",Toast.LENGTH_SHORT).show()
+                    val i2 = Intent(this,App::class.java)
+                    startActivity(i2)
+                    finish()
 
                 }
                 R.id.nav_share -> {
@@ -131,10 +156,7 @@ class FifthActivity : AppCompatActivity() {
              when(it.itemId){
                  R.id.rappel -> {
                      Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
-                     val cAge =myshared?.getString("poids","").toString().trim()
-                     val intent = Intent(this,personnelSetting::class.java)
-                     val a = cAge.toString()
-                     intent.putExtra("poids",a)
+                     val intent = Intent(this,PageAdmin::class.java)
                      startActivity(intent)
                  }
                  R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
@@ -178,11 +200,12 @@ class FifthActivity : AppCompatActivity() {
          //get data from intent
          val intent = intent
          val dec = DecimalFormat("#,###.00")
-         myshared=getSharedPreferences("myshared",0)
+
          val poids =myshared?.getString("poids","").toString().toDouble()
          val hauteur =myshared?.getString("hauteur","").toString().toDouble()
          val cAge =myshared?.getString("age","").toString().trim()
          val sexe =myshared?.getString("sexe","").toString().trim()
+         val token =myshared?.getString("token","").toString().trim()
 
          imc.text = dec.format(poids/(hauteur*hauteur)).toString()
 
@@ -240,18 +263,103 @@ class FifthActivity : AppCompatActivity() {
              val intent = Intent(this,workoutGoal::class.java)
              startActivity(intent)
          }*/
+
+
+
+
+
+
+
+
+
+
+
+
          addBreakFast.setOnClickListener {
-             val intent = Intent(this,aliments::class.java)
-             startActivity(intent)
+             val i3 = Intent(this,aliments::class.java)
+             if (myshared?.getString("idbreakfast","")==""){
+             val call = retrofitInterface!!.executeCreateBreakfast(token)
+             call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                 override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                     Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                     if (response.code()==200){
+                         var editor: SharedPreferences.Editor=myshared!!.edit()
+                         editor.putString("idbreakfast",response.body()!!._id)
+                         editor.commit()
+
+                         startActivity(i3)
+                     }else if (response.code()==400){
+                         Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                     }
+                 }
+                 override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                     Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                 }
+             })
+         }else{
+                 startActivity(i3)
+         }
+
          }
          addLunch.setOnClickListener {
-             val intent = Intent(this,aliments::class.java)
-             startActivity(intent)
+             val i3 = Intent(this,aliments::class.java)
+             if (myshared?.getString("idlunch","")==""){
+                 val call = retrofitInterface!!.executeCreateLunch(token)
+                 call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                     override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                         Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                         if (response.code()==200){
+                             var editor: SharedPreferences.Editor=myshared!!.edit()
+                             editor.putString("idlunch",response.body()!!._id)
+                             editor.commit()
+                             startActivity(i3)
+                         }else if (response.code()==400){
+                             Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                         }
+                     }
+                     override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                         Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                     }
+                 })
+             }else{
+                 startActivity(i3)
+             }
          }
          addDinner.setOnClickListener {
-             val intent = Intent(this,Tennis::class.java)
-             startActivity(intent)
+             val i3 = Intent(this,aliments::class.java)
+             if (myshared?.getString("iddinner","")==""){
+                 val call = retrofitInterface!!.executeCreateDinner(token)
+                 call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                     override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                         Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                         if (response.code()==200){
+                             var editor: SharedPreferences.Editor=myshared!!.edit()
+                             editor.putString("iddinner",response.body()!!._id)
+                             editor.commit()
+
+                             startActivity(i3)
+                         }else if (response.code()==400){
+                             Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                         }
+                     }
+                     override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                         Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                     }
+                 })
+             }else{
+                 startActivity(i3)
+             }
          }
+
+
+
+
+
+
+
+
+
+
 
     }
 

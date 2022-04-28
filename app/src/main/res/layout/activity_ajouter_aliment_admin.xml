@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".AjouterRepasAdmin">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="370dp"
+    android:layout_height="300dp"
+    app:cardElevation="50dp"
+    app:cardCornerRadius="35dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="MissingConstraints">
+
+    <ImageView
+        android:layout_width="515dp"
+        android:layout_height="366dp"
+        android:layout_marginTop="-15dp"
+        android:layout_marginLeft="-10dp"
+        android:src="@drawable/aliment" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="30dp">
+        <EditText
+            android:id="@+id/exercice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Nom D'exercice"
+            android:textColorHint="#656161"
+            android:textAlignment="center"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="100dp">
+        <EditText
+            android:id="@+id/nbrCamerie"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Nombre des Caleries"
+            android:textAlignment="center"
+            android:textColorHint="#656161"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/camera"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="175dp"
+        android:src="@drawable/calque_6_cam"/>
+
+</androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

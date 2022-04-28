@@ -123,10 +123,10 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
 
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter=AlimentAdapter(context,response.body()!!,object: ExerciceAdapter.onItemClickListener{
+                        adapter=AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i = Intent(context,FifthActivity::class.java)
-                                startActivity(i)
+                               // startActivity(i)
                             }
                         })
                     }
@@ -140,11 +140,7 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
 
         })
     }
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
         return inflater.inflate(R.layout.fragment_aliments,container,false)
     }
