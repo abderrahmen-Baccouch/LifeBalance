@@ -176,6 +176,7 @@
             android:layout_marginTop="35dp"
             android:fontFamily="@font/carter_one"
             android:text="24%"
+            android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="24dp"

@@ -35,7 +35,7 @@ tools:context=".AjouterRepasAdmin">
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:hint="Nom D'exercice"
+            android:hint="Nom D'aliment"
             android:textColorHint="#656161"
             android:textAlignment="center"
             android:fontFamily="sans-serif-medium"
@@ -49,11 +49,65 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="85dp"
         android:layout_marginTop="100dp">
         <EditText
-            android:id="@+id/nbrCamerie"
+            android:id="@+id/nbrCalerie"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="Nombre des Caleries"
+            android:textAlignment="center"
+            android:textColorHint="#656161"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="175dp">
+        <EditText
+            android:id="@+id/proteine"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Proteine"
+            android:textAlignment="center"
+            android:textColorHint="#656161"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="175dp">
+        <EditText
+            android:id="@+id/lipide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Lipide"
+            android:textAlignment="center"
+            android:textColorHint="#656161"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="175dp">
+        <EditText
+            android:id="@+id/glucide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Glucide"
             android:textAlignment="center"
             android:textColorHint="#656161"
             android:fontFamily="sans-serif-medium"
@@ -66,7 +120,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="155dp"
-        android:layout_marginTop="175dp"
+        android:layout_marginTop="240dp"
         android:src="@drawable/calque_6_cam"/>
 
 </androidx.cardview.widget.CardView>

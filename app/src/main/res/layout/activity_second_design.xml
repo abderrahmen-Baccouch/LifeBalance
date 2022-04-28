@@ -33,7 +33,7 @@
             android:fontFamily="sans-serif-medium"
             android:padding="15dp"/>
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="35dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:src="@drawable/calque_5"/>
@@ -64,7 +64,7 @@
             android:fontFamily="sans-serif-medium"
             android:padding="15dp"/>
         <ImageView
-            android:layout_width="40dp"
+            android:layout_width="35dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:src="@drawable/calq1"/>
@@ -96,7 +96,7 @@
             android:padding="15dp"/>
         <ImageView
             android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_margin="10dp"
             android:src="@drawable/calc3"/>
 
@@ -136,7 +136,7 @@
             android:padding="15dp"/>
         <ImageView
             android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_margin="10dp"
             android:src="@drawable/calc3"/>
 
