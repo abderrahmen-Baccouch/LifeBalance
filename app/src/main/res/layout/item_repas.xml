@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="90dp"
+    android:layout_height="100dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="Orientation">
@@ -11,7 +11,7 @@
         android:layout_width="360dp"
         android:layout_height="70dp"
         app:cardCornerRadius="20dp"
-        app:cardElevation="20dp"
+        app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="25dp"
@@ -27,14 +27,15 @@
         <TextView
             android:id="@+id/mTitle"
             android:text="Repas"
-            android:paddingLeft="80sp"
+            android:paddingLeft="5dp"
             android:paddingTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#D81B60"
-            android:textSize="24sp"
-            android:fontFamily="@font/chewyy"
-            android:layout_margin="6dp"/>
+            android:layout_width="230dp"
+            android:layout_height="match_parent"
+            android:textColor="#000000"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="60dp"/>
         <TextView
             android:id="@+id/mSubtitle"
             android:text="Kcal"

@@ -31,12 +31,12 @@
             tools:layout_editor_absoluteY="4dp" />
 
         <TextView
-            android:layout_width="256dp"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="-98dp"
             android:fontFamily="@font/anton"
-            android:text="Breakfast Recipes"
+            android:text="Recettes du Petit Déjeuner"
             android:paddingTop="5dp"
             android:textColor="#000000"
             android:textSize="28dp"
@@ -695,9 +695,9 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteY="4dp" />
     <TextView
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="50dp"
-        android:text="Lunch Recipes"
+        android:text="Recettes du Déjeuner"
         android:textColor="#000000"
         android:textSize="28dp"
         android:layout_marginLeft="70dp"
@@ -1207,7 +1207,7 @@
             android:layout_marginLeft="70dp"
             android:layout_marginTop="-73dp"
             android:fontFamily="@font/anton"
-            android:text="Dinner Recipes"
+            android:text="Recettes du Dîner"
             android:textColor="#000000"
             android:textSize="28dp"
             android:textStyle="bold"

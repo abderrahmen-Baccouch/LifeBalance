@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/galada"
-                android:text="Verified"
+                android:text="Verifié"
                 android:textColor="@color/bleufonce"
                 android:textSize="12dp"
                 android:layout_marginTop="40dp"

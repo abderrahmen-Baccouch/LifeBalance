@@ -9,7 +9,7 @@ import android.widget.TextView
 import pl.droidsonroids.gif.GifImageView
 
 class DietType : AppCompatActivity() {
-    private lateinit var btn : TextView
+
     private lateinit var app1 : TextView
     private lateinit var app2 : TextView
     private lateinit var app3 : TextView
@@ -18,17 +18,13 @@ class DietType : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_diet_type)
-        btn = findViewById(R.id.settings)
         app1 = findViewById(R.id.apply1)
         app2 = findViewById(R.id.apply2)
         app3 = findViewById(R.id.apply3)
         app4 = findViewById(R.id.apply4)
         retour = findViewById(R.id.retour)
 
-        btn.setOnClickListener {
-            val intent = Intent(this,diaryBalanceActivity::class.java)
-            startActivity(intent)
-        }
+
 
         retour.setOnClickListener {
             val intent = Intent(this,FifthActivity::class.java)

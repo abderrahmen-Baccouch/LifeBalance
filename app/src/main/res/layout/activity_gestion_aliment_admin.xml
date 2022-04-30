@@ -21,22 +21,35 @@ tools:context=".GestionAlimentAdmin">
         android:layout_marginTop="30sp" />
 </LinearLayout>
 
-<Button
-    android:id="@+id/ajouter"
-    android:layout_width="150dp"
-    android:layout_height="60dp"
-    android:background="@drawable/button_bg4"
-    android:text="ajouter Aliment"
-    android:textStyle="bold"
-    android:textSize="20dp"
-    android:textColor="@color/white"
-    android:fontFamily="@font/patrick_hand"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.498"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.424" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="25dp"
+        android:layout_marginTop="330dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+        tools:ignore="MissingConstraints">
+
+    <Button
+        android:id="@+id/ajouter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="ajouter Aliment"
+        android:textColor="@color/bleuCiel"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424" />
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

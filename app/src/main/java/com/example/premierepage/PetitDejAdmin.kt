@@ -10,7 +10,7 @@ class PetitDejAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_petit_dej_admin)
-        ajouter= findViewById(R.id.ajouter)
+        ajouter= findViewById(R.id.ajouter_petitDej)
         ajouter.setOnClickListener {
             val i = Intent(this,AjouterRepasAdmin::class.java)
             startActivity(i)
