@@ -6,13 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".personnelSetting">
 
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="Orientation">
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="370dp"
         android:layout_height="270dp"
         app:cardElevation="50dp"
-        android:layout_marginTop="45dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,16 +101,19 @@
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout5"
+        android:layout_width="420dp"
         android:layout_height="50dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="-390dp"
         android:background="@drawable/background_color_3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardView3"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="@+id/cardView3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.449"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal">
 
     </LinearLayout>
 
@@ -113,19 +121,21 @@
         android:id="@+id/cardView4"
         android:layout_width="352dp"
         android:layout_height="105dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
+       android:layout_marginLeft="-392dp"
+        android:layout_marginTop="320dp"
         tools:ignore="MissingConstraints">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="120dp"
+            android:src="@drawable/calque_22"/>
 
         <TextView
             android:layout_width="50dp"
             android:layout_height="30dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:text="IMC"
             android:textAlignment="center"
@@ -136,7 +146,7 @@
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginLeft="260dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/candal"
             android:text="Poids"
             android:textAlignment="center"
@@ -144,23 +154,14 @@
             android:textSize="20dp"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:layout_width="160dp"
-            android:layout_height="43dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/salsa"
-            android:text="Grasse Cororelle"
-            android:textColor="#434141"
-            android:textSize="20dp"
-            tools:ignore="MissingConstraints" />
+
 
         <TextView
             android:id="@+id/imc2"
             android:layout_width="90dp"
             android:layout_height="50dp"
             android:layout_marginLeft="0dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/carter_one"
             android:text="10"
             android:textAlignment="center"
@@ -168,26 +169,14 @@
             android:textSize="24dp"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/img"
-            android:layout_width="90dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="35dp"
-            android:fontFamily="@font/carter_one"
-            android:text="24%"
-            android:inputType="numberDecimal"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24dp"
-            tools:ignore="MissingConstraints" />
+
 
         <TextView
             android:id="@+id/poids2"
             android:layout_width="90dp"
             android:layout_height="70dp"
             android:layout_marginLeft="250dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:fontFamily="@font/chewyy"
             android:text="10"
             android:textAlignment="center"
@@ -197,5 +186,5 @@
 
     </androidx.cardview.widget.CardView>
 
-
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

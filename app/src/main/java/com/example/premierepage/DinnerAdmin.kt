@@ -10,7 +10,7 @@ class DinnerAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dinner_admin)
-        ajouter= findViewById(R.id.ajouter)
+        ajouter= findViewById(R.id.ajouter_diner)
         ajouter.setOnClickListener {
             val i = Intent(this, AjouterRepasAdmin::class.java)
             startActivity(i)

@@ -12,7 +12,7 @@
         android:layout_height="58dp"
         android:background="@drawable/gotohome"
         android:fontFamily="@font/fredoka"
-        android:text="GO TO HOME"
+        android:text="PAGE HOME"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20dp"
@@ -50,20 +50,20 @@
         </com.github.mikephil.charting.charts.PieChart>
 
         <TextView
-        android:layout_width="225dp"
-        android:layout_height="69dp"
-        android:fontFamily="@font/anton"
-        android:layout_marginLeft="85dp"
-        android:text="Daily nutrition goal"
-        android:textAlignment="center"
-        android:textColor="#595353"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.383"
-        tools:ignore="MissingConstraints" />
+            android:layout_width="222dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="85dp"
+            android:fontFamily="@font/anton"
+            android:text="Objectig Nutritionnel Quotidien"
+            android:textAlignment="center"
+            android:textColor="#595353"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.383"
+            tools:ignore="MissingConstraints" />
 
         <TextView
             android:layout_width="100dp"
@@ -88,7 +88,7 @@
             android:layout_marginLeft="250dp"
             android:layout_marginTop="-50dp"
             android:fontFamily="@font/chewyy"
-            android:text="Carb"
+            android:text="Glucide"
             android:textSize="22dp" />
 
         <TextView
@@ -97,7 +97,7 @@
             android:layout_marginLeft="340dp"
             android:layout_marginTop="-50dp"
             android:fontFamily="@font/chewyy"
-            android:text="Fat"
+            android:text="Lipide"
             android:textSize="22dp"
             />
 
@@ -287,11 +287,12 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="199dp"
-        android:layout_height="50dp"
+        android:layout_width="296dp"
+        android:layout_height="49dp"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/coiny"
-        android:text="Your Daily Goal"
+        android:layout_marginLeft="10dp"
+        android:text="Votre Objectif Quotidien"
         android:textColor="@color/white"
         android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
