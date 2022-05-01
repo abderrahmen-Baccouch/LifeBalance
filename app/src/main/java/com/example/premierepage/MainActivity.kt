@@ -87,12 +87,15 @@ class MainActivity : AppCompatActivity() {
                             var editor: SharedPreferences.Editor=myshared!!.edit()
                             editor.putString("token",result!!.getToken())
                             editor.putString("username",result!!.getUsername())
+                            editor.putString("role",result!!.getRole().toString())
                             editor.commit()
-                            if(result!!.getRole()==0) {
+                          /*  if(result!!.getRole()==0) {
                                 startActivity(i)
                             }else if(result!!.getRole()==1){
                                 startActivity(i2)
-                            }
+                            }*/
+                            startActivity(i)
+
                         } else if (response.code() == 400) {
                             Toast.makeText(this@MainActivity, "Wrong Credentials", Toast.LENGTH_LONG).show()
                         //si le compte n'est pas verifié

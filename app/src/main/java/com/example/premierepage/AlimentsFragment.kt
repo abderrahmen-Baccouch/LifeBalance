@@ -37,11 +37,11 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         /**set find Id*/
         addsBtn = view!!.findViewById(R.id.addingBtn)
         recv = view!!.findViewById(R.id.alimentsRecycler)
-
+        /**-------------------------------------retrofit-------------------------------------------------- */
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-        /**bech njibou token mel fichier myshared */
+        /**-------------------------------------myshared-------------------------------------------------- */
         myshared=context?.getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
 

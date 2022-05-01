@@ -2,6 +2,7 @@ package com.example.premierepage
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,10 +16,11 @@ import kotlinx.android.synthetic.main.activity_page_admin.*
 
 class PageAdmin : AppCompatActivity() {
     lateinit var toggle : ActionBarDrawerToggle
+    var myshared: SharedPreferences?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_page_admin)
-
+        myshared=getSharedPreferences("myshared",0)
         G_al.setOnClickListener {
             val intent = Intent(this,GestionAlimentAdmin::class.java)
             startActivity(intent)
@@ -58,8 +60,14 @@ class PageAdmin : AppCompatActivity() {
                     startActivity(intent)
                 }
                     R.id.nav_logout -> {
-                        Toast.makeText(applicationContext, "Clicked LogOut", Toast.LENGTH_SHORT)
-                            .show()
+                        /**---------------Logout----------*/
+                        var editor: SharedPreferences.Editor=myshared!!.edit()
+                        editor.remove("token")
+                        editor.commit()
+                        Toast.makeText(applicationContext,"Clicked LogOut",Toast.LENGTH_SHORT).show()
+                        val i2 = Intent(this,App::class.java)
+                        startActivity(i2)
+                        finish()
                     }
                 R.id.nav_aliments -> {
                     Toast.makeText(applicationContext,"aliments", Toast.LENGTH_SHORT).show()

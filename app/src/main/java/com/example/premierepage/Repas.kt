@@ -29,6 +29,8 @@ class Repas : AppCompatActivity() {
 
         val token =myshared?.getString("token","").toString().trim()
         val idbreakfast=myshared?.getString("idbreakfast","").toString().trim()
+        val iddinner=myshared?.getString("iddinner","").toString().trim()
+        val idlunch=myshared?.getString("idlunch","").toString().trim()
 
         var addBreakFast:Button=findViewById(R.id.addBreakFast)
         var addDejeuner:Button=findViewById(R.id.addDejeuner)
@@ -41,7 +43,24 @@ class Repas : AppCompatActivity() {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     Toast.makeText(this@Repas,response.code().toString(),Toast.LENGTH_LONG).show()
                     if (response.code()==200){
-                        Toast.makeText(this@Repas,"ok",Toast.LENGTH_LONG).show()
+                        finish()
+                    }else if (response.code()==400){
+                        Toast.makeText(this@Repas,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    Toast.makeText(this@Repas, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+
+        addDinner.setOnClickListener {
+            val call = retrofitInterface!!.executeAddDinner(token,iddinner,idRecette)
+            call.enqueue(object : retrofit2.Callback<Void> {
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    Toast.makeText(this@Repas,response.code().toString(),Toast.LENGTH_LONG).show()
+                    if (response.code()==200){
+                        finish()
                     }else if (response.code()==400){
                         Toast.makeText(this@Repas,"400",Toast.LENGTH_LONG).show()
                     }
@@ -53,11 +72,21 @@ class Repas : AppCompatActivity() {
         }
 
         addDejeuner.setOnClickListener {
+            val call = retrofitInterface!!.executeAddLunch(token,idlunch,idRecette)
+            call.enqueue(object : retrofit2.Callback<Void> {
+                override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                    Toast.makeText(this@Repas,response.code().toString(),Toast.LENGTH_LONG).show()
+                    if (response.code()==200){
+                        finish()
 
-        }
-
-        addDinner.setOnClickListener {
-
+                    }else if (response.code()==400){
+                        Toast.makeText(this@Repas,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<Void>, t: Throwable) {
+                    Toast.makeText(this@Repas, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
         }
 
 

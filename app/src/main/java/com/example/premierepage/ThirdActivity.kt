@@ -125,6 +125,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                             Toast.makeText(this@ThirdActivity, " success", Toast.LENGTH_LONG).show()
                             val intent = Intent(this@ThirdActivity,FifthActivity::class.java)
                             startActivity(intent)
+                            finish()
 
                         } else if (response.code() == 400) {
                             Toast.makeText(this@ThirdActivity, "error", Toast.LENGTH_LONG).show()

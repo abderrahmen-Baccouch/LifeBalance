@@ -30,11 +30,11 @@
             android:layout_marginLeft="85dp"
             android:layout_marginTop="30dp">
             <EditText
-                android:id="@+id/exercice"
+                android:id="@+id/nomExercice"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:hint="Nom D'exercice"
+                android:hint="Nom d'exercice"
                 android:textColorHint="#9F9A9A"
                 android:textAlignment="center"
                 android:fontFamily="sans-serif-medium"
@@ -48,11 +48,11 @@
                 android:layout_marginLeft="85dp"
                 android:layout_marginTop="100dp">
             <EditText
-                android:id="@+id/nbrCamerie"
+                android:id="@+id/calories"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:hint="Nombre des Caleries"
+                android:hint="Calories"
                 android:textAlignment="center"
                 android:textColorHint="#9F9A9A"
                 android:fontFamily="sans-serif-medium"

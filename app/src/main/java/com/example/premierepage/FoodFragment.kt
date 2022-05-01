@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.model.Aliments
+import com.example.premierepage.model.BreakfastX
 import com.example.premierepage.model.RecetteX
 import com.example.premierepage.view.NotreRepasAdapter
 import com.example.premierepage.view.RecetteAdapter
@@ -81,6 +82,38 @@ class FoodFragment : Fragment() {
 
         })
     }
+
+   /*fun getBreakfast(t:String){
+        //5edmet l affichage mte3 les aliments
+        val call = retrofitInterface!!.executeAllBreakfast(t)
+        call.enqueue(object : Callback<MutableList<BreakfastX>> {
+            override fun onResponse(call: Call<MutableList<BreakfastX>>, response: Response<MutableList<BreakfastX>>) {
+                var listRepas=response.body()!!
+                if (response.code()==200){
+                    recv.apply {
+                        recv.layoutManager = LinearLayoutManager(activity)
+                        adapter= RecetteAdapter(context,response.body()!!.get(0).recettes,object: RecetteAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                val i = Intent(context,Repas::class.java)
+                                Toast.makeText(context,"aa",Toast.LENGTH_LONG).show()
+                              //  i.putExtra("nomRecette",listRepas.get(position).nomRecette)
+                                i.putExtra("idRecette",listRepas.get(position)._id)
+                                // i.putExtra("calories",listRepas.get(position).calories)
+
+                                startActivity(i)
+                            }
+                        })
+                    }
+                }else if (response.code()==400){
+
+                }
+            }
+            override fun onFailure(call: Call<MutableList<BreakfastX>>, t: Throwable) {
+                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }*/
 
     //wala onRestar w t7ot feha getRecettes
     override fun onResume() {

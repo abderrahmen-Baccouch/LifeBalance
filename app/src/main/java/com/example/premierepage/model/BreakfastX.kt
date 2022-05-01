@@ -4,5 +4,5 @@ data class BreakfastX(
     val __v: Int,
     val _id: String,
     val calories: Int,
-    val recettes: List<Any>
+    val recettes: MutableList<RecetteX>
 )

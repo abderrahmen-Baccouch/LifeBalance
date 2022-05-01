@@ -31,7 +31,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="85dp"
         android:layout_marginTop="30dp">
         <EditText
-            android:id="@+id/exercice"
+            android:id="@+id/nomAliment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -49,11 +49,11 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="85dp"
         android:layout_marginTop="100dp">
         <EditText
-            android:id="@+id/nbrCalerie"
+            android:id="@+id/calories"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:hint="Nombre des Caleries"
+            android:hint="Calories"
             android:textAlignment="center"
             android:textColorHint="#656161"
             android:fontFamily="sans-serif-medium"
@@ -67,7 +67,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="10dp"
         android:layout_marginTop="175dp">
         <EditText
-            android:id="@+id/proteine"
+            android:id="@+id/proteines"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -85,7 +85,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="130dp"
         android:layout_marginTop="175dp">
         <EditText
-            android:id="@+id/lipide"
+            android:id="@+id/lipides"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -103,7 +103,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginLeft="255dp"
         android:layout_marginTop="175dp">
         <EditText
-            android:id="@+id/glucide"
+            android:id="@+id/glucides"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"

@@ -1,6 +1,8 @@
 package com.example.premierepage
 
 import com.example.premierepage.model.*
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 import java.util.HashMap
@@ -28,7 +30,7 @@ interface RetrofitInterface {
 
 
 
-    /**Aliment*/
+    /**--------------------------------------------------Aliment------------------------------------------------------------*/
     @POST("aliment/addAliment")
     fun executeAddAliment(
         @Body map:HashMap<String?,String?>?,
@@ -51,7 +53,7 @@ interface RetrofitInterface {
 
 
 
-    /**notre aliment*/
+    /**-----------------------------------------------notre aliment------------------------------------------------------------*/
     @GET("notrealiment/allAliments")
     fun executeAllNotreAliments():Call<MutableList<Aliments>>
 
@@ -67,7 +69,9 @@ interface RetrofitInterface {
     ):Call<Void?>?
 
     @DELETE("notrealiment/delete/{id}")//---------------Admin
-    fun executeDeleteNotreAliment(@Path("id") id:String?):Call<Void?>?
+    fun executeDeleteNotreAliment(
+        @Path("id") id:String?)
+    :Call<Void?>?
 
 
 
@@ -78,9 +82,12 @@ interface RetrofitInterface {
     fun executeAllExercices():Call<MutableList<Exercices>>
 
     //add
+    //@Multipart
     @POST("exercice/addExercice")
     fun executeAddExercice(
-        @Body map:HashMap<String?,String?>?)
+        @Body map:HashMap<String?,String?>?,
+       /* @Part image: MultipartBody.Part,
+        @Part("myFile") name:RequestBody*/)
     :Call<Void>
 
     //update
@@ -140,12 +147,26 @@ interface RetrofitInterface {
     :Call<Void>
 
 
+    /**--------------------------------------------notre repas -----------------------------------------------------------*/
+
     @GET("notrerepas/allrepas")
     fun executeAllRepas()
     :Call<MutableList<Repa>>
 
 
-    /**Diary*/
+@POST("notrerepas/addRepas")
+fun executeAddRepas(
+    @Body map:HashMap<String?,String?>?)
+:Call<Void>
+
+
+
+
+
+
+
+
+    /**--------------------------------------------------Diary-------------------------------------------------------------*/
 
     @POST("/diary/createBreakfast")
     fun executeCreateBreakfast(
@@ -165,8 +186,54 @@ interface RetrofitInterface {
     @POST("diary/addBreakfast/{idbreakfast}/{idrecette}")
     fun executeAddBreakfast(@Header("authorization") authHeader: String?,
                             @Path("idbreakfast") idbreakfast:String?,
-                            @Path("idrecette") idrecette:String?,)
+                            @Path("idrecette") idrecette:String?,):Call<Void>
+
+    @POST("diary/addDinner/{iddinner}/{idrecette}")
+    fun executeAddDinner(@Header("authorization") authHeader: String?,
+                            @Path("iddinner") iddinner:String?,
+                            @Path("idrecette") idrecette:String?,):Call<Void>
+
+    @POST("diary/addLunch/{idlunch}/{idrecette}")
+    fun executeAddLunch(@Header("authorization") authHeader: String?,
+                         @Path("idlunch") idlunch:String?,
+                         @Path("idrecette") idrecette:String?,):Call<Void>
+
+
+    @GET("diary/allBreakfast")
+    fun executeAllBreakfast(@Header("authorization") authHeader: String?)
+    :Call<MutableList<BreakfastX>>
+
+    @GET("diary/allDinner")
+    fun executeAllBDinner(@Header("authorization") authHeader: String?)
+            :Call<MutableList<BreakfastX>>
+
+    @GET("diary/allLunch")
+    fun executeAllLunch(@Header("authorization") authHeader: String?)
+            :Call<MutableList<BreakfastX>>
+
+
+
+    /**-----------------------------------------------Defit--------------------------------------------------------*/
+
+    @POST("defit/addDefit")
+    fun executeAddDefit(
+        @Body map:HashMap<String?,String?>?)
     :Call<Void>
+
+    @POST("defit/addEtape/{iddefit}")
+    fun executeAddEtape(@Body map:HashMap<String?,String?>?,
+        @Path("iddefit") iddefit:String?,
+    ):Call<Void>
+
+    @GET("defit/allDefit")
+    fun executeAllDefit()
+    :Call<MutableList<Defit>>
+
+    @GET("defit/allEtapes/{iddefit}")
+    fun  executeAllEtapes( @Path("iddefit") iddefit:String?,)
+    :Call<MutableList<String>>
+
+
 
 
 

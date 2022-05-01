@@ -113,9 +113,9 @@ class FifthActivity : AppCompatActivity() {
                 R.id.nav_setting -> Toast.makeText(applicationContext,"Clicked Setting",Toast.LENGTH_SHORT).show()
                 R.id.nav_logout -> {
                     /**---------------Logout----------*/
-                  /*  var editor: SharedPreferences.Editor=myshared!!.edit()
+                    var editor: SharedPreferences.Editor=myshared!!.edit()
                     editor.remove("token")
-                    editor.commit()*/
+                    editor.commit()
                     Toast.makeText(applicationContext,"Clicked LogOut",Toast.LENGTH_SHORT).show()
                     val i2 = Intent(this,App::class.java)
                     startActivity(i2)

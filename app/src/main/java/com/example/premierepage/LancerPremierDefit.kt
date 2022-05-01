@@ -32,6 +32,7 @@ class LancerPremierDefit : AppCompatActivity() {
             R.id.windmill_pose,
             R.id.legup_pose
         )
+
     }
 
 

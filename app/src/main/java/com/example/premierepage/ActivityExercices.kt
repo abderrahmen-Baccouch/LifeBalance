@@ -55,24 +55,16 @@ class ActivityExercices : AppCompatActivity() {
                              i.putExtra("calories",listExercice?.get(position)?.calories)
                                i.putExtra("id",listExercice?.get(position)?._id)
                               startActivity(i)
-
                            }
-
-
                        }/*object:ExerciceAdapter.onItemClickListener{
                            override fun onItemClick(position: Int) {}}*/)
                     }
-
-
-
                 }else if (response.code()==400){
-
                 }
             }
             override fun onFailure(call: Call<MutableList<Exercices>>, t: Throwable) {
                 Toast.makeText(this@ActivityExercices, t.message, Toast.LENGTH_LONG).show()
             }
-
         })
 
 

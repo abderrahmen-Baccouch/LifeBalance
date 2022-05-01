@@ -12,16 +12,19 @@ class App:AppCompatActivity() {
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
         var sexe=myshared?.getString("sexe","")
+        var role=myshared?.getString("role","")
         if (token==""){
-            //lazem thezni lel FifthActivity ama lmochkla ena fil fifth test7a9 des données mel third
             val it=Intent(this@App,MainActivity::class.java)
             startActivity(it)
-        }else if (token!="" && sexe==""){
-
+        }else if (token!="" && role=="null" && sexe==""){
+            Toast.makeText(this,"aaaa",Toast.LENGTH_LONG)
             val it=Intent(this@App,ThirdActivity::class.java)
             startActivity(it)
-        }else if (token!="" && sexe!=""){
+        }else if (token!="" && role=="null" && sexe!=""){
             val it=Intent(this@App,FifthActivity::class.java)
+            startActivity(it)
+        }else if(token!="" && role=="1"){
+            val it=Intent(this@App,PageAdmin::class.java)
             startActivity(it)
         }
     }
