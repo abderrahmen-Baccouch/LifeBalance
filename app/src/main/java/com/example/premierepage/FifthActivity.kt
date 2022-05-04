@@ -1,19 +1,25 @@
 package com.example.premierepage
 
+import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.graphics.Color.*
+import android.icu.util.Calendar
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.DatePicker
 import android.widget.ImageView
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -23,8 +29,13 @@ import com.google.android.material.navigation.NavigationView
 import com.google.api.AnnotationsProto.http
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import kotlinx.android.synthetic.main.activity_fifth.*
+import kotlinx.android.synthetic.main.activity_fifth.buttonDatePicker
+import kotlinx.android.synthetic.main.activity_third.*
 import java.text.DecimalFormat
 class FifthActivity : AppCompatActivity() {
+    private var cYear: Int? = null
+    private var cMonth: Int? = null
+    private var cDay: Int? = null
 
     var myshared: SharedPreferences?=null
     lateinit var toggle : ActionBarDrawerToggle
@@ -36,6 +47,8 @@ class FifthActivity : AppCompatActivity() {
     private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
     private var clicked = false
+     @SuppressLint("NewApi", "SetTextI18n")
+     @RequiresApi(Build.VERSION_CODES.N)
      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
@@ -258,8 +271,35 @@ class FifthActivity : AppCompatActivity() {
              val intent = Intent(this,Tennis::class.java)
              startActivity(intent)
          }
+         //Calendar
+         val c = Calendar.getInstance()
+         var year = c.get(Calendar.YEAR)
+         var month = c.get(Calendar.MONTH)
+         var day = c.get(Calendar.DAY_OF_MONTH)
+
+         //button click to show DatePicker
+         buttonDatePicker.setOnClickListener{
+             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener
+             { view, mYear, mMonth, mDay ->
+                 day = mDay
+                 month = mMonth
+                 year = mYear
+                 //set to textView
+                 cYear=year
+                 cMonth=month
+                 cDay=day
+                 calendar.text ="${cDay.toString()}/${cMonth.toString()}/${cYear.toString()}"
+
+                // age.text= "${cAge.toString()}"
+
+             },year,month,day)
+
+             //Show dialog
+             dpd.show()
+         }
 
     }
+
 
     private fun onAddButtonClicked() {
         setVisibility(clicked)
@@ -310,5 +350,6 @@ class FifthActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+
     }
 }

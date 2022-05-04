@@ -1098,6 +1098,28 @@
                 tools:ignore="MissingConstraints" />
 
 
+                <ImageView
+                    android:id="@+id/buttonDatePicker"
+                    android:layout_width="40dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="345dp"
+                    android:layout_marginTop="-38dp"
+                    android:src="@drawable/ic_calendar"
+                    tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/calendar"
+                android:layout_width="95dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="-35dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:fontFamily="@font/courgette"
+                android:layout_marginLeft="260dp"/>
+
+
         </LinearLayout>
     </ScrollView>
 
