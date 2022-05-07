@@ -66,13 +66,22 @@
         </androidx.cardview.widget.CardView>
 
 
-        <ImageView
-            android:id="@+id/camera"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="155dp"
-            android:layout_marginTop="175dp"
-            android:src="@drawable/calque_6_cam" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:cardElevation="15dp"
+            app:cardCornerRadius="30dp"
+            app:cardBackgroundColor="#08FF00"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="170dp">
+            <Button
+                android:id="@+id/camera"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/ic_baseline_photo_camera_24"
+                android:src="@drawable/calque_6_cam"/>
+        </androidx.cardview.widget.CardView>
 
     </androidx.cardview.widget.CardView>
 
@@ -81,7 +90,7 @@
         android:id="@+id/bouton"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:background="@drawable/bouton_bg"
+        android:background="@drawable/bouton_bg5"
         android:fontFamily="@font/salsa"
         android:text="Remplir Formulaire"
         android:textColor="@color/white"
@@ -92,7 +101,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="207dp"
@@ -104,30 +113,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.03"
         app:civ_border_width="3dp"
-        app:civ_border_color="#B2BCBC"/>
+        app:civ_border_color="#00FF00"/>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="10dp"
-        android:layout_marginTop="400dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#B1B8B8"
-            android:fontFamily="@font/patrick_hand"
-            android:text="Upload"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold" />
-
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
