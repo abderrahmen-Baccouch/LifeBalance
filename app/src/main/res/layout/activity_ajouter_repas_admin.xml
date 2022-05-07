@@ -76,21 +76,58 @@
 
     </androidx.cardview.widget.CardView>
 
+
     <Button
         android:id="@+id/bouton"
-        android:layout_width="120dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:background="@drawable/bouton_bg"
+        android:fontFamily="@font/salsa"
         android:text="Remplir Formulaire"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="normal"
-        android:fontFamily="@font/chewyy"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.868"/>
+        app:layout_constraintVertical_bias="0.94" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="207dp"
+        android:layout_height="142dp"
+        android:src="@drawable/placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        app:civ_border_width="3dp"
+        app:civ_border_color="#B2BCBC"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B1B8B8"
+            android:fontFamily="@font/patrick_hand"
+            android:text="Upload"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

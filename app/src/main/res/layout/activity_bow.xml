@@ -20,11 +20,9 @@
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="fill_parent"
                 android:layout_height="130dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/exersice_1" />
-
-
 
 
             <TextView
@@ -32,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="95dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/button_bg_round"
                 android:fontFamily="@font/chewyy"
                 android:paddingTop="70dp"
@@ -78,7 +76,7 @@
                 android:layout_width="50dp"
                 android:layout_height="0dp"
                 android:layout_marginLeft="45dp"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="225dp"
                 android:layout_marginRight="20dp"
                 android:fontFamily="@font/chewyy"
                 android:gravity="center"
@@ -91,7 +89,7 @@
                 app:sub_btn_line_color="@color/bleufonce"
                 app:sub_btn_ripple_color="@color/bleufonce"
                 app:sub_btn_tick_color="@color/white"
-                tools:ignore="MissingClass"/>
+                tools:ignore="MissingClass" />
 
             <!--  <com.varunest.sparkbutton.SparkButton
                   android:layout_width="159dp"
@@ -117,51 +115,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp">
+
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:fontFamily="@font/chewyy"
                     android:text="Step 1"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/chewyy"
                     android:textColor="@color/bl"
-                    android:textStyle="bold"/>
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="Step 2"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/chewyy"
                     android:layout_marginLeft="-50dp"
                     android:layout_marginTop="93dp"
+                    android:fontFamily="@font/chewyy"
+                    android:text="Step 2"
                     android:textColor="@color/bl"
-                    android:textStyle="bold"/>
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
+                    android:layout_marginLeft="-50dp"
+                    android:layout_marginTop="160dp"
                     android:fontFamily="@font/chewyy"
                     android:text="Step 3"
-                    android:layout_marginTop="160dp"
-                    android:layout_marginLeft="-50dp"
-                    android:textSize="16dp"
                     android:textColor="@color/bl"
-                    android:textStyle="bold"/>
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:text="Step 4"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/chewyy"
-                    android:layout_marginTop="272dp"
                     android:layout_marginLeft="-50dp"
+                    android:layout_marginTop="272dp"
+                    android:fontFamily="@font/chewyy"
+                    android:text="Step 4"
                     android:textColor="@color/bl"
-                    android:textStyle="bold"/>
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginBottom="-40dp"
-                    android:paddingBottom="40dp"
                     android:fontFamily="@font/salsa"
+                    android:paddingBottom="40dp"
                     android:text="@string/pose1"
                     android:textColor="@color/black"
                     android:textSize="18sp"

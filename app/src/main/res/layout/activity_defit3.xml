@@ -127,7 +127,7 @@
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:text="Muscle up"
+                android:text="Faire Monter"
                 android:textSize="24dp"
                 android:textColor="@color/black"
                 android:layout_marginLeft="160dp"
@@ -405,7 +405,7 @@
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:text="Muscle up"
+                android:text="Faire Monter"
                 android:textSize="24dp"
                 android:textColor="@color/black"
                 android:layout_marginLeft="170dp"

@@ -156,7 +156,8 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_breakfast9.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_bridge.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_burpees.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_chair.xml" value="0.1" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_calcule_premier_defit.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_chair.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_child.xml" value="0.2" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_cobbler.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_cow.xml" value="0.12335359675785208" />
@@ -188,12 +189,13 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dinner_admin.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dips.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_dips_pro.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_exercices.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_fifth.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_food.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_formulaire_repas_admin.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_fourth.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gainage.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_aliment_admin.xml" value="0.16" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_aliment_admin.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_exercice_admin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_gestion_repas_admin.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_handstand.xml" value="0.25416666666666665" />
@@ -201,8 +203,8 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_hight_protein_diet.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_keto_easy.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_keto_medium.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_deuxieme_defit.xml" value="0.2" />
-        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_premier_defit.xml" value="0.16576086956521738" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_deuxieme_defit.xml" value="0.264" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lancer_premier_defit.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_leg_raise.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch1.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_lunch10.xml" value="0.21081081081081082" />
