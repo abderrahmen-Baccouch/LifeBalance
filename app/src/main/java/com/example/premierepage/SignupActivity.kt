@@ -10,6 +10,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.varunest.sparkbutton.SparkButton
 import kotlinx.android.synthetic.main.activity_second_design.*
 import retrofit2.Call
@@ -35,6 +37,8 @@ class SignupActivity : AppCompatActivity() {
                 "$"
     )
 
+    private lateinit var text1:TextView
+    private lateinit var text2:TextView
     private lateinit var etUsername : EditText
     private lateinit var etEmail : EditText
     private lateinit var etPassword : EditText
@@ -45,6 +49,14 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second_design)
+
+
+        text1=findViewById(R.id.text1)
+        text2=findViewById(R.id.text2)
+        YoYo.with(
+            Techniques.RubberBand).duration(1000).repeat(1).playOn(text1)
+        YoYo.with(
+            Techniques.RubberBand).duration(1000).repeat(1).playOn(text2)
 
 
         val retrofit = RetrofitClient.getInstance()

@@ -172,6 +172,7 @@
 
     <TextView
 
+        android:id="@+id/text1"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:fontFamily="@font/courgette"
@@ -188,7 +189,7 @@
         app:layout_constraintVertical_bias="0.116" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/text2"
         android:layout_width="201dp"
         android:layout_height="66dp"
         android:fontFamily="@font/courgette"

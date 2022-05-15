@@ -9,7 +9,7 @@
 
 
     <TextView
-
+        android:id="@+id/text1"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
@@ -21,7 +21,7 @@
         android:fontFamily="@font/courgette"
         android:text="Sign Up"
         android:textAlignment="center"
-        android:textColor="#A5A3A3"
+        android:textColor="#C1BFBF"
         android:textSize="35dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.116" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/text2"
         android:layout_width="201dp"
         android:layout_height="66dp"
         android:layout_alignParentStart="true"

@@ -8,8 +8,11 @@ import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,6 +21,7 @@ import java.util.regex.Pattern
 
 
 class MainActivity : AppCompatActivity() {
+
     private var retrofitInterface: RetrofitInterface? = null
     var myshared:SharedPreferences?=null
 private var ShowPass = false
@@ -33,7 +37,8 @@ private var ShowPass = false
                 "$"
     )
 
-
+    private lateinit var text1:TextView
+    lateinit var text2:TextView
     private lateinit var etEmail : EditText
     private lateinit var etPassword : EditText
     private lateinit var btnValidate : Button
@@ -41,6 +46,13 @@ private var ShowPass = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        text1=findViewById(R.id.text1)
+        text2=findViewById(R.id.text2)
+        YoYo.with(
+            Techniques.RubberBand).duration(1000).repeat(1).playOn(text1)
+        YoYo.with(
+            Techniques.RubberBand).duration(1000).repeat(1).playOn(text2)
 
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
