@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    tools:ignore="MissingConstraints">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:padding="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/avocado_on_toast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        />
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/knewavee"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:text="3ejja bel 3adhma"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="5130 kcal"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#535151"
+        android:paddingTop="5dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/lobsterr"
+        />
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="-320dp"
+        android:text="proteine"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="@font/chewyy"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:text="glucide"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="@font/chewyy"/>
+
+    <TextView
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:text="lipide"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:fontFamily="@font/chewyy"/>
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/bleu2"
+        android:layout_marginLeft="-230dp"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="5dp"
+        android:text="100g"
+        android:textSize="15dp"
+        android:textColor="#5C5A5A"
+        android:fontFamily="@font/chewyy"/>
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/vert2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        />
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="5dp"
+        android:text="100g"
+        android:textSize="15dp"
+        android:textColor="#5C5A5A"
+        android:fontFamily="@font/chewyy"/>
+
+    <ImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:src="@drawable/rose2"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="5dp"
+        android:text="100g"
+        android:textSize="15dp"
+        android:textColor="#5C5A5A"
+        android:fontFamily="@font/chewyy"/>
+    <LinearLayout
+        android:layout_width="420dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="145dp"
+        android:layout_marginLeft="-310dp"
+        android:background="#9F9C9C"/>
+
+
+
+
+
+
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
