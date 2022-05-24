@@ -26,10 +26,10 @@
         android:layout_width="250dp"
         android:layout_height="75dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/knewavee"
+        android:fontFamily="@font/montserrat_alternates_medium"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:text="3ejja bel 3adhma"
+        android:text="3ejja bel 3adhma!"
         android:textColor="#000000"
         android:textSize="20dp" />
     <TextView
@@ -41,7 +41,7 @@
         android:textColor="#535151"
         android:paddingTop="5dp"
         android:layout_marginTop="5dp"
-        android:fontFamily="@font/lobsterr"
+        android:fontFamily="sans-serif-medium"
         />
     <TextView
         android:layout_width="70dp"

@@ -35,10 +35,10 @@ tools:context=".AjouterRepasAdmin">
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-            android:hint="Nom D'aliment"
+            android:hint="nom d'aliment"
             android:textColorHint="#656161"
             android:textAlignment="center"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:textSize="20sp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -54,11 +54,11 @@ tools:context=".AjouterRepasAdmin">
             android:layout_height="match_parent"
             android:background="@null"
             android:inputType="numberDecimal"
-            android:hint="Nombre des Caleries"
+            android:hint="nombre des caleries"
             android:textAlignment="center"
             android:textColorHint="#656161"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="20sp"/>
+            android:fontFamily="@font/montserrat_alternates_medium"
+            android:textSize="18sp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:layout_width="100dp"
@@ -76,7 +76,7 @@ tools:context=".AjouterRepasAdmin">
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColorHint="#656161"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:textSize="20sp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -95,7 +95,7 @@ tools:context=".AjouterRepasAdmin">
             android:inputType="numberDecimal"
             android:textAlignment="center"
             android:textColorHint="#656161"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:textSize="20sp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
@@ -114,7 +114,7 @@ tools:context=".AjouterRepasAdmin">
             android:textAlignment="center"
             android:inputType="numberDecimal"
             android:textColorHint="#656161"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:textSize="20sp"/>
     </androidx.cardview.widget.CardView>
 
@@ -163,7 +163,7 @@ tools:context=".AjouterRepasAdmin">
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#FF005D"
-                android:fontFamily="@font/patrick_hand"
+                android:fontFamily="sans-serif-medium"
                 android:text="ENREGISTRER"
                 android:textColor="@color/white"
                 android:textSize="22sp"

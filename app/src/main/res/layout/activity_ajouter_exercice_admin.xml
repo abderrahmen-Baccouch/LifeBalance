@@ -34,10 +34,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:hint="Nom D'exercice"
+                android:hint="nom d'exercice"
                 android:textColorHint="#9F9A9A"
                 android:textAlignment="center"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:textSize="20sp"/>
         </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
@@ -53,10 +53,10 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:inputType="numberDecimal"
-                android:hint="Nombre des Caleries"
+                android:hint="nombre des caleries"
                 android:textAlignment="center"
                 android:textColorHint="#9F9A9A"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:textSize="20sp"/>
             </androidx.cardview.widget.CardView>
 
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00E3FF"
-                android:fontFamily="@font/patrick_hand"
+                android:fontFamily="sans-serif-medium"
                 android:text="ENREGISTRER"
                 android:textColor="@color/white"
                 android:textSize="22sp"
