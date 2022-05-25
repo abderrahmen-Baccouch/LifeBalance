@@ -9,14 +9,14 @@
 
     <TextView
         android:id="@+id/text1"
-        android:layout_width="248dp"
-        android:layout_height="53dp"
+        android:layout_width="267dp"
+        android:layout_height="59dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="81dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginBottom="533dp"
+        android:layout_marginEnd="63dp"
+        android:layout_marginBottom="527dp"
         android:fontFamily="@font/montserrat_alternates_medium"
         android:text="Se connecter"
         android:textAlignment="center"

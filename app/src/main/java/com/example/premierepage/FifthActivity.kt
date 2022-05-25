@@ -153,7 +153,7 @@ class FifthActivity : AppCompatActivity() {
              when(it.itemId){
                  R.id.rappel -> {
                      Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
-                     val intent = Intent(this,PageAdmin::class.java)
+                     val intent = Intent(this,reminder::class.java) //pageadmin
                      startActivity(intent)
                  }
                  R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()

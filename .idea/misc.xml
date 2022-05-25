@@ -235,6 +235,8 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_plank.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_pompe_pro.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_quantite_aliment.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_register_reminder.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_reminder.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_repas.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_rotation.xml" value="0.1" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/activity_second_design.xml" value="0.264" />
@@ -260,6 +262,7 @@
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_exercice.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_exercices_admin.xml" value="0.264" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_recette.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_reminder.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_repas.xml" value="0.37158469945355194" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/item_repas2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Abdou/Desktop/first-commit/app/src/main/res/layout/list_item.xml" value="0.37755102040816324" />

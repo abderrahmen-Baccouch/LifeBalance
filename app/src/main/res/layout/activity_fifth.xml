@@ -26,7 +26,7 @@
         android:src="@drawable/ic_add"
         android:focusable="true"
         android:tint="@color/white"
-        android:layout_marginTop="-450dp"
+        android:layout_marginTop="-800dp"
         android:backgroundTint="@color/bleuCiel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,21 +88,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fitness"
         tools:ignore="MissingConstraints" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavMenu"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:background="@drawable/bottomnav_bg"
         android:elevation="2dp"
-        app:itemIconTint="#00ACC1"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="620dp"
         app:itemIconSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:itemIconTint="#00ACC1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973"
-        app:menu="@menu/bottom_menu" >
+        app:menu="@menu/bottom_menu"
+        tools:ignore="MissingConstraints">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
