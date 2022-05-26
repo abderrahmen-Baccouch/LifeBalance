@@ -27,7 +27,7 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
     private var retrofitInterface: RetrofitInterface? = null
     var myshared: SharedPreferences?=null
 
-    private lateinit var addsBtn: FloatingActionButton
+    private lateinit var addingBtn: FloatingActionButton
     private lateinit var recv: RecyclerView
 
     @SuppressLint("UseRequireInsteadOfGet", "NotifyDataSetChanged")
@@ -35,7 +35,7 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         super.onActivityCreated(savedInstanceState)
 
         /**set find Id*/
-        addsBtn = view!!.findViewById(R.id.addingBtn)
+        addingBtn = view!!.findViewById(R.id.addingBtn)
         recv = view!!.findViewById(R.id.alimentsRecycler)
         /**-------------------------------------retrofit-------------------------------------------------- */
         val retrofit = RetrofitClient.getInstance()
@@ -45,13 +45,15 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         myshared=context?.getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
 
-
+        val intent = Intent(context,AjouterAlimentAdmin::class.java)
 
 
         getAliments(token!!)
 
-        addsBtn.setOnClickListener {
-            val inflter = LayoutInflater.from(this.context)
+        addingBtn.setOnClickListener {
+
+            startActivity(intent)
+           /* val inflter = LayoutInflater.from(this.context)
             val v = inflter.inflate(R.layout.add_item,null)
 
             /** v hya add_item */
@@ -109,9 +111,16 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
                     dialog.dismiss()
             }
             addDialog.create()
-            addDialog.show()
+            addDialog.show()*/
         }
 
+    }
+
+    override fun onResume() {
+        //momkon tjib   myshared=context?.getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
+        super.onResume()
+        getAliments(token!!)
     }
 
     fun getAliments(t:String){

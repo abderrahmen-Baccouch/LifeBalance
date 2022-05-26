@@ -22,8 +22,10 @@ class Yoga : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yoga)
+
         val nomExerciceTV=findViewById<TextView>(R.id.nomExercice)
         val nomExercice = intent.getStringExtra("nomExercice")
+        val imageURL = intent.getStringExtra("imageURL")
         val calories = intent.getStringExtra("calories")?.toDouble()
         val id = intent.getStringExtra("id")
 
@@ -49,12 +51,11 @@ class Yoga : AppCompatActivity() {
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
         saveYoga.setOnClickListener {
-
-
             val map = HashMap<String?, String?>()
-            map["exerciceID"] = id
+            map["nomExercice"] = nomExercice
+            map["imageURL"] = imageURL
             map["duration"]=duration.text.toString()
-            map["caloriesConsome"]=nbrKcal.text.toString()
+            map["calories"]=nbrKcal.text.toString()
 
             val call = retrofitInterface!!.executeAddExerciceTermine(token,map)
             call?.enqueue(object :retrofit2.Callback<Void?>{

@@ -5,7 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AjouterExerciceAdmin">
-
+   <!-- <ImageView
+        android:id="@+id/imageViewGX"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        tools:ignore="MissingConstraints" />-->
     <androidx.cardview.widget.CardView
         android:layout_width="370dp"
         android:layout_height="300dp"
@@ -18,6 +25,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/imgaddexercice"
             android:layout_width="1010dp"
             android:layout_height="510dp"
             android:layout_marginLeft="-320dp"
@@ -47,16 +55,18 @@
                 app:cardCornerRadius="20dp"
                 android:layout_marginLeft="85dp"
                 android:layout_marginTop="100dp">
-            <EditText
-                android:id="@+id/calories"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@null"
-                android:hint="Calories"
-                android:textAlignment="center"
-                android:textColorHint="#9F9A9A"
-                android:fontFamily="sans-serif-medium"
-                android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/calories"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:fontFamily="sans-serif-medium"
+                    android:hint="Calories"
+                    android:textAlignment="center"
+                    android:textColorHint="#9F9A9A"
+                    android:textSize="20sp" />
             </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -68,7 +78,7 @@
             android:layout_marginLeft="150dp"
             android:layout_marginTop="170dp">
         <Button
-            android:id="@+id/camera"
+            android:id="@+id/addImage"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
@@ -87,7 +97,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.922"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:orientation="horizontal">
+
+     <!--   <Button
+            android:id="@+id/addImagek"
+            android:text="camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+             />
+             -->
+
+
+       <!-- <Button
+            android:id="@+id/uploadImageX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="16dp"
+            android:text="upload"
+           />-->
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
@@ -98,7 +129,7 @@
             app:cardElevation="10dp">
 
             <Button
-                android:id="@+id/save_exercice"
+                android:id="@+id/uploadImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#00E3FF"
@@ -112,6 +143,7 @@
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewG"
         android:layout_width="207dp"
         android:layout_height="142dp"
         android:src="@drawable/placeholder"

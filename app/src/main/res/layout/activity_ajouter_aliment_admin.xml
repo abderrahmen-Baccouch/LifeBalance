@@ -42,11 +42,11 @@ tools:context=".AjouterRepasAdmin">
             android:textSize="20sp"/>
     </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp"
-        android:layout_marginLeft="85dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginTop="100dp">
         <EditText
             android:id="@+id/calories"
@@ -54,6 +54,26 @@ tools:context=".AjouterRepasAdmin">
             android:layout_height="match_parent"
             android:background="@null"
             android:hint="Calories"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColorHint="#656161"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="20sp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:cardElevation="25dp"
+        app:cardCornerRadius="20dp"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="100dp">
+        <EditText
+            android:id="@+id/quantite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="Quntite"
+            android:inputType="number"
             android:textAlignment="center"
             android:textColorHint="#656161"
             android:fontFamily="sans-serif-medium"
@@ -68,6 +88,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginTop="175dp">
         <EditText
             android:id="@+id/proteines"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -86,6 +107,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginTop="175dp">
         <EditText
             android:id="@+id/lipides"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -104,6 +126,7 @@ tools:context=".AjouterRepasAdmin">
         android:layout_marginTop="175dp">
         <EditText
             android:id="@+id/glucides"
+            android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -170,6 +193,7 @@ tools:context=".AjouterRepasAdmin">
     </LinearLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewG"
         android:layout_width="207dp"
         android:layout_height="142dp"
         android:src="@drawable/placeholder"

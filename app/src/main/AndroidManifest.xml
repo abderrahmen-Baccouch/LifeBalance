@@ -2,11 +2,31 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.premierepage">
 
+
+    <uses-feature android:name="android.hardware.camera"
+        android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"
+        android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash"
+        android:required="false"/>
+
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+       <queries>
+            <intent>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+            </intent>
+           <intent>
+               <action android:name="android.intent.action.GET_CONTENT" />
+               <data android:mimeType="image/*" />
+           </intent>
+        </queries>
+
+
 
     <application
         android:allowBackup="true"
@@ -16,6 +36,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PremierePage"
         android:usesCleartextTraffic="true">
+        <provider
+            android:authorities="${applicationId}.provider"
+            android:name="androidx.core.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+
+
+        </provider>
+        <activity
+            android:name=".bow"
+            android:exported="false" />
+        <activity
+            android:name=".ListeDefit"
+            android:exported="false" />
         <activity
             android:name=".ListeAliments"
             android:exported="false" />
@@ -52,32 +90,22 @@
         <activity
             android:name=".personnelSetting"
             android:exported="false" />
-
-
         <activity
             android:name=".Breakfast1"
             android:exported="false" />
         <activity
+            android:name=".DinnerAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".DejeunerAdmin"
+            android:exported="false" />
+        <activity
+            android:name=".PetitDejAdmin"
+            android:exported="false" />
+        <activity
             android:name=".dietPlans"
             android:exported="false" />
-        <activity
-            android:name=".warming_up11"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up10"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up9"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up8"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up7"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up6"
-            android:exported="false" />
+
         <activity
             android:name=".handstand_pro"
             android:exported="false" />
@@ -99,18 +127,7 @@
         <activity
             android:name=".create_repas"
             android:exported="false" />
-        <activity
-            android:name=".warming_up5"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up4"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up3"
-            android:exported="false" />
-        <activity
-            android:name=".warming_up2"
-            android:exported="false" />
+
         <activity
             android:name=".dips"
             android:exported="false" />
@@ -180,11 +197,9 @@
         <activity
             android:name=".customActivity"
             android:exported="false" />
-
         <activity
             android:name=".Yoga"
             android:exported="false" />
-
         <activity
             android:name=".calculeKcalActivity"
             android:exported="false" />

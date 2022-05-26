@@ -44,20 +44,9 @@ class calculePremierDefit : AppCompatActivity() {
 
         when (intvalue) {
             1  ->  setContentView(R.layout.activity_bow)
-            2  ->  setContentView(R.layout.activity_bridge)
-            3  ->  setContentView(R.layout.activity_chair)
-            4  ->  setContentView(R.layout.activity_child)
-            5  ->  setContentView(R.layout.activity_cobbler)
-            6  ->  setContentView(R.layout.activity_cow)
-            7  ->  setContentView(R.layout.activity_play_ji)
-            8  ->  setContentView(R.layout.activity_pauseji)
-            9  ->  setContentView(R.layout.activity_plank)
-            10  ->  setContentView(R.layout.activity_crunches)
-            11  ->  setContentView(R.layout.activity_situp)
-            12  ->  setContentView(R.layout.activity_rotation)
+
             13  ->  setContentView(R.layout.activity_twist)
-            14  ->  setContentView(R.layout.activity_windmill)
-            15  ->  setContentView(R.layout.activity_logup)
+
 
         }
 

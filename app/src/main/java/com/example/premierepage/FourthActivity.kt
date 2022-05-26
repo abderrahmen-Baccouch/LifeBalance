@@ -29,7 +29,7 @@ class FourthActivity : AppCompatActivity() {
         learning = findViewById(R.id.textView2)
         handler = Handler()
         handler.postDelayed({
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this,App::class.java)
             startActivity(intent)
             finish()
         },5000)

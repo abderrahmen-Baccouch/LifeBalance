@@ -33,7 +33,7 @@
             app:cardElevation="20dp">
 
             <EditText
-                android:id="@+id/repas"
+                android:id="@+id/nomRepas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -53,12 +53,12 @@
             app:cardElevation="20dp">
 
             <EditText
-                android:id="@+id/nbrCamerie"
+                android:id="@+id/tempsPreparation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:fontFamily="sans-serif-medium"
-                android:hint="Nombre des Caleries"
+                android:hint="Temps de préparation"
                 android:inputType="numberDecimal"
                 android:textAlignment="center"
                 android:textColorHint="#656161"
@@ -87,12 +87,12 @@
 
 
     <Button
-        android:id="@+id/bouton"
+        android:id="@+id/addIngredient"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/bouton_bg5"
         android:fontFamily="@font/salsa"
-        android:text="Remplir Formulaire"
+        android:text="Ajouter un ingredient"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="normal"
@@ -103,17 +103,41 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.871" />
 
+    <Button
+        android:id="@+id/saveRecette"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bouton_bg5"
+        android:fontFamily="@font/salsa"
+        android:text="save"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/cancelRecette"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bouton_bg5"
+        android:fontFamily="@font/salsa"
+        android:text="cancel"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="normal"
+   />
+
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circleImageView"
         android:layout_width="207dp"
         android:layout_height="142dp"
         android:src="@drawable/placeholder"
+        app:civ_border_color="#00FF00"
+        app:civ_border_width="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03"
-        app:civ_border_width="3dp"
-        app:civ_border_color="#00FF00"/>
+        app:layout_constraintVertical_bias="0.03" />
 
 
 

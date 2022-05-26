@@ -238,7 +238,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="-150dp"
                 android:fontFamily="@font/galada"
-                android:text="566"
+                android:text="0"
                 android:textColor="@color/black"
                 android:textSize="35dp"
                 android:textStyle="bold"
@@ -1043,23 +1043,25 @@
                 android:fontFamily="sans-serif-condensed-medium"/>
 
             <TextView
+                android:id="@+id/caloriesConsome"
                 android:layout_width="86dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="290dp"
                 android:layout_marginTop="-145dp"
                 android:fontFamily="@font/anton"
-                android:text="341"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="#FF003B"
                 android:textSize="28dp"
                 android:textStyle="bold" />
             <TextView
+                android:id="@+id/caloriesBrulee"
                 android:layout_width="86dp"
                 android:layout_height="70dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="-75dp"
                 android:fontFamily="@font/anton"
-                android:text="607"
+                android:text="0"
                 android:textAlignment="center"
                 android:textColor="#EF053C"
                 android:textSize="28dp"

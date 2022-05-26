@@ -36,7 +36,7 @@
             android:layout_marginLeft="58dp"
             android:fontFamily="@font/patrick_hand"
             android:hint="Quantité d'aliment"
-            android:inputType="text"
+            android:inputType="number"
             android:paddingStart="12dp"
             android:paddingEnd="15dp"
             tools:ignore="MissingConstraints" />

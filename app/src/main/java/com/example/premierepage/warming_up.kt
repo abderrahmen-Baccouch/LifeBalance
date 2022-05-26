@@ -12,8 +12,7 @@ class warming_up : AppCompatActivity() {
         setContentView(R.layout.activity_warming_up)
         btn = findViewById(R.id.button)
         btn.setOnClickListener {
-            val intent = Intent(this,muscleUp::class.java)
-            startActivity(intent)
+
         }
     }
 }

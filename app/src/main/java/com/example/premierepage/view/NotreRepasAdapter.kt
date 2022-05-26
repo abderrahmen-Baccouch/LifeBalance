@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.R
+import com.example.premierepage.model.RecetteX
 import com.example.premierepage.model.Repa
 import com.example.premierepage.model.Repas
 
-class NotreRepasAdapter(val c: Context, val repasList: MutableList<Repa>,val mListener: onItemClickListener): RecyclerView.Adapter<NotreRepasAdapter.UserViewHolder> (){
+class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val mListener: onItemClickListener): RecyclerView.Adapter<NotreRepasAdapter.UserViewHolder> (){
 
     interface onItemClickListener{
         fun onItemClick(position: Int)
@@ -36,8 +37,8 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<Repa>,val mLi
     }
     override fun onBindViewHolder(holder: NotreRepasAdapter.UserViewHolder, position: Int) {
         val newList = repasList[position]
-        holder.nomRecetteTV.text = newList.nomRepas
-        holder.caloriesTV.text = newList.calories.toString()
+        holder.nomRecetteTV.text = newList.nomRecette
+        holder.caloriesTV.text = newList.calories.toString()+"cal"
         /* holder.proteinesTV.text = newList.proteines
          holder.glucidesTV.text = newList.glucides
          holder.lipidesTV.text = newList.lipides*/

@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.premierepage.R
 import com.example.premierepage.RetrofitClient
 import com.example.premierepage.RetrofitInterface
@@ -30,12 +31,14 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
         var proteinesTV : TextView
         var glucidesTV : TextView
         var lipidesTV : TextView
+        var imageIV:ImageView
         var mMenus : ImageView
         init {
             nomAlimentTV = v.findViewById<TextView>(R.id.nomAliment)
             caloriesTV = v.findViewById<TextView>(R.id.calories)
             proteinesTV = v.findViewById<TextView>(R.id.proteines)
             glucidesTV = v.findViewById<TextView>(R.id.glucides)
+            imageIV=v.findViewById<ImageView>(R.id.imageAliment)
             lipidesTV = v.findViewById<TextView>(R.id.lipides)
             mMenus = v.findViewById(R.id.mMenus)
             mMenus.setOnClickListener { popupMenus(it) }
@@ -179,6 +182,7 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
         holder.proteinesTV.text = newList.proteines+" g"
         holder.glucidesTV.text = newList.glucides+" g"
         holder.lipidesTV.text = newList.lipides+" g"
+        Glide.with(c).load(newList.imageURL).into(holder.imageIV)
 
     }
     override fun getItemCount(): Int {

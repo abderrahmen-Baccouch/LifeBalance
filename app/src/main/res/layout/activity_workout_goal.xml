@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".workoutGoal">
 
+
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
@@ -17,6 +18,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ellipse_1__3_"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/buttonDatePicker"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="345dp"
+        android:layout_marginTop="-38dp"
+        android:src="@drawable/ic_calendar"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/calendar"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+
+        android:textColor="@color/white"
+
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:fontFamily="@font/courgette"
+        android:layout_marginLeft="0dp"/>
 
     <com.mikhaellopez.circularprogressbar.CircularProgressBar
         android:id="@+id/progress_circular_workout"
@@ -56,27 +78,27 @@
         app:layout_constraintVertical_bias="0.23"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/KcalConsumed"
-        android:layout_width="118dp"
-        android:layout_height="71dp"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/chew"
-        android:text="Kcal Consumed"
-        android:textAlignment="center"
-        android:textColor="#8A7D04"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.053"
-        tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/KcalConsumed"
+            android:layout_width="118dp"
+            android:layout_height="71dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/chew"
+            android:text="Kcal Consumed"
+            android:textAlignment="center"
+            android:textColor="#8A7D04"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.054"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.053"
+            tools:ignore="MissingConstraints" />
 
-    <TextView
+        <TextView
         android:id="@+id/KcalNbr"
         android:layout_width="118dp"
         android:layout_height="71dp"
@@ -95,6 +117,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.041"
         tools:ignore="MissingConstraints" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/exercicesRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="350dp"/>
+    </LinearLayout>
 
 
 

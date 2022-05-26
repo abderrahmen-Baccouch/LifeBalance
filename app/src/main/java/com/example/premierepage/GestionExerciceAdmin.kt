@@ -19,20 +19,20 @@ class GestionExerciceAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_exercice_admin)
+
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        recv = findViewById(R.id.exercicesRecycler)
+        getExercices()
+
         ajouter = findViewById(R.id.ajouter)
         ajouter.setOnClickListener {
             val i = Intent(this,AjouterExerciceAdmin::class.java)
             startActivity(i)
         }
+    }/**fin OnCreate()*/
 
-        val retrofit = RetrofitClient.getInstance()
-        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-        recv = findViewById(R.id.exercicesRecycler)
-
-        getExercices()
-
-    }
     fun getExercices(){
         val call = retrofitInterface!!.executeAllExercices()
         call.enqueue(object : retrofit2.Callback<MutableList<Exercices>> {
@@ -45,13 +45,7 @@ class GestionExerciceAdmin : AppCompatActivity() {
                         adapter= ExerciceAdapter(this@GestionExerciceAdmin,response.body()!!,object:
                             ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
-                                val i =Intent(this@GestionExerciceAdmin,Yoga::class.java)
-                                Toast.makeText(this@GestionExerciceAdmin,
-                                    listExercice?.get(position)?._id, Toast.LENGTH_LONG).show()
-                                i.putExtra("nomExercice",listExercice?.get(position)?.nomExercice)
-                                i.putExtra("calories",listExercice?.get(position)?.calories)
-                                i.putExtra("id",listExercice?.get(position)?._id)
-                                startActivity(i)
+
                             }
                         }/*object:ExerciceAdapter.onItemClickListener{
                            override fun onItemClick(position: Int) {}}*/)
@@ -63,5 +57,10 @@ class GestionExerciceAdmin : AppCompatActivity() {
                 Toast.makeText(this@GestionExerciceAdmin, t.message, Toast.LENGTH_LONG).show()
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        getExercices()
     }
 }

@@ -47,7 +47,7 @@ class FoodFragment : Fragment() {
 
         Btn = view!!.findViewById(R.id.addBtn)
         Btn.setOnClickListener {
-            val intent = Intent(context,create_repas::class.java)
+            val intent = Intent(context,AjouterRepasAdmin::class.java)
             startActivity(intent)
         }
     }
@@ -63,7 +63,7 @@ class FoodFragment : Fragment() {
                         adapter= RecetteAdapter(context,response.body()!!,object: RecetteAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i = Intent(context,Repas::class.java)
-                                Toast.makeText(context,"aa",Toast.LENGTH_LONG).show()
+
                                 i.putExtra("nomRecette",listRepas.get(position).nomRecette)
                                 i.putExtra("idRecette",listRepas.get(position)._id)
                                // i.putExtra("calories",listRepas.get(position).calories)

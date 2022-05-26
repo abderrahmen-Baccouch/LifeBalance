@@ -24,42 +24,56 @@ class QuantiteAliment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quantite_aliment)
-
+        /*********************** Retrofit and myshared and intent  *************************************************/
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        myshared=getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
+        var role =myshared?.getString("role","")
+        var idrecette =myshared?.getString("idrecette","")
+        var idaliment=intent.getStringExtra("idaliment")
 
         quantite = findViewById(R.id.quantite)
         saveQuantite= findViewById(R.id.saveQuantite)
         cancelQuantite= findViewById(R.id.cancelQuantite)
 
-        /**bech njibou token mel fichier myshared */
-        myshared=getSharedPreferences("myshared",0)
-        var token =myshared?.getString("token","")
-        var idrecette =myshared?.getString("idrecette","")
-        var idaliment=intent.getStringExtra("idaliment")
-        Toast.makeText(this@QuantiteAliment, "iaa", Toast.LENGTH_LONG).show()
 
         saveQuantite.setOnClickListener {
             val map = HashMap<String?, String?>()
             map["quantite"] = quantite.text.toString()
-            Toast.makeText(this@QuantiteAliment, "bb", Toast.LENGTH_LONG).show()
-            val call = retrofitInterface!!.executeAddIngredient(token,idrecette,idaliment,map)
 
-            call.enqueue(object : Callback<RecetteX> {
-                override fun onResponse(call: Call<RecetteX>, response: Response<RecetteX>) {
-                    if (response.code()==200){
-                        Toast.makeText(this@QuantiteAliment, "ingredient ajouté", Toast.LENGTH_LONG).show()
-                        finish()
-                    }else if (response.code()==400){
-                        Toast.makeText(this@QuantiteAliment, "400", Toast.LENGTH_LONG).show()
+            if (role!="1"){
+                val call = retrofitInterface!!.executeAddIngredient(token, idrecette, idaliment, map)
+                call.enqueue(object : Callback<RecetteX> {
+                    override fun onResponse(call: Call<RecetteX>, response: Response<RecetteX>) {
+                        if (response.code() == 200) {
+                            finish()
+                        } else if (response.code() == 400) {
+                            Toast.makeText(this@QuantiteAliment, "400", Toast.LENGTH_LONG).show()
+                        }
                     }
-                }
-                override fun onFailure(call: Call<RecetteX>, t: Throwable) {
-                    Toast.makeText(this@QuantiteAliment, t.message, Toast.LENGTH_LONG).show()
-                }
 
-            })
+                    override fun onFailure(call: Call<RecetteX>, t: Throwable) {
+                        Toast.makeText(this@QuantiteAliment, t.message, Toast.LENGTH_LONG).show()
+                    }
+                })
+            }else{
+                val call = retrofitInterface!!.executeAddIngredientAdmin(idrecette, idaliment, map)
+                call.enqueue(object : Callback<RecetteX> {
+                    override fun onResponse(call: Call<RecetteX>, response: Response<RecetteX>) {
+                        if (response.code() == 200) {
+                            finish()
+                        } else if (response.code() == 400) {
+                            Toast.makeText(this@QuantiteAliment, "400", Toast.LENGTH_LONG).show()
+                        }
+                    }
 
-        }
+                    override fun onFailure(call: Call<RecetteX>, t: Throwable) {
+                        Toast.makeText(this@QuantiteAliment, t.message, Toast.LENGTH_LONG).show()
+                    }
+                })
+            }
+            }
+
     }
 }

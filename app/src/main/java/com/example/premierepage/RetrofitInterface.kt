@@ -1,11 +1,22 @@
 package com.example.premierepage
 
 import com.example.premierepage.model.*
+import com.example.premierepage.model.Defit
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
 import java.util.HashMap
+
+
+import okhttp3.ResponseBody
+
+import retrofit2.http.POST
+
+import retrofit2.http.Multipart
+
+
+
 
 interface RetrofitInterface {
     /**User*/
@@ -49,13 +60,15 @@ interface RetrofitInterface {
     ):Call<Void?>?
 
     @DELETE("aliment/delete/{id}")
-    fun executeDeleteAliment(@Path("id") id:String?):Call<Void?>?
+    fun executeDeleteAliment(@Path("id") id:String?
+    ):Call<Void?>?
 
 
 
     /**-----------------------------------------------notre aliment------------------------------------------------------------*/
     @GET("notrealiment/allAliments")
-    fun executeAllNotreAliments():Call<MutableList<Aliments>>
+    fun executeAllNotreAliments()
+    :Call<MutableList<Aliments>>
 
     @POST("notrealiment/addAliment")//---------------Admin
     fun executeAddNotreAliment(
@@ -76,7 +89,7 @@ interface RetrofitInterface {
 
 
 
-    /**Exercice*/
+    /**------------------------------------------Exercice-------------------------------------*/
 
     @GET("exercice/allExercices")
     fun executeAllExercices():Call<MutableList<Exercices>>
@@ -85,9 +98,10 @@ interface RetrofitInterface {
     //@Multipart
     @POST("exercice/addExercice")
     fun executeAddExercice(
-        @Body map:HashMap<String?,String?>?,
-       /* @Part image: MultipartBody.Part,
-        @Part("myFile") name:RequestBody*/)
+        @Body map: HashMap<String?, String?>?,
+        /* @Part image: MultipartBody.Part,
+        @Part("myFile") name:RequestBody*/
+    )
     :Call<Void>
 
     //update
@@ -106,8 +120,18 @@ interface RetrofitInterface {
 
 
 
+    @Multipart
+    @POST("/exercice/upload")
+    fun postImage(@Part image: MultipartBody.Part?,
+                  @Part("upload") name: RequestBody?,
+                  ): Call<Image>?
 
-    /**ExerciceTermine*/
+
+
+
+
+
+    /**-------------------------------------------------ExerciceTermine------------------------------------------------*/
     @POST("exercicetermine/addExerciceTermine")
     fun executeAddExerciceTermine(
         @Header("authorization") authHeader: String?,
@@ -115,13 +139,18 @@ interface RetrofitInterface {
     )
     :Call<Void?>?
 
-    @GET("exercicetermine/allExerciceTermine")
+    @POST("exercicetermine/allExerciceTermine")
     fun executeAllExerciceTermine(
+        @Body map:HashMap<String?,String?>?,
         @Header("authorization") authHeader: String?
     ):Call<MutableList<Exercices>>
 
+    @POST("exercicetermine/getCaloriesBrulee")
+    fun executeGetCaloriesBrulee(@Body map:HashMap<String?,String?>?,
+                                 @Header("authorization") authHeader: String?)
+    :Call<Exercices>
 
-    /**Repas*/
+    /**----------------------------------------------------Recette-------------------------------------------*/
 
     @GET("recette/allRecettes")
     fun executeAllRecettes(
@@ -143,24 +172,35 @@ interface RetrofitInterface {
 
 
     @PUT("recette/save/{idrecette}")
-    fun executeSaveRecette(@Path("idrecette") idrecette:String?,)
+    fun executeSaveRecette(@Path("idrecette") idrecette: String?)
     :Call<Void>
+
+    @GET("recette/allIngredients/{idrecette}")
+    fun executeAllIngredients(@Path("idrecette") idrecette: String?)
+    :Call<MutableList<Aliments>>
+
+
+
 
 
     /**--------------------------------------------notre repas -----------------------------------------------------------*/
 
-    @GET("notrerepas/allrepas")
-    fun executeAllRepas()
-    :Call<MutableList<Repa>>
+    @POST("notrerepas/allrepas")
+    fun executeAllRepas(@Body map:HashMap<String?,String?>?)//body feha typeRepas
+    :Call<MutableList<RecetteX>>
 
 
 @POST("notrerepas/addRepas")
 fun executeAddRepas(
     @Body map:HashMap<String?,String?>?)
-:Call<Void>
+:Call<Recette>
 
 
-
+    @POST("notreRepas/addIngredient/{idrecette}/{idaliment}")
+    fun executeAddIngredientAdmin(@Path("idrecette") idrecette:String?,
+                             @Path("idaliment") idaliment:String?,
+                             @Body map:HashMap<String?,String?>?)
+            :Call<RecetteX>
 
 
 
@@ -170,46 +210,63 @@ fun executeAddRepas(
 
     @POST("/diary/createBreakfast")
     fun executeCreateBreakfast(
-        @Header("authorization") authHeader: String?,)
+        @Header("authorization") authHeader: String?,
+    )
     :Call<BreakfastX>
 
     @POST("/diary/createDinner")
     fun executeCreateDinner(
-        @Header("authorization") authHeader: String?,)
+        @Header("authorization") authHeader: String?,
+    )
             :Call<BreakfastX>
 
     @POST("/diary/createLunch")
     fun executeCreateLunch(
-        @Header("authorization") authHeader: String?,)
+        @Header("authorization") authHeader: String?,
+    )
             :Call<BreakfastX>
 
     @POST("diary/addBreakfast/{idbreakfast}/{idrecette}")
-    fun executeAddBreakfast(@Header("authorization") authHeader: String?,
-                            @Path("idbreakfast") idbreakfast:String?,
-                            @Path("idrecette") idrecette:String?,):Call<Void>
+    fun executeAddBreakfast(
+        @Header("authorization") authHeader: String?,
+        @Path("idbreakfast") idbreakfast: String?,
+        @Path("idrecette") idrecette: String?,
+    ):Call<Void>
 
     @POST("diary/addDinner/{iddinner}/{idrecette}")
-    fun executeAddDinner(@Header("authorization") authHeader: String?,
-                            @Path("iddinner") iddinner:String?,
-                            @Path("idrecette") idrecette:String?,):Call<Void>
+    fun executeAddDinner(
+        @Header("authorization") authHeader: String?,
+        @Path("iddinner") iddinner: String?,
+        @Path("idrecette") idrecette: String?,
+    ):Call<Void>
 
     @POST("diary/addLunch/{idlunch}/{idrecette}")
-    fun executeAddLunch(@Header("authorization") authHeader: String?,
-                         @Path("idlunch") idlunch:String?,
-                         @Path("idrecette") idrecette:String?,):Call<Void>
+    fun executeAddLunch(
+        @Header("authorization") authHeader: String?,
+        @Path("idlunch") idlunch: String?,
+        @Path("idrecette") idrecette: String?,
+    ):Call<Void>
 
 
-    @GET("diary/allBreakfast")
-    fun executeAllBreakfast(@Header("authorization") authHeader: String?)
+    @POST("diary/allBreakfast")
+    fun executeAllBreakfast(@Header("authorization") authHeader: String?,
+                            @Body map:HashMap<String?,String?>?)
     :Call<MutableList<BreakfastX>>
 
     @GET("diary/allDinner")
-    fun executeAllBDinner(@Header("authorization") authHeader: String?)
+    fun executeAllDinner(@Header("authorization") authHeader: String?)
             :Call<MutableList<BreakfastX>>
 
     @GET("diary/allLunch")
     fun executeAllLunch(@Header("authorization") authHeader: String?)
             :Call<MutableList<BreakfastX>>
+
+
+
+    @POST("diary/caloriesConsome")
+    fun executeGetCaloriesConsome(@Body map:HashMap<String?,String?>?,
+                                  @Header("authorization") authHeader: String?)
+    :Call<BreakfastX>//zid thabet feha
 
 
 
@@ -221,8 +278,9 @@ fun executeAddRepas(
     :Call<Void>
 
     @POST("defit/addEtape/{iddefit}")
-    fun executeAddEtape(@Body map:HashMap<String?,String?>?,
-        @Path("iddefit") iddefit:String?,
+    fun executeAddEtape(
+        @Body map: HashMap<String?, String?>?,
+        @Path("iddefit") iddefit: String?,
     ):Call<Void>
 
     @GET("defit/allDefit")
@@ -230,8 +288,21 @@ fun executeAddRepas(
     :Call<MutableList<Defit>>
 
     @GET("defit/allEtapes/{iddefit}")
-    fun  executeAllEtapes( @Path("iddefit") iddefit:String?,)
+    fun  executeAllEtapes(@Path("iddefit") iddefit: String?)
     :Call<MutableList<String>>
+
+
+
+
+    @GET("defit3/allDefit")
+    fun executeAllDefit3()
+            :Call<MutableList<Defit>>
+
+    @GET("defit3/getDefit/{iddefit}")
+    fun executeGetDefit(@Path("iddefit") iddefit: String?,
+    )
+    :Call<Defit>
+
 
 
 

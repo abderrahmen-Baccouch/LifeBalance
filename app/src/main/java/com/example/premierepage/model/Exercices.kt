@@ -5,5 +5,6 @@ data class Exercices(
     var calories : String,
     var imageURL:String,
     var _id:String,
-    var dure:Int
+    var duration:Int,
+    var caloriesBrulee:Int
 )

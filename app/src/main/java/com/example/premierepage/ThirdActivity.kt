@@ -39,15 +39,17 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-        //get data from intent
-        val intent = intent
-        //val extras = intent.extras
-        val username = intent.getStringExtra("username")
+
+        myshared=getSharedPreferences("myshared",0)
+        val username =myshared?.getString("username","").toString().trim()
+
+
+
 
         // textView
-        val resultview = findViewById<TextView>(R.id.username)
+        val usernameTV = findViewById<TextView>(R.id.username)
         //setText
-        resultview.text = username
+        usernameTV.text = username
 
 
         etHauteur = findViewById(R.id.Hauteur)
@@ -99,7 +101,7 @@ class ThirdActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener{
                 Toast.makeText(this, "Poids est Invalide !", LENGTH_SHORT).show()}
 
             else {
-                myshared=getSharedPreferences("myshared",0)
+
                 var token =myshared?.getString("token","")
 
                 val map = HashMap<String?, String?>()

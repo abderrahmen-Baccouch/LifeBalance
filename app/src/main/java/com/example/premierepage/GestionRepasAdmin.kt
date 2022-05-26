@@ -11,6 +11,7 @@ class GestionRepasAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_repas_admin)
+
         petit_dejeuner.setOnClickListener {
             val intent = Intent(this,PetitDejAdmin::class.java)
             startActivity(intent)

@@ -25,19 +25,17 @@ class GestionAlimentAdmin : AppCompatActivity() {
 
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
-        ajouter = findViewById(R.id.ajouter)
         recv = findViewById(R.id.alimentsRecycler)
+        getNotreAliments()
 
+        ajouter = findViewById(R.id.ajouter)
         ajouter.setOnClickListener {
             val i = Intent(this,AjouterAlimentAdmin::class.java)
             startActivity(i)
         }
-
-        getAliments()
-
     }
 
-    fun getAliments(){
+    fun getNotreAliments(){
         //5edmet l affichage mte3 les aliments
         val call = retrofitInterface!!.executeAllNotreAliments()
         call.enqueue(object : Callback<MutableList<Aliments>> {
@@ -47,24 +45,19 @@ class GestionAlimentAdmin : AppCompatActivity() {
                         recv.layoutManager = LinearLayoutManager(context)
                         adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
-
                             }
                         })
                     }
-
                 }else if (response.code()==400){
-
                 }
             }
             override fun onFailure(call: Call<MutableList<Aliments>>, t: Throwable) {
                 Toast.makeText(this@GestionAlimentAdmin, t.message, Toast.LENGTH_LONG).show()
             }
-
         })
     }
-
     override fun onResume() {
         super.onResume()
-        getAliments()
+        getNotreAliments()
     }
 }

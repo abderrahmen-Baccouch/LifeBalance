@@ -127,7 +127,7 @@
             android:fontFamily="@font/salsa"
             android:inputType="text"
             android:padding="18dp"
-            android:hint="abderrahmen"
+            android:hint="a"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18sp"

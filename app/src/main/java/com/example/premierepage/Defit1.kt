@@ -15,7 +15,7 @@ class Defit1 : AppCompatActivity() {
 
         button = findViewById(R.id.sp_btn)
         button.setOnClickListener {
-            val intent = Intent(this,LancerPremierDefit::class.java)
+            val intent = Intent(this,ListeDefit::class.java)
             startActivity(intent)
         }
 
