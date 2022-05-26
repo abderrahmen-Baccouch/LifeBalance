@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
 
 
+        <item>@font/</item>
         <item>@font/allerta</item>
         <item>@font/bevan</item>
         <item>@font/candal</item>
@@ -12,8 +13,13 @@
         <item>@font/fredoka_one</item>
         <item>@font/kite_one</item>
         <item>@font/lobster</item>
+        <item>@font/montserrat_subrayada</item>
+        <item>@font/oi</item>
         <item>@font/patua_one</item>
         <item>@font/qwigley</item>
+        <item>@font/roboto_bold</item>
+        <item>@font/roboto_medium</item>
+        <item>@font/roboto_thin</item>
         <item>@font/ruthie</item>
         <item>@font/ruthie2</item>
     </array>

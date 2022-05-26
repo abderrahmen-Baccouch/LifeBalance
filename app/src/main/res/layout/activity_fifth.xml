@@ -9,98 +9,14 @@
     android:id="@+id/drawerLayout"
     tools:context=".FifthActivity">
 
-   <!-- <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"
-        tools:context=".FifthActivity"
-        tools:ignore="MissingConstraints" />
-    -->
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_fifth_activity">
+    android:background="@drawable/background_fifth_activity"
+    android:layout_marginBottom="-200dp">
 
-
-
-   <!-- <TextView
-        android:id="@+id/KcalTitle1"
-        android:layout_width="169dp"
-        android:layout_height="32dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Kcal Consumed"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429"
-        tools:ignore="MissingConstraints" />
--->
-   <!-- <TextView
-        android:id="@+id/KcalTitle2"
-        android:layout_width="170dp"
-        android:layout_height="26dp"
-        android:fontFamily="sans-serif-black"
-        android:text="Daily Kcal Goal"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.933"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.424"
-        tools:ignore="MissingConstraints" />
--->
-   <!-- <TextView
-        android:id="@+id/kcal_consumed1"
-        android:layout_width="124dp"
-        android:layout_height="48dp"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/galada"
-        android:text="69"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344"
-        tools:ignore="MissingConstraints" />
--->
-    <!--<TextView
-        android:id="@+id/kcal_consumed2"
-        android:layout_width="112dp"
-        android:layout_height="48dp"
-        android:layout_centerInParent="true"
-        android:fontFamily="@font/galada"
-        android:text="100"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343"
-        tools:ignore="MissingConstraints" />
--->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -110,6 +26,7 @@
         android:src="@drawable/ic_add"
         android:focusable="true"
         android:tint="@color/white"
+        android:layout_marginTop="-800dp"
         android:backgroundTint="@color/bleuCiel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,21 +88,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fitness"
         tools:ignore="MissingConstraints" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/BottomNavMenu"
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
         android:background="@drawable/bottomnav_bg"
         android:elevation="2dp"
-        app:itemIconTint="#00ACC1"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="620dp"
         app:itemIconSize="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:itemIconTint="#00ACC1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973"
-        app:menu="@menu/bottom_menu" >
+        app:menu="@menu/bottom_menu"
+        tools:ignore="MissingConstraints">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
@@ -373,16 +291,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="75dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="40dp"
                     android:layout_marginTop="150dp"
-                    android:fontFamily="@font/galada"
+                    android:fontFamily="@font/montserrat_alternates_medium"
                     android:text="Proteine"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="22dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_width="70dp"
                     android:layout_height="50dp"
@@ -418,11 +336,11 @@
                     android:textColor="#00ACC1"
                     android:textSize="20dp"/>
                 <TextView
-                    android:layout_width="75dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="160dp"
                     android:layout_marginTop="150dp"
-                    android:fontFamily="@font/galada"
+                    android:fontFamily="@font/montserrat_alternates_medium"
                     android:text="Glucide"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -432,11 +350,11 @@
                 </TextView>
 
                 <TextView
-                    android:layout_width="75dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="280dp"
                     android:layout_marginTop="150dp"
-                    android:fontFamily="@font/galada"
+                    android:fontFamily="@font/montserrat_alternates_medium"
                     android:text="Lipide"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -615,7 +533,7 @@
                 android:layout_width="370dp"
                 android:layout_height="200dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginBottom="25dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
@@ -670,7 +588,7 @@
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:paddingTop="100dp"
+                android:paddingTop="60dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="50dp"
@@ -931,20 +849,20 @@
 
 
             <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
+                android:layout_width="390dp"
                 android:layout_height="180dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="20dp"
                 app:cardElevation="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints">
+
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -1005,6 +923,7 @@
                     android:layout_marginTop="10dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/glass" />
+
 
                <!-- <TextView
                     android:layout_width="80dp"
@@ -1104,13 +1023,13 @@
                     android:id="@+id/buttonDatePicker"
                     android:layout_width="40dp"
                     android:layout_height="35dp"
-                    android:layout_marginLeft="345dp"
+                    android:layout_marginLeft="355dp"
                     android:layout_marginTop="-38dp"
                     android:src="@drawable/ic_calendar"
                     tools:ignore="MissingConstraints" />
             <TextView
                 android:id="@+id/calendar"
-                android:layout_width="95dp"
+                android:layout_width="105dp"
                 android:layout_height="35dp"
                 android:layout_marginTop="-35dp"
                 android:textColor="@color/white"
