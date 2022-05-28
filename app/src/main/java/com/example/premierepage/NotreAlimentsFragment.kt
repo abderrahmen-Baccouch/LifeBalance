@@ -2,6 +2,7 @@ package com.example.premierepage
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,26 +20,28 @@ import retrofit2.Response
 
 class NotreAlimentsFragment : Fragment(R.layout.fragment_notrealiments) {
     private var retrofitInterface: RetrofitInterface? = null
-
+    var myshared: SharedPreferences?=null
     private lateinit var recv: RecyclerView
 
     @SuppressLint("UseRequireInsteadOfGet", "NotifyDataSetChanged")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-       recv = view!!.findViewById(R.id.mRecycler)
+        recv = view!!.findViewById(R.id.mRecycler)
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
-
+        myshared=context!!.getSharedPreferences("myshared",0)
+        var role=myshared?.getString("role","")
 
         val call = retrofitInterface!!.executeAllNotreAliments()
         call.enqueue(object : Callback<MutableList<Aliments>> {
+
             override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
                 if (response.code()==200){
                     Toast.makeText(context, "aaaaa", Toast.LENGTH_LONG).show()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
+                        adapter= AlimentAdapter(context,response.body()!!,role.toString(),object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i = Intent(context,FifthActivity::class.java)
 

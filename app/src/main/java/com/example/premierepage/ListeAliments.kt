@@ -20,6 +20,7 @@ class ListeAliments : AppCompatActivity() {
 
     var myshared: SharedPreferences?=null
     private lateinit var recv: RecyclerView
+    private lateinit var recv2: RecyclerView
     /**ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,51 +33,53 @@ class ListeAliments : AppCompatActivity() {
         var role =myshared?.getString("role","")
         /*****************************************************************************************************/
         recv = findViewById(R.id.listeAlimentRecycler)
+        recv2 = findViewById(R.id.listeAlimentRecycler2)
         if(role=="1"){
-             getNotreAliments()
+            getNotreAliments(role.toString())
         }else{
-            getAliments(token!!)
+            getNotreAliments(role.toString())
+            getAliments(token!!,role.toString())
         }
     }
     /**oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo    fin*/
-     fun getAliments(t:String){
-     //5edmet l affichage mte3 les aliments
-     val call = retrofitInterface!!.executeAllAliments(t)
-     call.enqueue(object : Callback<MutableList<Aliments>> {
-         override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
-             if (response.code()==200){
+    fun getAliments(t:String,role:String){
+        //5edmet l affichage mte3 les aliments
+        val call = retrofitInterface!!.executeAllAliments(t)
+        call.enqueue(object : Callback<MutableList<Aliments>> {
+            override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
+                if (response.code()==200){
 
-                 recv.apply {
-                     recv.layoutManager = LinearLayoutManager(this@ListeAliments)
-                     adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
-                         override fun onItemClick(position: Int) {
-                             var editor: SharedPreferences.Editor=myshared!!.edit()
-                          //   editor.putString("idrecette",response.body()!!.get(position).)
-                           val i=Intent(this@ListeAliments,QuantiteAliment::class.java)
-                             i.putExtra("idaliment",response.body()!!.get(position)._id)
-                             startActivity(i)
-                             finish()
-                         }
-                     })
-                 }
-             }else if (response.code()==400){
+                    recv2.apply {
+                        recv2.layoutManager = LinearLayoutManager(this@ListeAliments)
+                        adapter= AlimentAdapter(context,response.body()!!,role,object: AlimentAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+                                var editor: SharedPreferences.Editor=myshared!!.edit()
+                                //   editor.putString("idrecette",response.body()!!.get(position).)
+                                val i=Intent(this@ListeAliments,QuantiteAliment::class.java)
+                                i.putExtra("idaliment",response.body()!!.get(position)._id)
+                                startActivity(i)
+                                finish()
+                            }
+                        })
+                    }
+                }else if (response.code()==400){
 
-             }
-         }
-         override fun onFailure(call: Call<MutableList<Aliments>>, t: Throwable) {
-             Toast.makeText(this@ListeAliments, t.message, Toast.LENGTH_LONG).show()
-         }
+                }
+            }
+            override fun onFailure(call: Call<MutableList<Aliments>>, t: Throwable) {
+                Toast.makeText(this@ListeAliments, t.message, Toast.LENGTH_LONG).show()
+            }
 
-     })
- }
-    fun getNotreAliments(){
+        })
+    }
+    fun getNotreAliments(role: String){
         val call = retrofitInterface!!.executeAllNotreAliments()
         call.enqueue(object : Callback<MutableList<Aliments>> {
             override fun onResponse(call: Call<MutableList<Aliments>>, response: Response<MutableList<Aliments>>) {
                 if (response.code()==200){
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(context)
-                        adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
+                        adapter= AlimentAdapter(context,response.body()!!,role,object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 var editor: SharedPreferences.Editor=myshared!!.edit()
                                 //   editor.putString("idrecette",response.body()!!.get(position).)

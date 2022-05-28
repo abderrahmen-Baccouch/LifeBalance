@@ -25,8 +25,10 @@ class GestionAlimentAdmin : AppCompatActivity() {
 
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        myshared=getSharedPreferences("myshared",0)
+        var role=myshared?.getString("role","")
         recv = findViewById(R.id.alimentsRecycler)
-        getNotreAliments()
+        getNotreAliments(role.toString())
 
         ajouter = findViewById(R.id.ajouter)
         ajouter.setOnClickListener {
@@ -35,7 +37,7 @@ class GestionAlimentAdmin : AppCompatActivity() {
         }
     }
 
-    fun getNotreAliments(){
+    fun getNotreAliments(role:String){
         //5edmet l affichage mte3 les aliments
         val call = retrofitInterface!!.executeAllNotreAliments()
         call.enqueue(object : Callback<MutableList<Aliments>> {
@@ -43,7 +45,7 @@ class GestionAlimentAdmin : AppCompatActivity() {
                 if (response.code()==200){
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(context)
-                        adapter= AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
+                        adapter= AlimentAdapter(context,response.body()!!,role,object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                             }
                         })
@@ -58,6 +60,8 @@ class GestionAlimentAdmin : AppCompatActivity() {
     }
     override fun onResume() {
         super.onResume()
-        getNotreAliments()
+        myshared=getSharedPreferences("myshared",0)
+        var role=myshared?.getString("role","")
+        getNotreAliments(role.toString())
     }
 }

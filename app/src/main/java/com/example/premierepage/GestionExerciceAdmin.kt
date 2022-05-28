@@ -23,7 +23,7 @@ class GestionExerciceAdmin : AppCompatActivity() {
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
         recv = findViewById(R.id.exercicesRecycler)
-        getExercices()
+        getExercices("1")
 
         ajouter = findViewById(R.id.ajouter)
         ajouter.setOnClickListener {
@@ -33,7 +33,7 @@ class GestionExerciceAdmin : AppCompatActivity() {
     }/**fin OnCreate()*/
 
 
-    fun getExercices(){
+    fun getExercices(role:String){
         val call = retrofitInterface!!.executeAllExercices()
         call.enqueue(object : retrofit2.Callback<MutableList<Exercices>> {
             override fun onResponse(call: Call<MutableList<Exercices>>, response: Response<MutableList<Exercices>>) {
@@ -42,7 +42,7 @@ class GestionExerciceAdmin : AppCompatActivity() {
 
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(this@GestionExerciceAdmin)
-                        adapter= ExerciceAdapter(this@GestionExerciceAdmin,response.body()!!,object:
+                        adapter= ExerciceAdapter(this@GestionExerciceAdmin,response.body()!!,role,object:
                             ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
 
@@ -61,6 +61,6 @@ class GestionExerciceAdmin : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        getExercices()
+        getExercices("1")
     }
 }

@@ -34,8 +34,8 @@ interface RetrofitInterface {
         @Header("authorization") authHeader: String?
     ): Call<Void?>?
 
-   // @POST("/user/logout")
-   // fun executeLogout(): Call<Void>?
+    // @POST("/user/logout")
+    // fun executeLogout(): Call<Void>?
 
 
 
@@ -68,7 +68,7 @@ interface RetrofitInterface {
     /**-----------------------------------------------notre aliment------------------------------------------------------------*/
     @GET("notrealiment/allAliments")
     fun executeAllNotreAliments()
-    :Call<MutableList<Aliments>>
+            :Call<MutableList<Aliments>>
 
     @POST("notrealiment/addAliment")//---------------Admin
     fun executeAddNotreAliment(
@@ -84,7 +84,7 @@ interface RetrofitInterface {
     @DELETE("notrealiment/delete/{id}")//---------------Admin
     fun executeDeleteNotreAliment(
         @Path("id") id:String?)
-    :Call<Void?>?
+            :Call<Void?>?
 
 
 
@@ -102,14 +102,14 @@ interface RetrofitInterface {
         /* @Part image: MultipartBody.Part,
         @Part("myFile") name:RequestBody*/
     )
-    :Call<Void>
+            :Call<Void>
 
     //update
     @PUT("exercice/updateExercice/{idexercice}")
     fun executeUpdateExercice(
         @Body map:HashMap<String?,String?>?,
         @Path("idexercice") idexercice:String?
-        ):Call<Void>
+    ):Call<Void>
 
     //delete
 
@@ -124,7 +124,7 @@ interface RetrofitInterface {
     @POST("/exercice/upload")
     fun postImage(@Part image: MultipartBody.Part?,
                   @Part("upload") name: RequestBody?,
-                  ): Call<Image>?
+    ): Call<Image>?
 
 
 
@@ -137,7 +137,7 @@ interface RetrofitInterface {
         @Header("authorization") authHeader: String?,
         @Body map:HashMap<String?,String?>?
     )
-    :Call<Void?>?
+            :Call<Void?>?
 
     @POST("exercicetermine/allExerciceTermine")
     fun executeAllExerciceTermine(
@@ -148,58 +148,59 @@ interface RetrofitInterface {
     @POST("exercicetermine/getCaloriesBrulee")
     fun executeGetCaloriesBrulee(@Body map:HashMap<String?,String?>?,
                                  @Header("authorization") authHeader: String?)
-    :Call<Exercices>
+            :Call<Exercices>
 
     /**----------------------------------------------------Recette-------------------------------------------*/
 
     @GET("recette/allRecettes")
     fun executeAllRecettes(
         @Header("authorization") authHeader: String?)
-    :Call<MutableList<RecetteX>>
+            :Call<MutableList<RecetteX>>
 
     @POST("recette/addRecette")
     fun executeAddRecette(
         @Body map:HashMap<String?,String?>?,
         @Header("authorization") authHeader: String?)
-    :Call<Recette>
+            :Call<Recette>
 
     @POST("recette/addIngredient/{idrecette}/{idaliment}")
     fun executeAddIngredient(@Header("authorization") authHeader: String?,
                              @Path("idrecette") idrecette:String?,
                              @Path("idaliment") idaliment:String?,
                              @Body map:HashMap<String?,String?>?)
-    :Call<RecetteX>
+            :Call<RecetteX>
 
 
     @PUT("recette/save/{idrecette}")
-    fun executeSaveRecette(@Path("idrecette") idrecette: String?)
-    :Call<Void>
+    fun executeSaveRecette(@Path("idrecette") idrecette: String?,@Body map:HashMap<String?,String?>?)
+            :Call<Void>
 
     @GET("recette/allIngredients/{idrecette}")
     fun executeAllIngredients(@Path("idrecette") idrecette: String?)
-    :Call<MutableList<Aliments>>
+            :Call<MutableList<Aliments>>
 
-
-
+    @DELETE("recette/deleteIngredient/{idrecette}/{indiceingredient}")
+    fun executeDeleteIngredient(@Path("idrecette") idrecette: String?,
+                                @Path("indiceingredient") indiceingredient: String?):Call<Void>
 
 
     /**--------------------------------------------notre repas -----------------------------------------------------------*/
 
     @POST("notrerepas/allrepas")
     fun executeAllRepas(@Body map:HashMap<String?,String?>?)//body feha typeRepas
-    :Call<MutableList<RecetteX>>
+            :Call<MutableList<RecetteX>>
 
 
-@POST("notrerepas/addRepas")
-fun executeAddRepas(
-    @Body map:HashMap<String?,String?>?)
-:Call<Recette>
+    @POST("notrerepas/addRepas")
+    fun executeAddRepas(
+        @Body map:HashMap<String?,String?>?)
+            :Call<Recette>
 
 
     @POST("notreRepas/addIngredient/{idrecette}/{idaliment}")
     fun executeAddIngredientAdmin(@Path("idrecette") idrecette:String?,
-                             @Path("idaliment") idaliment:String?,
-                             @Body map:HashMap<String?,String?>?)
+                                  @Path("idaliment") idaliment:String?,
+                                  @Body map:HashMap<String?,String?>?)
             :Call<RecetteX>
 
 
@@ -212,7 +213,7 @@ fun executeAddRepas(
     fun executeCreateBreakfast(
         @Header("authorization") authHeader: String?,
     )
-    :Call<BreakfastX>
+            :Call<BreakfastX>
 
     @POST("/diary/createDinner")
     fun executeCreateDinner(
@@ -251,7 +252,7 @@ fun executeAddRepas(
     @POST("diary/allBreakfast")
     fun executeAllBreakfast(@Header("authorization") authHeader: String?,
                             @Body map:HashMap<String?,String?>?)
-    :Call<MutableList<BreakfastX>>
+            :Call<MutableList<BreakfastX>>
 
     @GET("diary/allDinner")
     fun executeAllDinner(@Header("authorization") authHeader: String?)
@@ -266,7 +267,7 @@ fun executeAddRepas(
     @POST("diary/caloriesConsome")
     fun executeGetCaloriesConsome(@Body map:HashMap<String?,String?>?,
                                   @Header("authorization") authHeader: String?)
-    :Call<BreakfastX>//zid thabet feha
+            :Call<BreakfastX>//zid thabet feha
 
 
 
@@ -275,7 +276,7 @@ fun executeAddRepas(
     @POST("defit/addDefit")
     fun executeAddDefit(
         @Body map:HashMap<String?,String?>?)
-    :Call<Void>
+            :Call<Void>
 
     @POST("defit/addEtape/{iddefit}")
     fun executeAddEtape(
@@ -285,11 +286,11 @@ fun executeAddRepas(
 
     @GET("defit/allDefit")
     fun executeAllDefit()
-    :Call<MutableList<Defit>>
+            :Call<MutableList<Defit>>
 
     @GET("defit/allEtapes/{iddefit}")
     fun  executeAllEtapes(@Path("iddefit") iddefit: String?)
-    :Call<MutableList<String>>
+            :Call<MutableList<String>>
 
 
 
@@ -301,7 +302,14 @@ fun executeAddRepas(
     @GET("defit3/getDefit/{iddefit}")
     fun executeGetDefit(@Path("iddefit") iddefit: String?,
     )
-    :Call<Defit>
+            :Call<Defit>
+
+    /***********************************Task**********************************************/
+
+    @POST("task/addTask")
+    fun executeAddTask(@Header("authorization") authHeader: String?,
+                       @Body map:HashMap<String?,String?>?)
+    :Call<Void>//momken tetbadel ki bech naamlou notification
 
 
 

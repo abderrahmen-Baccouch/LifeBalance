@@ -94,6 +94,9 @@
             android:name=".Breakfast1"
             android:exported="false" />
         <activity
+            android:name=".reminder"
+            android:exported="false" />
+        <activity
             android:name=".DinnerAdmin"
             android:exported="false" />
         <activity
@@ -106,43 +109,12 @@
             android:name=".dietPlans"
             android:exported="false" />
 
-        <activity
-            android:name=".handstand_pro"
-            android:exported="false" />
-        <activity
-            android:name=".orteilsBarre_pro"
-            android:exported="false" />
-        <activity
-            android:name=".pompe_pro"
-            android:exported="false" />
-        <activity
-            android:name=".muscle_up_pro"
-            android:exported="false" />
-        <activity
-            android:name=".gainage"
-            android:exported="false" />
-        <activity
-            android:name=".dips_pro"
-            android:exported="false" />
+
         <activity
             android:name=".create_repas"
             android:exported="false" />
 
-        <activity
-            android:name=".dips"
-            android:exported="false" />
-        <activity
-            android:name=".legRaise"
-            android:exported="false" />
-        <activity
-            android:name=".handstand"
-            android:exported="false" />
-        <activity
-            android:name=".burpees"
-            android:exported="false" />
-        <activity
-            android:name=".muscleUp"
-            android:exported="false" />
+
         <activity
             android:name=".warming_up"
             android:exported="false" />

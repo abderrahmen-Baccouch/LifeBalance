@@ -83,7 +83,10 @@ if (myshared?.getString("idrecette","")==""){
 
 
         saveRecette.setOnClickListener {
-            val call = retrofitInterface!!.executeSaveRecette(myshared?.getString("idrecette",""))
+            val map = HashMap<String?, String?>()
+            map["nomRecette"] = "a"
+            map["temps"] = "a"
+            val call = retrofitInterface!!.executeSaveRecette(myshared?.getString("idrecette",""),map)
             call.enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     Toast.makeText(this@create_repas,response.errorBody().toString(), Toast.LENGTH_LONG).show()

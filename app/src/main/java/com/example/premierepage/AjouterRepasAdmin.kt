@@ -105,7 +105,10 @@ class AjouterRepasAdmin : AppCompatActivity() {
 
 
         saveRecette.setOnClickListener {
-            val call = retrofitInterface!!.executeSaveRecette(myshared?.getString("idrecette",""))
+            val map = HashMap<String?, String?>()
+            map["nomRecette"] = nomRepasET.text.toString()
+            map["temps"] = tempsPreparationET.text.toString()
+            val call = retrofitInterface!!.executeSaveRecette(myshared?.getString("idrecette",""),map)
             call.enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     Toast.makeText(this@AjouterRepasAdmin,response.errorBody().toString(), Toast.LENGTH_LONG).show()

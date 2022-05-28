@@ -3,6 +3,7 @@ package com.example.premierepage.view
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,9 +18,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val mListener:onItemClickListener) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
+class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val role:String,val mListener:onItemClickListener) : RecyclerView.Adapter<AlimentAdapter.UserViewHolder> () {
     private var retrofitInterface: RetrofitInterface? = null
-
+    var myshared: SharedPreferences?=null
     interface onItemClickListener{
         fun onItemClick(position: Int)
     }
@@ -31,23 +32,29 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
         var proteinesTV : TextView
         var glucidesTV : TextView
         var lipidesTV : TextView
+        var quantiteTV : TextView
         var imageIV:ImageView
         var mMenus : ImageView
+
         init {
+
             nomAlimentTV = v.findViewById<TextView>(R.id.nomAliment)
             caloriesTV = v.findViewById<TextView>(R.id.calories)
             proteinesTV = v.findViewById<TextView>(R.id.proteines)
             glucidesTV = v.findViewById<TextView>(R.id.glucides)
             imageIV=v.findViewById<ImageView>(R.id.imageAliment)
             lipidesTV = v.findViewById<TextView>(R.id.lipides)
+            quantiteTV = v.findViewById<TextView>(R.id.quantite)
             mMenus = v.findViewById(R.id.mMenus)
             mMenus.setOnClickListener { popupMenus(it) }
             v.setOnClickListener{
                 listener.onItemClick(adapterPosition)
             }
+            if(role!="1"){
+                mMenus.visibility= View.GONE
+            }
         }
-
-       @SuppressLint("DiscouragedPrivateApi", "NotifyDataSetChanged")
+        @SuppressLint("DiscouragedPrivateApi", "NotifyDataSetChanged")
         private fun popupMenus(v:View) {
             val retrofit = RetrofitClient.getInstance()
             retrofitInterface = retrofit.create(RetrofitInterface::class.java)
@@ -75,12 +82,12 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
                         AlertDialog.Builder(c)
                             .setView(v)
                             .setPositiveButton("Update"){
-                                dialog,_->
+                                    dialog,_->
                                 position.nomAliment = nomAlimentET.text.toString()
-                                position.calories = caloriesET.text.toString()+"  Kcal"
-                                position.proteines = proteinesET.text.toString()+" g"
-                                position.glucides = glucidesET.text.toString()+" g"
-                                position.lipides = lipidesET.text.toString()+" g"
+                                position.calories = caloriesET.text.toString()
+                                position.proteines = proteinesET.text.toString()
+                                position.glucides = glucidesET.text.toString()
+                                position.lipides = lipidesET.text.toString()
                                 val map = HashMap<String?, String?>()
 
                                 map["nomAliment"] = nomAlimentET.text.toString()
@@ -88,25 +95,25 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
                                 map["proteines"] =proteinesET.text.toString()
                                 map["glucides"] = glucidesET.text.toString()
                                 map["lipides"] = lipidesET.text.toString()
-                               val call = retrofitInterface!!.executeUpdateAliment(map,position._id)
-                               call!!.enqueue(object : Callback<Void?>{
-                                   override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-                                       if (response.code()==200){
-                                           Toast.makeText(c, "success", Toast.LENGTH_LONG).show()
-                                           notifyDataSetChanged()
-                                       }else if (response.code()==400){
-                                           Toast.makeText(c, "error1", Toast.LENGTH_LONG).show()
-                                       }
-                                   }
-                                   override fun onFailure(call: Call<Void?>, t: Throwable) {
-                                       Toast.makeText(c, t.message, Toast.LENGTH_LONG).show()
-                                   }
+                                val call = retrofitInterface!!.executeUpdateAliment(map,position._id)
+                                call!!.enqueue(object : Callback<Void?>{
+                                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                                        if (response.code()==200){
+                                            Toast.makeText(c, "success", Toast.LENGTH_LONG).show()
+                                            notifyDataSetChanged()
+                                        }else if (response.code()==400){
+                                            Toast.makeText(c, "error1", Toast.LENGTH_LONG).show()
+                                        }
+                                    }
+                                    override fun onFailure(call: Call<Void?>, t: Throwable) {
+                                        Toast.makeText(c, t.message, Toast.LENGTH_LONG).show()
+                                    }
 
-                               })
+                                })
                                 dialog.dismiss()
                             }
                             .setNegativeButton("Cancel"){
-                                dialog,_->
+                                    dialog,_->
                                 dialog.dismiss()
                             }
                             .create()
@@ -119,7 +126,7 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
                             .setIcon(R.drawable.ic_warning)
                             .setMessage("Are You Sure To Delete This Information")
                             .setPositiveButton("Yes"){
-                                dialog,_->
+                                    dialog,_->
                                 val call = retrofitInterface!!.executeDeleteAliment(position._id)
                                 call!!.enqueue(object :Callback<Void?>{
                                     override fun onResponse(
@@ -147,14 +154,14 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
                                 dialog.dismiss()
                             }
                             .setNegativeButton("No"){
-                                dialog,_->
+                                    dialog,_->
                                 dialog.dismiss()
                             }
                             .create()
                             .show()
-                       true
+                        true
                     }
-                  else -> true
+                    else -> true
                 }
 
             }
@@ -173,15 +180,18 @@ class AlimentAdapter(val c: Context, val alimentsList:MutableList<Aliments>,val 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val v = inflater.inflate(R.layout.item_aliment,parent,false)
+
         return UserViewHolder(v,mListener)
     }
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+
         val newList = alimentsList[position]
         holder.nomAlimentTV.text = newList.nomAliment
-        holder.caloriesTV.text = newList.calories+" Kcal"
+        holder.caloriesTV.text = newList.calories+" cal"
         holder.proteinesTV.text = newList.proteines+" g"
         holder.glucidesTV.text = newList.glucides+" g"
         holder.lipidesTV.text = newList.lipides+" g"
+        holder.quantiteTV.text = newList.quantite+" g"
         Glide.with(c).load(newList.imageURL).into(holder.imageIV)
 
     }

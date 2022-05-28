@@ -60,13 +60,18 @@ class FoodFragment : Fragment() {
                 if (response.code()==200){
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= RecetteAdapter(context,response.body()!!,object: RecetteAdapter.onItemClickListener{
+                        adapter= NotreRepasAdapter(context,response.body()!!,object: NotreRepasAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
-                                val i = Intent(context,Repas::class.java)
+                                val i = Intent(context,Breakfast1::class.java)
+                                i.putExtra("nomRepas",listRepas.get(position).nomRecette)
+                                i.putExtra("idRepas",listRepas.get(position)._id)
+                                i.putExtra("calories",listRepas.get(position).calories)
+                                i.putExtra("proteines",listRepas.get(position).proteines)
+                                i.putExtra("glucides",listRepas.get(position).glucides)
+                                i.putExtra("lipides",listRepas.get(position).lipides)
+                                i.putExtra("temps",listRepas.get(position).temps)
 
-                                i.putExtra("nomRecette",listRepas.get(position).nomRecette)
-                                i.putExtra("idRecette",listRepas.get(position)._id)
-                               // i.putExtra("calories",listRepas.get(position).calories)
+
 
                                 startActivity(i)
                             }
@@ -83,37 +88,37 @@ class FoodFragment : Fragment() {
         })
     }
 
-   /*fun getBreakfast(t:String){
-        //5edmet l affichage mte3 les aliments
-        val call = retrofitInterface!!.executeAllBreakfast(t)
-        call.enqueue(object : Callback<MutableList<BreakfastX>> {
-            override fun onResponse(call: Call<MutableList<BreakfastX>>, response: Response<MutableList<BreakfastX>>) {
-                var listRepas=response.body()!!
-                if (response.code()==200){
-                    recv.apply {
-                        recv.layoutManager = LinearLayoutManager(activity)
-                        adapter= RecetteAdapter(context,response.body()!!.get(0).recettes,object: RecetteAdapter.onItemClickListener{
-                            override fun onItemClick(position: Int) {
-                                val i = Intent(context,Repas::class.java)
-                                Toast.makeText(context,"aa",Toast.LENGTH_LONG).show()
-                              //  i.putExtra("nomRecette",listRepas.get(position).nomRecette)
-                                i.putExtra("idRecette",listRepas.get(position)._id)
-                                // i.putExtra("calories",listRepas.get(position).calories)
+    /*fun getBreakfast(t:String){
+         //5edmet l affichage mte3 les aliments
+         val call = retrofitInterface!!.executeAllBreakfast(t)
+         call.enqueue(object : Callback<MutableList<BreakfastX>> {
+             override fun onResponse(call: Call<MutableList<BreakfastX>>, response: Response<MutableList<BreakfastX>>) {
+                 var listRepas=response.body()!!
+                 if (response.code()==200){
+                     recv.apply {
+                         recv.layoutManager = LinearLayoutManager(activity)
+                         adapter= RecetteAdapter(context,response.body()!!.get(0).recettes,object: RecetteAdapter.onItemClickListener{
+                             override fun onItemClick(position: Int) {
+                                 val i = Intent(context,Repas::class.java)
+                                 Toast.makeText(context,"aa",Toast.LENGTH_LONG).show()
+                               //  i.putExtra("nomRecette",listRepas.get(position).nomRecette)
+                                 i.putExtra("idRecette",listRepas.get(position)._id)
+                                 // i.putExtra("calories",listRepas.get(position).calories)
 
-                                startActivity(i)
-                            }
-                        })
-                    }
-                }else if (response.code()==400){
+                                 startActivity(i)
+                             }
+                         })
+                     }
+                 }else if (response.code()==400){
 
-                }
-            }
-            override fun onFailure(call: Call<MutableList<BreakfastX>>, t: Throwable) {
-                Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-            }
+                 }
+             }
+             override fun onFailure(call: Call<MutableList<BreakfastX>>, t: Throwable) {
+                 Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+             }
 
-        })
-    }*/
+         })
+     }*/
 
     //wala onRestar w t7ot feha getRecettes
     override fun onResume() {

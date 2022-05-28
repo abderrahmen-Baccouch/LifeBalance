@@ -8,6 +8,7 @@ package com.example.premierepage.model
         var proteines : String,
         var glucides : String,
         var lipides : String,
+        var quantite : String,
         var _id:String
     )
 

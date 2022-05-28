@@ -34,8 +34,10 @@ class ActivityExercices : AppCompatActivity() {
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
         recv = findViewById(R.id.exercicesRecycler)
+        myshared=getSharedPreferences("myshared",0)
+        var role=myshared?.getString("role","")
 
-        getExercices()
+        getExercices(role.toString())
 
         myCustomActivity.setOnClickListener {
             val intent =Intent(this,customActivity::class.java)
@@ -44,7 +46,7 @@ class ActivityExercices : AppCompatActivity() {
 
     }
 
-    fun getExercices(){
+    fun getExercices(role:String){
         val call = retrofitInterface!!.executeAllExercices()
         call.enqueue(object : retrofit2.Callback<MutableList<Exercices>> {
             override fun onResponse(call: Call<MutableList<Exercices>>, response: Response<MutableList<Exercices>>) {
@@ -52,7 +54,7 @@ class ActivityExercices : AppCompatActivity() {
                     listExercice=response.body()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(this@ActivityExercices)
-                        adapter= ExerciceAdapter(this@ActivityExercices,response.body()!!,object:ExerciceAdapter.onItemClickListener{
+                        adapter= ExerciceAdapter(this@ActivityExercices,response.body()!!,role,object:ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i =Intent(this@ActivityExercices,Yoga::class.java)
                                 i.putExtra("nomExercice",listExercice?.get(position)?.nomExercice)
@@ -74,6 +76,8 @@ class ActivityExercices : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        getExercices()
+        myshared=getSharedPreferences("myshared",0)
+        var role=myshared?.getString("role","")
+        getExercices(role.toString())
     }
 }

@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    android:background="#F3F2F2"
-tools:context=".PetitDejAdmin">
-
-<LinearLayout
-    android:id="@+id/linearLayout3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    tools:ignore="MissingConstraints">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RepasRecycler"
+    android:layout_height="match_parent"
+    android:background="#F3F2F2"
+    tools:context=".PetitDejAdmin">
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="30sp" />
-</LinearLayout>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RepasRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30sp" />
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/ajouterCard"
         android:layout_width="260dp"
         android:layout_height="60dp"
         app:cardCornerRadius="30dp"
@@ -39,7 +44,7 @@ tools:context=".PetitDejAdmin">
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#00FF0C"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="@font/chewyy"
             android:text="ajouter Petit Déjeuner"
             android:textColor="#FFFFFF"
             android:textSize="22dp"

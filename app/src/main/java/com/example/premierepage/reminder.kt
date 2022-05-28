@@ -3,12 +3,15 @@ package com.example.premierepage
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.SharedPreferences
 import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.DatePicker
-import android.widget.TimePicker
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_reminder.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.time.Year
 
 class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
@@ -26,11 +29,37 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
     var savedMinute = 0
 
 
+    private var retrofitInterface: RetrofitInterface? = null
+    var myshared: SharedPreferences?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminder)
+        /**-------------------------------------retrofit and myshared -------------------------------------------------- */
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        myshared=getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
         pickDate()
+
+        val nomTask:EditText=findViewById(R.id.nomTask)
+        val descTask:EditText=findViewById(R.id.descTask)
+        val addTask:LinearLayout=findViewById(R.id.addTask)
+
+
+        addTask.setOnClickListener {
+            val map = HashMap<String?, String?>()
+            map["nomTask"] = nomTask.text.toString()
+            map["descTask"] = descTask.text.toString()
+            map["year"] =savedYear.toString()
+            map["month"] =savedMonth.toString()
+            map["day"] =savedDay.toString()
+            map["hour"] =savedHour.toString()
+            map["minute"] =savedMinute.toString()
+            Toast.makeText(this@reminder,savedYear.toString(),Toast.LENGTH_LONG).show()
+            AddTask(token!!,map)
+        }
+
     }
     @SuppressLint("NewApi")
     private fun getDateTimeCalendar(){
@@ -64,5 +93,23 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
         savedMinute = minute
 
         tv_textTime.text = "$savedDay-$savedMonth-$savedYear\n Heure: $savedHour Minute: $savedMinute"
+    }
+
+    fun AddTask(token:String,map: java.util.HashMap<String?, String?>?){
+        val call = retrofitInterface!!.executeAddTask(token,map)
+        call!!.enqueue(object : Callback<Void?> {
+            override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                if (response.code() == 200) {
+                    finish()
+                } else if (response.code() == 401) {
+                    Toast.makeText(this@reminder, "Task existe", Toast.LENGTH_LONG).show()
+                } else if (response.code() == 400) {
+                    Toast.makeText(this@reminder, "an error occured while saving task", Toast.LENGTH_LONG).show()
+                }
+            }
+            override fun onFailure(call: Call<Void?>?, t: Throwable) {
+                Toast.makeText(this@reminder, t.message, Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

@@ -44,74 +44,74 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         /**-------------------------------------myshared-------------------------------------------------- */
         myshared=context?.getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
-
+        var role=myshared?.getString("role","")
         val intent = Intent(context,AjouterAlimentAdmin::class.java)
 
 
-        getAliments(token!!)
+        getAliments(token!!,"1")
 
         addingBtn.setOnClickListener {
 
             startActivity(intent)
-           /* val inflter = LayoutInflater.from(this.context)
-            val v = inflter.inflate(R.layout.add_item,null)
+            /* val inflter = LayoutInflater.from(this.context)
+             val v = inflter.inflate(R.layout.add_item,null)
 
-            /** v hya add_item */
-            val nomAlimentET = v.findViewById<EditText>(R.id.nomAliment)
-            val caloriesET = v.findViewById<EditText>(R.id.calories)
-            val proteinesET = v.findViewById<EditText>(R.id.proteines)
-            val glucidesET = v.findViewById<EditText>(R.id.glucides)
-            val lipidesET = v.findViewById<EditText>(R.id.lipides)
+             /** v hya add_item */
+             val nomAlimentET = v.findViewById<EditText>(R.id.nomAliment)
+             val caloriesET = v.findViewById<EditText>(R.id.calories)
+             val proteinesET = v.findViewById<EditText>(R.id.proteines)
+             val glucidesET = v.findViewById<EditText>(R.id.glucides)
+             val lipidesET = v.findViewById<EditText>(R.id.lipides)
 
-            val addDialog = AlertDialog.Builder(this.context)
+             val addDialog = AlertDialog.Builder(this.context)
 
-            addDialog.setView(v)
-            addDialog.setPositiveButton("ADD"){
-                    dialog,_->
+             addDialog.setView(v)
+             addDialog.setPositiveButton("ADD"){
+                     dialog,_->
 
-                val nomAliment =nomAlimentET.text.toString()
-                val calories = caloriesET.text.toString()
-                val proteines = proteinesET.text.toString()
-                val glucides = glucidesET.text.toString()
-                val lipides = lipidesET.text.toString()
+                 val nomAliment =nomAlimentET.text.toString()
+                 val calories = caloriesET.text.toString()
+                 val proteines = proteinesET.text.toString()
+                 val glucides = glucidesET.text.toString()
+                 val lipides = lipidesET.text.toString()
 
-                   val map = HashMap<String?, String?>()
-                   map["nomAliment"] = nomAliment
-                   map["calories"] = calories
-                   map["proteines"] = proteines
-                   map["glucides"] = glucides
-                   map["lipides"] = lipides
+                    val map = HashMap<String?, String?>()
+                    map["nomAliment"] = nomAliment
+                    map["calories"] = calories
+                    map["proteines"] = proteines
+                    map["glucides"] = glucides
+                    map["lipides"] = lipides
 
-                   val call = retrofitInterface!!.executeAddAliment(map, token)
-                   call!!.enqueue(object : Callback<Void?> {
-                       override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-                           if (response.code() == 200) {
-                               Toast.makeText(context, "aliment ajouté", Toast.LENGTH_LONG).show()
-                               /**to93ed fama mochkla : ki tzid aliment yetzed fil base
-                                * ama mayetzedech fil front lazem to5rej mel activty w t3awed tod5ol bech yetra tzed*/
+                    val call = retrofitInterface!!.executeAddAliment(map, token)
+                    call!!.enqueue(object : Callback<Void?> {
+                        override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                            if (response.code() == 200) {
+                                Toast.makeText(context, "aliment ajouté", Toast.LENGTH_LONG).show()
+                                /**to93ed fama mochkla : ki tzid aliment yetzed fil base
+                                 * ama mayetzedech fil front lazem to5rej mel activty w t3awed tod5ol bech yetra tzed*/
 
-                               getAliments(token!!)
-                               dialog.dismiss()
-                           } else if (response.code() == 401) {
-                               Toast.makeText(context, "aliment existe", Toast.LENGTH_LONG).show()
-                           } else if (response.code() == 400) {
-                               Toast.makeText(context, "an error occured while saving aliment", Toast.LENGTH_LONG).show()
-                           }
-                       }
+                                getAliments(token!!)
+                                dialog.dismiss()
+                            } else if (response.code() == 401) {
+                                Toast.makeText(context, "aliment existe", Toast.LENGTH_LONG).show()
+                            } else if (response.code() == 400) {
+                                Toast.makeText(context, "an error occured while saving aliment", Toast.LENGTH_LONG).show()
+                            }
+                        }
 
-                       override fun onFailure(call: Call<Void?>?, t: Throwable) {
-                           Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
-                       }
-                   })
+                        override fun onFailure(call: Call<Void?>?, t: Throwable) {
+                            Toast.makeText(context, t.message, Toast.LENGTH_LONG).show()
+                        }
+                    })
 
-            }
+             }
 
-            addDialog.setNegativeButton("CANCEL"){
-                    dialog,_->
-                    dialog.dismiss()
-            }
-            addDialog.create()
-            addDialog.show()*/
+             addDialog.setNegativeButton("CANCEL"){
+                     dialog,_->
+                     dialog.dismiss()
+             }
+             addDialog.create()
+             addDialog.show()*/
         }
 
     }
@@ -119,11 +119,12 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
     override fun onResume() {
         //momkon tjib   myshared=context?.getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
+        var role=myshared?.getString("role","")
         super.onResume()
-        getAliments(token!!)
+        getAliments(token!!,"1")
     }
 
-    fun getAliments(t:String){
+    fun getAliments(t:String,role:String){
         //5edmet l affichage mte3 les aliments
         val call = retrofitInterface!!.executeAllAliments(t)
         call.enqueue(object :Callback<MutableList<Aliments>>{
@@ -132,10 +133,10 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
 
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(activity)
-                        adapter=AlimentAdapter(context,response.body()!!,object: AlimentAdapter.onItemClickListener{
+                        adapter=AlimentAdapter(context,response.body()!!,role.toString(),object: AlimentAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i = Intent(context,FifthActivity::class.java)
-                               // startActivity(i)
+                                // startActivity(i)
                             }
                         })
                     }

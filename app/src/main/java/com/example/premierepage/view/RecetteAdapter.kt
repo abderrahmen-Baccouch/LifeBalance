@@ -25,16 +25,16 @@ class RecetteAdapter(val c: Context, val recettesList:MutableList<RecetteX>,val 
 
 
     inner  class UserViewHolder(val v: View,listener:onItemClickListener):RecyclerView.ViewHolder(v){
-      var nomRecetteTV: TextView
-      var caloriesTV : TextView
+        var nomRecetteTV: TextView
+        var caloriesTV : TextView
 
-       // var mMenus : ImageView
+        // var mMenus : ImageView
         init {
-          nomRecetteTV = v.findViewById<TextView>(R.id.nomRecette)
-         caloriesTV = v.findViewById<TextView>(R.id.calories)
-           v.setOnClickListener{
-               listener.onItemClick(adapterPosition)
-           }
+            nomRecetteTV = v.findViewById<TextView>(R.id.nomRecette)
+            caloriesTV = v.findViewById<TextView>(R.id.calories)
+            v.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
 
         }
 
@@ -45,16 +45,16 @@ class RecetteAdapter(val c: Context, val recettesList:MutableList<RecetteX>,val 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val v = inflater.inflate(R.layout.item_repas,parent,false)
+        val v = inflater.inflate(R.layout.item_recette,parent,false)
         return UserViewHolder(v,mListener)
     }
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val newList = recettesList[position]
-       holder.nomRecetteTV.text = newList.nomRecette
-      holder.caloriesTV.text = newList.calories.toString()
-       /* holder.proteinesTV.text = newList.proteines
-        holder.glucidesTV.text = newList.glucides
-        holder.lipidesTV.text = newList.lipides*/
+        holder.nomRecetteTV.text = newList.nomRecette
+        holder.caloriesTV.text = newList.calories.toString()
+        /* holder.proteinesTV.text = newList.proteines
+         holder.glucidesTV.text = newList.glucides
+         holder.lipidesTV.text = newList.lipides*/
 
     }
     override fun getItemCount(): Int {

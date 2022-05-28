@@ -1,6 +1,6 @@
 package com.example.premierepage
 
-import android.content.Intent
+
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -37,7 +37,9 @@ class QuantiteAliment : AppCompatActivity() {
         saveQuantite= findViewById(R.id.saveQuantite)
         cancelQuantite= findViewById(R.id.cancelQuantite)
 
-
+        cancelQuantite.setOnClickListener {
+            finish()
+        }
         saveQuantite.setOnClickListener {
             val map = HashMap<String?, String?>()
             map["quantite"] = quantite.text.toString()
@@ -73,7 +75,7 @@ class QuantiteAliment : AppCompatActivity() {
                     }
                 })
             }
-            }
+        }
 
     }
 }

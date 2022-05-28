@@ -45,7 +45,7 @@ class workoutGoal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_workout_goal)
-      KcalNbr=findViewById(R.id.KcalNbr)
+        KcalNbr=findViewById(R.id.KcalNbr)
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
         recv = findViewById(R.id.exercicesRecycler)//esm recycler badlou choufou fil workoutGoal
@@ -56,9 +56,9 @@ class workoutGoal : AppCompatActivity() {
         /**-------------------------------------myshared-------------------------------------------------- */
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
-       // val nbrKcal2 = intent.getStringExtra("nbrKcal2").toString()
+        // val nbrKcal2 = intent.getStringExtra("nbrKcal2").toString()
         //val name2 = intent.getStringExtra("name2").toString()
-      //  val names = name
+        //  val names = name
 
 
 
@@ -70,7 +70,7 @@ class workoutGoal : AppCompatActivity() {
 
 
 
-getExercices(token!!,calendar.text.toString())
+        getExercices(token!!,calendar.text.toString())
 
 
         //Calendar
@@ -113,43 +113,25 @@ for(index in 0..tab.size-1){
 
 
 
-/**    if (arr[0]==0){
-    arr.set(0,number)
-    }else{
-       var i = 1
+        /**    if (arr[0]==0){
+        arr.set(0,number)
+        }else{
+        var i = 1
         var b =false
-     while(b==false){
-         if(arr[i]==null){
-            arr.set(i,number)
-             b=true
-         }
-            else{
-            i++ }}}
+        while(b==false){
+        if(arr[i]==null){
+        arr.set(i,number)
+        b=true
+        }
+        else{
+        i++ }}}
 
-         for (j in 0..arr.size-1){
-             val a = nbr1
-             nbr1 = a!! +  arr.get(j) }
+        for (j in 0..arr.size-1){
+        val a = nbr1
+        nbr1 = a!! +  arr.get(j) }
         val c = nbr1.toString()
 
-*/
-
-
-
-
-
-
-
-
-
-
-
-      // nbr1 = nbrKcal1
-       //nbr2 = nbrKcal2
-       //  kcalNbr = findViewById(R.id.KcalNbr)
-          //    nbr3 = nbr1!! + nbr2!!
-         //   kcalNbr.text = " $nbr3   Kcal"
-
-
+         */
 
 
         progress_circular_workout.apply {
@@ -188,8 +170,7 @@ for(index in 0..tab.size-1){
                     KcalNbr.text= calConsome.toString()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(this@workoutGoal)
-                        adapter= ExerciceAdapter(this@workoutGoal,response.body()!!,object:
-                            ExerciceAdapter.onItemClickListener{
+                        adapter= ExerciceAdapter(this@workoutGoal,response.body()!!,"1",object: ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
 
                             }

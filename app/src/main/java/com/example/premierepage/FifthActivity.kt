@@ -21,11 +21,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.premierepage.model.BreakfastX
 import com.example.premierepage.model.Defit
 import com.example.premierepage.model.Exercices
 import com.example.premierepage.view.ExerciceAdapter
+import com.example.premierepage.view.NotreRepasAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.api.AnnotationsProto.http
@@ -48,81 +50,81 @@ class FifthActivity : AppCompatActivity() {
     var startPoint = 0
     var endPoint = 0
     private var retrofitInterface: RetrofitInterface? = null
-
+    private lateinit var recv: RecyclerView
     private val rotateOpen : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_open_anim) }
     private val rotateClose : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.rotate_close_anim) }
     private val fromBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.from_bottom_anim) }
     private val toBottom : Animation by lazy { AnimationUtils.loadAnimation(this,R.anim.to_bottom_anim) }
     private var clicked = false
-     override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
-         /**----------------------------------------Retrofit and myshared ------------------------------------------*/
-         val retrofit = RetrofitClient.getInstance()
-         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
-         myshared=getSharedPreferences("myshared",0)
-         val token =myshared?.getString("token","").toString().trim()
-         val poids=myshared?.getString("poids","").toString().toDouble()
-         val hauteur =myshared?.getString("hauteur","").toString().toDouble()
-         val age =myshared?.getString("age","").toString().trim()
-         val sexe =myshared?.getString("sexe","").toString().trim()
+        /**----------------------------------------Retrofit and myshared ------------------------------------------*/
+        val retrofit = RetrofitClient.getInstance()
+        retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        myshared=getSharedPreferences("myshared",0)
+        val token =myshared?.getString("token","").toString().trim()
+        val poids=myshared?.getString("poids","").toString().toDouble()
+        val hauteur =myshared?.getString("hauteur","").toString().toDouble()
+        val age =myshared?.getString("age","").toString().trim()
+        val sexe =myshared?.getString("sexe","").toString().trim()
+
+        recv = findViewById(R.id.listeAlimentRecycler)
+        getRecettes(token,calendar.text.toString())
+
+        val pattern = "dd-MM-yyyy"
+        val simpleDateFormat = SimpleDateFormat(pattern)
+        val date: String = simpleDateFormat.format(Date())
+        calendar.text=date
+
+        getCaloriesConsome(token,calendar.text.toString())
+        getCaloriesBrulee(token,calendar.text.toString())
+        val cc=caloriesConsome.text.toString().toInt()
+        val cb=caloriesBrulee.text.toString().toInt()
+        tv_stepsTaken.text=(cc-cb).toString() //problem d asyncronization
+
+        fab.setOnClickListener {
+            onAddButtonClicked()
+        }
+
+        edit_btn.setOnClickListener {
+            Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this,personnelSetting::class.java)
+            val a= poids.toString()
+            val b = hauteur.toString()
+            val c = age.toString()
+            val d = sexe.toString()
+            intent.putExtra("poids",a)
+            intent.putExtra("hauteur",b)
+            intent.putExtra("age",c)
+            intent.putExtra("sexe",d)
+            startActivity(intent)
+        }
+        workout.setOnClickListener {
+            val intent = Intent(this,Defit3::class.java)
+            startActivity(intent)
+        }
+        image_btn.setOnClickListener {
+            Toast.makeText(this,"Image Button Clicked",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this,DietType::class.java)
+            startActivity(intent)
+        }
 
 
+        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val imgMenu = findViewById<ImageView>(R.id.imgMenu)
+        val navView = findViewById<NavigationView>(R.id.navDrawar)
+        navView.itemIconTintList = null
+        imgMenu.setOnClickListener {
+            drawerLayout.openDrawer(GravityCompat.START)
+        }
 
+        toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
 
-         val pattern = "dd-MM-yyyy"
-         val simpleDateFormat = SimpleDateFormat(pattern)
-         val date: String = simpleDateFormat.format(Date())
-         calendar.text=date
-
-         getCaloriesConsome(token,calendar.text.toString())
-         getCaloriesBrulee(token,calendar.text.toString())
-         val cc=caloriesConsome.text.toString().toInt()
-         val cb=caloriesBrulee.text.toString().toInt()
-         tv_stepsTaken.text=(cc-cb).toString() //problem d asyncronization
-
-         fab.setOnClickListener {
-             onAddButtonClicked()
-         }
-
-         edit_btn.setOnClickListener {
-             Toast.makeText(this,"Edit Buton Clicked",Toast.LENGTH_SHORT).show()
-
-             val intent = Intent(this,personnelSetting::class.java)
-             val a= poids.toString()
-             val b = hauteur.toString()
-             val c = age.toString()
-             val d = sexe.toString()
-             intent.putExtra("poids",a)
-             intent.putExtra("hauteur",b)
-             intent.putExtra("age",c)
-             intent.putExtra("sexe",d)
-             startActivity(intent)
-         }
-         workout.setOnClickListener {
-             val intent = Intent(this,Defit3::class.java)
-             startActivity(intent)
-         }
-         image_btn.setOnClickListener {
-             Toast.makeText(this,"Image Button Clicked",Toast.LENGTH_SHORT).show()
-             val intent = Intent(this,DietType::class.java)
-             startActivity(intent)
-         }
-
-
-         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
-         val imgMenu = findViewById<ImageView>(R.id.imgMenu)
-         val navView = findViewById<NavigationView>(R.id.navDrawar)
-         navView.itemIconTintList = null
-         imgMenu.setOnClickListener {
-             drawerLayout.openDrawer(GravityCompat.START)
-         }
-
-           toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
-           drawerLayout.addDrawerListener(toggle)
-           toggle.syncState()
-
-      supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_home -> {
@@ -158,7 +160,7 @@ class FifthActivity : AppCompatActivity() {
                         val intent = Intent (Intent.ACTION_VIEW,uri)
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
-                }catch (activityNotFound : ActivityNotFoundException){
+                    }catch (activityNotFound : ActivityNotFoundException){
                         val uri : Uri = Uri.parse("http://play.google.com/store/apps/details?id=${getPackageName()}")
                         val intent = Intent (Intent.ACTION_VIEW,uri)
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -167,113 +169,114 @@ class FifthActivity : AppCompatActivity() {
                     }
                 }
             }
-           true
-         }
-         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.BottomNavMenu)
-         bottomNavigationView.setOnNavigationItemSelectedListener {
-             when(it.itemId){
-                 R.id.rappel -> {
-                     Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
-                     val intent = Intent(this,reminder::class.java) //pageadmin
-                     startActivity(intent)
-                 }
-                 R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
-                 R.id.recipe -> {
-                     Toast.makeText(this,"recettes",Toast.LENGTH_SHORT).show()
-                     val intent = Intent(this,dietPlans::class.java)
-                     startActivity(intent)
-                 }
-                 R.id.setting -> {
-                     Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show()
-                     val intent = Intent(this,DietType::class.java)
-                     startActivity(intent)
-                 }
-             }
-             true
-         }
+            true
+        }
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.BottomNavMenu)
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.rappel -> {
+                    Toast.makeText(this,"rappel",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,reminder::class.java)
+                    startActivity(intent)
+                }
+                R.id.home -> Toast.makeText(this,"home",Toast.LENGTH_SHORT).show()
+                R.id.recipe -> {
+                    Toast.makeText(this,"recettes",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,dietPlans::class.java)
+                    startActivity(intent)
+                }
+                R.id.setting -> {
+                    Toast.makeText(this,"setting",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this,DietType::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
 
-         volumeSeek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
-                 seekbar.text = progress.toString()
-             }
+        volumeSeek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
+                seekbar.text = progress.toString()
+            }
 
-             override fun onStartTrackingTouch(seekBar: SeekBar?) {
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
 
-                     if (seekBar != null) {
-                         startPoint = seekBar.progress
-                     }
+                if (seekBar != null) {
+                    startPoint = seekBar.progress
+                }
 
-             }
+            }
 
-             override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                 if (seekBar != null) {
-                     endPoint = seekBar.progress
-                 }
-             }
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar != null) {
+                    endPoint = seekBar.progress
+                }
+            }
 
-         })
+        })
 
-         //get data from intent
-         val intent = intent
-         val dec = DecimalFormat("#,###.00")
-
-
+        //get data from intent
+        val intent = intent
+        val dec = DecimalFormat("#,###.00")
 
 
 
-         imc.text = dec.format(poids/(hauteur*hauteur)).toString()
+
+
+        imc.text = dec.format(poids/(hauteur*hauteur)).toString()
 
 
 
-      progress_circular.apply {
-          progress = 100f
-          setProgressWithAnimation(30f,3000)
-          progressBarWidth = 12f
-          backgroundProgressBarWidth = 16f
-          progressBarColorStart = CYAN
-          progressBarColorEnd = WHITE
-          roundBorder = true
-          progressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
-          // Set background ProgressBar Color
-          backgroundProgressBarColor = GRAY
-          // or with gradient
-          backgroundProgressBarColorStart = WHITE
-          backgroundProgressBarColorEnd = rgb(220,20,60)
-          backgroundProgressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
+        progress_circular.apply {
+            progress = 100f
+            setProgressWithAnimation(30f,3000)
+            progressBarWidth = 12f
+            backgroundProgressBarWidth = 16f
+            progressBarColorStart = CYAN
+            progressBarColorEnd = WHITE
+            roundBorder = true
+            progressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
+            // Set background ProgressBar Color
+            backgroundProgressBarColor = GRAY
+            // or with gradient
+            backgroundProgressBarColorStart = WHITE
+            backgroundProgressBarColorEnd = rgb(220,20,60)
+            backgroundProgressBarColorDirection = CircularProgressBar.GradientDirection.TOP_TO_BOTTOM
 
 
-      }
+        }
 
 
-         defit_1.setOnClickListener {
-             val intent = Intent(this,Defit1::class.java)
-             startActivity(intent)
-         }
-         defit_2.setOnClickListener {
-             val intent = Intent(this,Defit2::class.java)
-             startActivity(intent)
-         }
-         defit_3.setOnClickListener {
-             val intent = Intent(this,Defit3::class.java)
-             startActivity(intent)
-         }
+
+        defit_1.setOnClickListener {
+            val intent = Intent(this,Defit1::class.java)
+            startActivity(intent)
+        }
+        defit_2.setOnClickListener {
+            val intent = Intent(this,Defit2::class.java)
+            startActivity(intent)
+        }
+        defit_3.setOnClickListener {
+            val intent = Intent(this,Defit3::class.java)
+            startActivity(intent)
+        }
         /* defit_4.setOnClickListener {
              val intent = Intent(this,dietPlans::class.java)
              startActivity(intent)
          }*/
-         exercice.setOnClickListener {
-             val intent = Intent(this,ActivityExercices::class.java)
-             startActivity(intent)
-         }
+        exercice.setOnClickListener {
+            val intent = Intent(this,ActivityExercices::class.java)
+            startActivity(intent)
+        }
 
-         diaryBalance_button.setOnClickListener {
-         val intent = Intent(this,diaryBalanceActivity::class.java)
-             val a = sexe.toString()
-             val b = age.toString()
-             intent.putExtra("age",b)
-             intent.putExtra("sexe",a)
-             startActivity(intent)
-         }
+        diaryBalance_button.setOnClickListener {
+            val intent = Intent(this,diaryBalanceActivity::class.java)
+            val a = sexe.toString()
+            val b = age.toString()
+            intent.putExtra("age",b)
+            intent.putExtra("sexe",a)
+            startActivity(intent)
+        }
         /* fab.setOnClickListener{
              val intent = Intent(this,workoutGoal::class.java)
              startActivity(intent)
@@ -290,111 +293,111 @@ class FifthActivity : AppCompatActivity() {
 
 
 
-         addBreakFast.setOnClickListener {
-             val i3 = Intent(this,aliments::class.java)
-             val call = retrofitInterface!!.executeCreateBreakfast(token)
-             call.enqueue(object : retrofit2.Callback<BreakfastX> {
-                 override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
-                     Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
-                     if (response.code()==200){
-                         var editor: SharedPreferences.Editor=myshared!!.edit()
-                         editor.putString("idbreakfast",response.body()!!._id)
-                         editor.commit()
-                         startActivity(i3)
-                     }else if (response.code()==400){
-                         Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
-                     }
-                 }
-                 override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
-                     Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
-                 }
-             })
-         }
-         addLunch.setOnClickListener {
-             val i3 = Intent(this,aliments::class.java)
-             val call = retrofitInterface!!.executeCreateLunch(token)
-             call.enqueue(object : retrofit2.Callback<BreakfastX> {
-                 override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
-                     Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
-                     if (response.code()==200){
-                         var editor: SharedPreferences.Editor=myshared!!.edit()
-                         editor.putString("idlunch",response.body()!!._id)
-                         editor.commit()
-                         startActivity(i3)
-                     }else if (response.code()==400){
-                         Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
-                     }
-                 }
-                 override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
-                     Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
-                 }
-             })
-         }
-         addDinner.setOnClickListener {
-             val i3 = Intent(this,aliments::class.java)
-             val call = retrofitInterface!!.executeCreateDinner(token)
-             call.enqueue(object : retrofit2.Callback<BreakfastX> {
-                 override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
-                     Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
-                     if (response.code()==200){
-                         var editor: SharedPreferences.Editor=myshared!!.edit()
-                         editor.putString("iddinner",response.body()!!._id)
-                         editor.commit()
-                         startActivity(i3)
-                     }else if (response.code()==400){
-                         Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
-                     }
-                 }
-                 override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
-                     Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
-                 }
-             })
-         }
-         //Calendar
-         val c = Calendar.getInstance()
-         var year = c.get(Calendar.YEAR)
-         var month = c.get(Calendar.MONTH)
-         var day = c.get(Calendar.DAY_OF_MONTH)
-         //button click to show DatePicker
-         buttonDatePicker.setOnClickListener{
-             val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener
-             { view, mYear, mMonth, mDay ->
-                 day = mDay
-                 month = mMonth
-                 year = mYear
-                 //set to textView
-                 cYear=year
-                 cMonth=month+1
-                 cDay=day
-                 calendar.text ="${cDay.toString().padStart(2, '0')}-${cMonth.toString().padStart(2, '0')}-${cYear.toString()}"
-             // age.text= "${age.toString()}"
-                 getCaloriesConsome(token,calendar.text.toString())
-                 getCaloriesBrulee(token,calendar.text.toString())
-                 tv_stepsTaken.text=(caloriesConsome.text.toString().toInt()-caloriesBrulee.text.toString().toInt()).toString()
-             },year,month,day)
+        addBreakFast.setOnClickListener {
+            val i3 = Intent(this,aliments::class.java)
+            val call = retrofitInterface!!.executeCreateBreakfast(token)
+            call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                    Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                    if (response.code()==200){
+                        var editor: SharedPreferences.Editor=myshared!!.edit()
+                        editor.putString("idbreakfast",response.body()!!._id)
+                        editor.commit()
+                        startActivity(i3)
+                    }else if (response.code()==400){
+                        Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+        addLunch.setOnClickListener {
+            val i3 = Intent(this,aliments::class.java)
+            val call = retrofitInterface!!.executeCreateLunch(token)
+            call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                    Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                    if (response.code()==200){
+                        var editor: SharedPreferences.Editor=myshared!!.edit()
+                        editor.putString("idlunch",response.body()!!._id)
+                        editor.commit()
+                        startActivity(i3)
+                    }else if (response.code()==400){
+                        Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+        addDinner.setOnClickListener {
+            val i3 = Intent(this,aliments::class.java)
+            val call = retrofitInterface!!.executeCreateDinner(token)
+            call.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                    Toast.makeText(this@FifthActivity,response.code().toString(),Toast.LENGTH_LONG).show()
+                    if (response.code()==200){
+                        var editor: SharedPreferences.Editor=myshared!!.edit()
+                        editor.putString("iddinner",response.body()!!._id)
+                        editor.commit()
+                        startActivity(i3)
+                    }else if (response.code()==400){
+                        Toast.makeText(this@FifthActivity,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+        //Calendar
+        val c = Calendar.getInstance()
+        var year = c.get(Calendar.YEAR)
+        var month = c.get(Calendar.MONTH)
+        var day = c.get(Calendar.DAY_OF_MONTH)
+        //button click to show DatePicker
+        buttonDatePicker.setOnClickListener{
+            val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener
+            { view, mYear, mMonth, mDay ->
+                day = mDay
+                month = mMonth
+                year = mYear
+                //set to textView
+                cYear=year
+                cMonth=month+1
+                cDay=day
+                calendar.text ="${cDay.toString().padStart(2, '0')}-${cMonth.toString().padStart(2, '0')}-${cYear.toString()}"
+                // age.text= "${age.toString()}"
+                getCaloriesConsome(token,calendar.text.toString())
+                getCaloriesBrulee(token,calendar.text.toString())
+                tv_stepsTaken.text=(caloriesConsome.text.toString().toInt()-caloriesBrulee.text.toString().toInt()).toString()
+            },year,month,day)
 
-             //Show dialog
-             dpd.show()
-         }
+            //Show dialog
+            dpd.show()
+        }
     }
     fun getCaloriesConsome(token:String,dateUser:String){
-    val map = HashMap<String?, String?>()
-    map["dateUser"] = dateUser
+        val map = HashMap<String?, String?>()
+        map["dateUser"] = dateUser
 
-    val call = retrofitInterface!!.executeGetCaloriesConsome(map,token)
-    call.enqueue(object : Callback<BreakfastX> {
-        override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
-            if (response.code()==200){
-                caloriesConsome.text=response.body()!!.caloriesConsome.toString()
-            }else if (response.code()==400){
+        val call = retrofitInterface!!.executeGetCaloriesConsome(map,token)
+        call.enqueue(object : Callback<BreakfastX> {
+            override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                if (response.code()==200){
+                    caloriesConsome.text=response.body()!!.caloriesConsome.toString()
+                }else if (response.code()==400){
 
+                }
             }
-        }
-        override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
-            Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
-        }
+            override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+            }
 
-    })
+        })
     }
     fun getCaloriesBrulee(token:String,dateUser:String){
         val map = HashMap<String?, String?>()
@@ -463,5 +466,31 @@ class FifthActivity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+    fun getRecettes(token:String,dateUser:String){
+        val map = HashMap<String?, String?>()
+        map["dateUser"] = "24-05-2022"//dateUser
+        val call = retrofitInterface!!.executeAllBreakfast(token,map)
+        call.enqueue(object : retrofit2.Callback<MutableList<BreakfastX>> {
+            override fun onResponse(call: Call<MutableList<BreakfastX>>, response: Response<MutableList<BreakfastX>>) {
+                if (response.code()==200){
+                    val listExercice=response.body()
+
+                    recv.apply {
+                        recv.layoutManager = LinearLayoutManager(this@FifthActivity)
+                        adapter= NotreRepasAdapter(this@FifthActivity,response.body()!![0]!!.recettes,object:NotreRepasAdapter.onItemClickListener{
+                            override fun onItemClick(position: Int) {
+
+                            }
+                        }/*object:ExerciceAdapter.onItemClickListener{
+                           override fun onItemClick(position: Int) {}}*/)
+                    }
+                }else if (response.code()==400){
+                }
+            }
+            override fun onFailure(call: Call<MutableList<BreakfastX>>, t: Throwable) {
+                Toast.makeText(this@FifthActivity, t.message, Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

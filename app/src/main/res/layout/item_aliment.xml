@@ -2,14 +2,14 @@
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="125dp"
+    android:layout_height="140dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:ignore="Orientation">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="360dp"
-        android:layout_height="100dp"
+        android:layout_width="370dp"
+        android:layout_height="110dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:cardMaxElevation="10dp"
@@ -26,34 +26,51 @@
 
         <TextView
             android:id="@+id/nomAliment"
-            android:text="title"
-            android:paddingLeft="80sp"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_margin="6dp"
+            android:fontFamily="@font/montserrat_subrayada"
+            android:paddingLeft="60sp"
             android:paddingTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#179386"
-            android:textSize="24sp"
-            android:fontFamily="@font/chewyy"
-            android:layout_margin="6dp"/>
-        <TextView
-            android:id="@+id/calories"
-            android:text="Subtitle"
-            android:paddingTop="15sp"
-            android:paddingLeft="280dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#595656"
-            android:textSize="15sp"
-            android:fontFamily="@font/lobsterr"
-            android:textStyle="bold"
-            android:layout_margin="6dp"/>
-      <ImageView
+            android:text="food  bnina "
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <ImageView
             android:id="@+id/mMenus"
             android:layout_width="35sp"
             android:layout_height="35dp"
             android:layout_marginLeft="315dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/ic_more"/>
+
+        <TextView
+            android:id="@+id/calories"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="300dp"
+            android:fontFamily="@font/lobsterr"
+            android:layout_marginTop="38dp"
+            android:paddingTop="7sp"
+            android:paddingLeft="5dp"
+            android:text="300kcal"
+            android:textColor="#595656"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/quantite"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="300dp"
+            android:fontFamily="@font/lobsterr"
+            android:layout_marginTop="70dp"
+            android:paddingTop="10sp"
+            android:paddingLeft="5dp"
+            android:text="300g"
+            android:textColor="#595656"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
         <!--<ImageView
             android:id="@+id/arrowDown"
             android:layout_width="50dp"
@@ -68,24 +85,25 @@
             android:paddingLeft="15dp"
             android:background="@color/white"
             android:layout_marginLeft="10dp"
-            android:textColor="#000000"
+            android:textColor="#323030"
             android:textSize="18dp"
             android:layout_marginTop="50dp"
             android:textStyle="bold"
             android:fontFamily="@font/chewyy"/>
+
         <TextView
             android:id="@+id/proteines"
             android:layout_width="70dp"
             android:layout_height="40dp"
-            android:text=""
-            android:paddingTop="5dp"
             android:layout_marginLeft="25dp"
-            android:paddingLeft="15dp"
+            android:layout_marginTop="68dp"
             android:background="@color/white"
-            android:textColor="#D81B60"
-            android:textSize="18dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/chewyy"/>
+            android:fontFamily="@font/anton"
+            android:paddingLeft="12dp"
+            android:paddingTop="0dp"
+            android:text="125g"
+            android:textColor="#888A8A"
+            android:textSize="18dp" />
         <TextView
             android:textStyle="bold"
             android:layout_marginLeft="115dp"
@@ -96,32 +114,32 @@
             android:layout_height="20dp"
             android:text="Glucides"
             android:background="@color/white"
-            android:textColor="#000000"
+            android:textColor="#323030"
             android:textSize="18dp"
             android:fontFamily="@font/chewyy"/>
         <TextView
             android:id="@+id/glucides"
             android:layout_width="70dp"
             android:layout_height="40dp"
-            android:text=""
-            android:paddingTop="5dp"
+            android:text="687g"
+            android:paddingTop="0dp"
             android:layout_marginLeft="125dp"
             android:paddingLeft="15dp"
             android:background="@color/white"
-            android:textColor="#D81B60"
+            android:textColor="#888A8A"
             android:textSize="18dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/chewyy"/>
+            android:layout_marginTop="68dp"
+            android:fontFamily="@font/anton"/>
         <TextView
             android:textStyle="bold"
             android:paddingTop="0dp"
             android:layout_marginLeft="220dp"
             android:paddingLeft="15dp"
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="20dp"
             android:text="Lipides"
             android:background="@color/white"
-            android:textColor="#050505"
+            android:textColor="#323030"
             android:textSize="18dp"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/chewyy"/>
@@ -129,15 +147,15 @@
             android:id="@+id/lipides"
             android:layout_width="70dp"
             android:layout_height="40dp"
-            android:text=""
-            android:paddingTop="5dp"
+            android:text="50g"
+            android:paddingTop="0dp"
             android:layout_marginLeft="229dp"
             android:paddingLeft="15dp"
             android:background="@color/white"
-            android:textColor="#D81B60"
+            android:textColor="#888A8A"
             android:textSize="18dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/chewyy"/>
+            android:layout_marginTop="68dp"
+            android:fontFamily="@font/anton"/>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

@@ -17,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,val mListener:onItemClickListener): RecyclerView.Adapter<ExerciceAdapter.ExerciceViewHolder> () {
+class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,val role:String,val mListener:onItemClickListener): RecyclerView.Adapter<ExerciceAdapter.ExerciceViewHolder> () {
     private var retrofitInterface: RetrofitInterface? = null
 
     interface onItemClickListener{
@@ -34,6 +34,9 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
             mMenus.setOnClickListener { popupMenus(it) }
             v.setOnClickListener{
                 listener.onItemClick(adapterPosition)
+            }
+            if(role!="1"){
+                mMenus.visibility= View.GONE
             }
         }
 
