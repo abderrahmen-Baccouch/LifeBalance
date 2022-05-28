@@ -53,6 +53,11 @@ class FifthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fifth)
 
+         bouton_eau.setOnClickListener {
+             val intent = Intent(this,ConsommationEau::class.java) //pageadmin
+             startActivity(intent)
+         }
+
          fab.setOnClickListener {
              onAddButtonClicked()
          }
@@ -172,7 +177,7 @@ class FifthActivity : AppCompatActivity() {
          }
 
 
-
+/*
          volumeSeek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
              override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
                  seekbar.text = progress.toString()
@@ -192,7 +197,7 @@ class FifthActivity : AppCompatActivity() {
                  }
              }
 
-         })
+         })*/
 
          //get data from intent
          val intent = intent

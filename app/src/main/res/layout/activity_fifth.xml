@@ -15,7 +15,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_fifth_activity"
-    android:layout_marginBottom="-200dp">
+    android:layout_marginBottom="-130dp">
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -96,7 +96,7 @@
         android:background="@drawable/bottomnav_bg"
         android:elevation="2dp"
         android:layout_marginLeft="-10dp"
-        android:layout_marginTop="620dp"
+        android:layout_marginTop="630dp"
         app:itemIconSize="50dp"
         app:itemIconTint="#00ACC1"
         app:layout_constraintEnd_toEndOf="parent"
@@ -847,16 +847,18 @@
 
 -->
 
-
+²
             <androidx.cardview.widget.CardView
-                android:layout_width="390dp"
-                android:layout_height="180dp"
+                android:id="@+id/bouton_eau"
+                android:layout_width="380dp"
+                android:layout_height="150dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
                 android:paddingTop="100dp"
                 app:cardBackgroundColor="@color/white"
                 app:cardElevation="50dp"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -868,59 +870,61 @@
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/background_cardview" />
+                    android:src="@drawable/eau_2" />
+
+
+<!--
 
                 <SeekBar
                     android:id="@+id/volumeSeek_bar"
                     android:layout_width="250dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="60dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="95dp"
+                    android:layout_marginLeft="70dp"
                     android:layout_weight="1"
                     android:indeterminate="false"
                     android:max="10"
                     android:progress="0"
                     android:progressDrawable="@drawable/track"
                     android:thumb="@drawable/thumb" />
-
+-->
+                <!--
                 <TextView
                     android:id="@+id/seekbar"
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="110dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="145dp"
                     android:fontFamily="@font/galada"
                     android:outlineAmbientShadowColor="@color/black"
                     android:text="0"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/patrick_hand"
-                    android:text="Bois de l'eau"
-                    android:textColor="#C12155"
-                    android:textSize="30dp"
-                    android:textStyle="bold" />
-
+-->
+<!--
                 <TextView
                     android:layout_width="80dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="170dp"
-                    android:layout_marginTop="120dp"
+                    android:layout_marginTop="145dp"
                     android:fontFamily="@font/galada"
                     android:text="Bouteille"
                     android:textSize="20dp"
                     android:textStyle="bold" />
+-->
+                <TextView
 
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="80dp"
+                    android:text="Consommer de l'eau"
+                    android:textStyle="bold"
+                    android:textColor="#2C2B2B"
+                    android:textSize="22dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/anton"
+                    android:layout_marginTop="90dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/glass" />
 

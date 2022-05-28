@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConsommationEau">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:layout_width="417dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginLeft="-5dp"
+                app:cardCornerRadius="30dp">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rectangle_3__1_"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:ignore="MissingConstraints" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="-388dp"
+                android:id="@+id/cardView"
+                android:layout_width="360dp"
+                android:layout_height="200dp"
+                android:paddingTop="100dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/eau_4"/>
+
+               <TextView
+                   android:layout_width="150dp"
+                   android:layout_height="50dp"
+                   android:textAlignment="center"
+                   android:textSize="28dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="215dp"
+                   android:textColor="#0066FF"
+                   android:textStyle="bold"
+                   android:text="2.1 L/J"
+                   android:paddingTop="5dp"
+                   android:fontFamily="@font/patrick_hand"/>
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:textAlignment="center"
+                    android:textSize="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="-80dp"
+                    android:text="Eau à boire"
+                    android:fontFamily="@font/lobsterr"/>
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <EditText
+                android:id="@+id/quantite"
+                android:layout_width="220dp"
+                android:layout_marginLeft="-350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="280dp"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:hint="Quantité d'eau "
+                android:textStyle="bold"
+                android:inputType="numberDecimal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.219"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.088"
+                tools:ignore="MissingConstraints" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/valide"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginBottom="206dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/textKg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    android:src="@drawable/glass" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="320dp"
+                android:layout_marginLeft="-360dp">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exercicesRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30sp" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
