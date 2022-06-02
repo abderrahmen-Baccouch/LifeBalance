@@ -48,12 +48,9 @@ android:layout_marginTop="555dp"
             android:id="@+id/ajouter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
-
             android:background="#04E1CA"
             android:fontFamily="@font/chewyy"
             android:text="ajouter Exercice"
-
             android:textColor="#FFFFFF"
             android:textSize="22dp"
             android:textStyle="bold"

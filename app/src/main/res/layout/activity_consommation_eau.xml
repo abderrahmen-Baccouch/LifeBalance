@@ -115,7 +115,7 @@
                 app:cardElevation="10dp">
 
                 <ImageView
-                    android:id="@+id/textKg"
+                    android:id="@+id/addEauBtn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingTop="10dp"
@@ -129,7 +129,7 @@
                 android:layout_marginTop="320dp"
                 android:layout_marginLeft="-360dp">
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/exercicesRecycler"
+                    android:id="@+id/eauRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="30sp" />

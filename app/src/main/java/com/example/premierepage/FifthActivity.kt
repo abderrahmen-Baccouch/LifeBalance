@@ -69,6 +69,10 @@ class FifthActivity : AppCompatActivity() {
         val age =myshared?.getString("age","").toString().trim()
         val sexe =myshared?.getString("sexe","").toString().trim()
 
+        bouton_eau.setOnClickListener {
+            val intent = Intent(this,ConsommationEau::class.java)
+            startActivity(intent)
+        }
         recv = findViewById(R.id.listeAlimentRecycler)
         getRecettes(token,calendar.text.toString())
 
@@ -194,26 +198,7 @@ class FifthActivity : AppCompatActivity() {
             true
         }
 
-        volumeSeek_bar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, p2: Boolean) {
-                seekbar.text = progress.toString()
-            }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-
-                if (seekBar != null) {
-                    startPoint = seekBar.progress
-                }
-
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                if (seekBar != null) {
-                    endPoint = seekBar.progress
-                }
-            }
-
-        })
 
         //get data from intent
         val intent = intent

@@ -58,6 +58,9 @@
             android:name=".ListeAliments"
             android:exported="false" />
         <activity
+            android:name=".ConsommationEau"
+            android:exported="false" />
+        <activity
             android:name=".NotreRepas"
             android:exported="false" />
         <activity
@@ -208,7 +211,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+<receiver android:name=".AlarmReceiver"
+    android:enabled="true"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

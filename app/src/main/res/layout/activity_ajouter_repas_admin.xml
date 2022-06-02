@@ -11,7 +11,7 @@
         android:layout_width="370dp"
         android:layout_height="300dp"
         app:cardCornerRadius="35dp"
-        app:cardElevation="50dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,31 +103,53 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.871" />
 
+
     <Button
         android:id="@+id/saveRecette"
         android:layout_width="75dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/bouton_bg5"
         android:fontFamily="@font/salsa"
-        android:text="save"
+        android:text="valider"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="normal"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <Button
-        android:id="@+id/cancelRecette"
-        android:layout_width="75dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bouton_bg5"
-        android:fontFamily="@font/salsa"
-        android:text="cancel"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:textStyle="normal"
-   />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="580dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/cancelRecette"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:background="#0AB511"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:paddingTop="5dp"
+            android:text="annuler"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="normal"
+            tools:ignore="MissingConstraints" />
+    </androidx.cardview.widget.CardView>
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circleImageView"
+        android:id="@+id/imageViewG"
         android:layout_width="207dp"
         android:layout_height="142dp"
         android:src="@drawable/placeholder"

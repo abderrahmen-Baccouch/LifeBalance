@@ -1,13 +1,17 @@
 package com.example.premierepage
 
+import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.premierepage.model.Aliments
 import com.example.premierepage.model.Ingredient
+import com.example.premierepage.model.Recette
 import com.example.premierepage.model.RecetteX
 import com.example.premierepage.view.AlimentAdapter
 import com.example.premierepage.view.IngredientAdapter
@@ -18,12 +22,17 @@ import retrofit2.Response
 
 class Breakfast1 : AppCompatActivity() {
     private var retrofitInterface: RetrofitInterface? = null
+    var myshared: SharedPreferences?=null
+    lateinit var addIngredient: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_breakfast1)
         /******************************Retrofit and intentGetExtra***************************/
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+        myshared=getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
+        var role =myshared?.getString("role","")
         var nomRepas=intent.getStringExtra("nomRepas")
 
         var calories=intent.getIntExtra("calories",0)
@@ -53,9 +62,23 @@ class Breakfast1 : AppCompatActivity() {
 
 
         getIngredients(idRepas!!)
+        addIngredient = findViewById(R.id.addIngredient)
+        addIngredient.setOnClickListener {
+            var editor: SharedPreferences.Editor = myshared!!.edit()
+            editor.putString("idrecette",idRepas )
+            editor.commit()
+            val i= Intent(this@Breakfast1,ListeAliments::class.java)
+    startActivity(i)
+
+        }
+
 
     }
-
+    override fun onResume() {
+        super.onResume()
+        var idRepas=intent.getStringExtra("idRepas")
+        getIngredients(idRepas!!)
+    }
     private fun getIngredients(idRepas:String) {
         val recv: RecyclerView = findViewById(R.id.IngredientsRecycler)
         val call = retrofitInterface!!.executeAllIngredients(idRepas)

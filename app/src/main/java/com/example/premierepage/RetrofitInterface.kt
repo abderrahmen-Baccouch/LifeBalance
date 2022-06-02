@@ -183,6 +183,10 @@ interface RetrofitInterface {
     fun executeDeleteIngredient(@Path("idrecette") idrecette: String?,
                                 @Path("indiceingredient") indiceingredient: String?):Call<Void>
 
+    @DELETE("recette/deleteRecette/{idrecette}")
+    fun executeDeleteRecette(@Path("idrecette") idrecette: String?, )
+    :Call<Void>
+
 
     /**--------------------------------------------notre repas -----------------------------------------------------------*/
 
@@ -311,6 +315,18 @@ interface RetrofitInterface {
                        @Body map:HashMap<String?,String?>?)
     :Call<Void>//momken tetbadel ki bech naamlou notification
 
+
+
+    /***********************************Eau**********************************************/
+
+    @POST("eau/addEau")
+    fun executeAddEau(@Header("authorization") authHeader: String?,
+                      @Body map:HashMap<String?,String?>?)
+    :Call<Void>
+
+    @GET("eau/alleau")
+    fun executeAllEau(@Header("authorization") authHeader: String?,)
+    :Call<MutableList<Eau>>
 
 
 

@@ -9,7 +9,7 @@ tools:context=".AjouterRepasAdmin">
 <androidx.cardview.widget.CardView
     android:layout_width="370dp"
     android:layout_height="320dp"
-    app:cardElevation="50dp"
+    app:cardElevation="20dp"
     app:cardCornerRadius="35dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
