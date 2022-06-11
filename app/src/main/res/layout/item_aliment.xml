@@ -29,10 +29,10 @@
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:layout_margin="6dp"
-            android:fontFamily="@font/montserrat_subrayada"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:paddingLeft="60sp"
             android:paddingTop="7dp"
-            android:text="food  bnina "
+            android:text="food  omlette "
             android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -80,7 +80,7 @@
             android:layout_marginTop="30dp"/> -->
         <TextView
             android:layout_width="100dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:text="Proteine"
             android:paddingLeft="15dp"
             android:background="@color/white"
@@ -89,16 +89,17 @@
             android:textSize="18dp"
             android:layout_marginTop="50dp"
             android:textStyle="bold"
-            android:fontFamily="@font/chewyy"/>
+            android:fontFamily="@font/montserrat_alternates_medium"/>
 
         <TextView
             android:id="@+id/proteines"
             android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="68dp"
+            android:textStyle="bold"
+            android:layout_marginTop="75dp"
             android:background="@color/white"
-            android:fontFamily="@font/anton"
+            android:fontFamily="@font/montserrat_alternates_medium"
             android:paddingLeft="12dp"
             android:paddingTop="0dp"
             android:text="125g"
@@ -111,51 +112,53 @@
             android:layout_marginTop="50dp"
             android:paddingTop="0dp"
             android:layout_width="100dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:text="Glucides"
             android:background="@color/white"
             android:textColor="#323030"
             android:textSize="18dp"
-            android:fontFamily="@font/chewyy"/>
+            android:fontFamily="@font/montserrat_alternates_medium"/>
         <TextView
             android:id="@+id/glucides"
             android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:text="687g"
+            android:textStyle="bold"
             android:paddingTop="0dp"
             android:layout_marginLeft="125dp"
             android:paddingLeft="15dp"
             android:background="@color/white"
             android:textColor="#888A8A"
             android:textSize="18dp"
-            android:layout_marginTop="68dp"
-            android:fontFamily="@font/anton"/>
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/montserrat_alternates_medium"/>
         <TextView
             android:textStyle="bold"
             android:paddingTop="0dp"
             android:layout_marginLeft="220dp"
             android:paddingLeft="15dp"
             android:layout_width="80dp"
-            android:layout_height="20dp"
+            android:layout_height="25dp"
             android:text="Lipides"
             android:background="@color/white"
             android:textColor="#323030"
             android:textSize="18dp"
             android:layout_marginTop="50dp"
-            android:fontFamily="@font/chewyy"/>
+            android:fontFamily="@font/montserrat_alternates_medium"/>
         <TextView
             android:id="@+id/lipides"
             android:layout_width="70dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:text="50g"
+            android:textStyle="bold"
             android:paddingTop="0dp"
             android:layout_marginLeft="229dp"
             android:paddingLeft="15dp"
             android:background="@color/white"
             android:textColor="#888A8A"
             android:textSize="18dp"
-            android:layout_marginTop="68dp"
-            android:fontFamily="@font/anton"/>
+            android:layout_marginTop="75dp"
+            android:fontFamily="@font/montserrat_alternates_medium"/>
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

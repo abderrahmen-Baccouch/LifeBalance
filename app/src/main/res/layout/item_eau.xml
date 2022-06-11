@@ -33,12 +33,25 @@
             android:text="17/05/2000"
             android:textColor="#000000"
             android:textSize="20dp" />
+        <ImageView
+            android:id="@+id/cancelEau"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/x"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.042"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.024" />
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="30dp"
             android:layout_marginTop="100dp"
-            android:layout_marginLeft="-300dp"
+            android:layout_marginLeft="-360dp"
             android:text="Eau consommée"
             android:textColor="#9A9696"
             android:textStyle="bold"
@@ -49,13 +62,13 @@
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/vert2"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="80dp"/>
         <ImageView
             android:layout_width="15dp"
             android:layout_height="15dp"
             android:src="@drawable/bleu2"
-            android:layout_marginLeft="-270dp"
+            android:layout_marginLeft="-250dp"
             android:layout_marginTop="80dp"/>
         <TextView
             android:id="@+id/quantite"
@@ -70,10 +83,11 @@
 
 
         <TextView
+            android:id="@+id/objectif"
             android:layout_width="80dp"
             android:layout_height="30dp"
             android:layout_marginTop="70dp"
-            android:layout_marginLeft="180dp"
+            android:layout_marginLeft="160dp"
             android:text="2.1 L"
             android:textSize="25dp"
             android:textColor="#5C5A5A"
@@ -93,7 +107,7 @@
             android:layout_width="420dp"
             android:layout_height="2dp"
             android:layout_marginTop="145dp"
-            android:layout_marginLeft="-420dp"
+            android:layout_marginLeft="-390dp"
             android:background="#9F9C9C"/>
 
 

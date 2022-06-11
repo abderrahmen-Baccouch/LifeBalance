@@ -170,7 +170,7 @@ for(index in 0..tab.size-1){
                     KcalNbr.text= calConsome.toString()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(this@workoutGoal)
-                        adapter= ExerciceAdapter(this@workoutGoal,response.body()!!,"1",object: ExerciceAdapter.onItemClickListener{
+                        adapter= ExerciceAdapter(this@workoutGoal,response.body()!!,"2",object: ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
 
                             }

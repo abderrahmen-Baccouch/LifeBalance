@@ -16,18 +16,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="832dp"
-                android:layout_height="644dp"
-                android:layout_marginLeft="-200dp"
-                android:layout_marginTop="-265dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/b1" />
+
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="100dp"
                 android:layout_height="80dp"
-                android:layout_marginTop="-130dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="-5dp"
                 android:src="@drawable/food_icon" />
 
@@ -36,30 +29,26 @@
                 android:layout_width="250dp"
                 android:layout_height="70dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/chewyy"
-                android:text="Avocat et l'oeufs de haricots noirs"
-                android:textColor="#D81B60"
-                android:textSize="30dp"
-                android:layout_marginLeft="80dp"
-                android:textStyle="bold"
-                android:layout_marginTop="-80dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.279"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.067" />
+                android:paddingTop="13dp"
+                android:paddingLeft="-30dp"
+                android:fontFamily="@font/anton"
+                android:text="Avocat et l'oeufs"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="-72dp"
+                 />
 
 
 
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:fontFamily="@font/lobsterr"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:text="Energie"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/one"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="35dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -89,10 +78,10 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:fontFamily="@font/lobsterr"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:text="Proteine"
                 android:textColor="@color/one"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="-80dp"
@@ -124,12 +113,12 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:fontFamily="@font/lobsterr"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:text="Glucide"
                 android:layout_marginLeft="215dp"
                 android:layout_marginTop="-80dp"
                 android:textColor="@color/one"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -159,11 +148,11 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="40dp"
-                android:fontFamily="@font/lobsterr"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:text="Lipides"
                 android:layout_marginLeft="295dp"
                 android:textColor="@color/one"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:layout_marginTop="-80dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -200,13 +189,13 @@
             <TextView
                 android:layout_width="211dp"
                 android:layout_height="38dp"
-                android:fontFamily="@font/patrick_hand"
+                android:fontFamily="@font/montserrat_alternates_medium"
                 android:text="temps de préparation"
-                android:textColor="@color/bleuCiel"
-                android:textSize="22sp"
+                android:textColor="@color/one"
+                android:textSize="18sp"
+                android:paddingTop="5dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="0dp"
-                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.08"
@@ -219,14 +208,14 @@
                 android:id="@+id/tempsPreparation"
                 android:layout_width="97dp"
                 android:layout_height="40dp"
-                android:fontFamily="@font/orbitron"
+                android:fontFamily="@font/patrick_hand"
                 android:text="10 Mins"
                 android:layout_marginLeft="300dp"
                 android:layout_marginTop="-40dp"
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textColor="#4E4D4D"
+                android:textSize="23dp"
+                android:paddingTop="0dp"
                 android:textStyle="bold"
-                android:paddingTop="5dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.91"
@@ -234,15 +223,178 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.468" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:paddingTop="8dp"
+                android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addBreakFast"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                android:paddingLeft="-5dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.17"
+                tools:ignore="MissingConstraints">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/spinach_pear_andwalnut_panini_feta"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:textStyle="bold"
+                    android:text="Ajouter "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:paddingLeft="35dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:layout_marginTop="75dp"/>
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:textStyle="bold"
+                    android:text="petit déjeuner"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:paddingLeft="7dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:layout_marginTop="93dp"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addDejeuner"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.061"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.17"
+                tools:ignore="MissingConstraints">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/deconstruced_hummus_salad"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="75dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:paddingLeft="30dp"
+                    android:text="Ajouter "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:textStyle="bold"
+                    android:text="déjeuner"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:paddingLeft="25dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:layout_marginTop="95dp"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addDinner"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.945"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="MissingConstraints">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/carrot_and_spinach_stirfry"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.03" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="75dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:paddingLeft="30dp"
+                    android:text="Ajouter "
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="95dp"
+                    android:fontFamily="@font/montserrat_alternates_medium"
+                    android:paddingLeft="40dp"
+                    android:text="dîner"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
             <TextView
                 android:layout_width="180dp"
                 android:layout_height="41dp"
-                android:fontFamily="@font/patrick_hand"
-                android:text="Ingredients :"
-                android:textColor="#E53935"
-                android:textSize="25dp"
+                android:fontFamily="@font/montserrat_alternates_medium"
+                android:text="Ingredients"
+                android:paddingLeft="30dp"
+                android:textColor="#000000"
+                android:textSize="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_marginLeft="120dp"
+                android:layout_marginLeft="110dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -254,7 +406,8 @@
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="150dp"
                 android:layout_height="120dp"
-                android:layout_marginTop="-85dp"
+                android:layout_marginTop="-105dp"
+                android:paddingTop="35dp"
                 android:layout_marginLeft="-30dp"
                 android:src="@drawable/salade" />
 
@@ -270,21 +423,24 @@
             </LinearLayout>
             <Button
                 android:id="@+id/addIngredient"
-                android:layout_width="250dp"
-                android:layout_height="50dp"
-                android:background="@drawable/bouton_bg5"
-                android:fontFamily="@font/salsa"
-                android:text="Ajouter un ingredient"
+                android:layout_width="200dp"
+                android:layout_height="57dp"
+                android:background="@drawable/button1"
+                android:fontFamily="@font/candal"
+                android:text="AJOUTER INGREDIENT"
                 android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="normal"
+                android:layout_marginLeft="100dp"
+                android:paddingTop="0dp"
+                android:paddingLeft="0dp"
+                android:textSize="16dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.871" />
-
+                app:layout_constraintVertical_bias="0.461"
+                tools:ignore="DuplicateIds,MissingConstraints" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

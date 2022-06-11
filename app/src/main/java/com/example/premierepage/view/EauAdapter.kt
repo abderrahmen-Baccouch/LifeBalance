@@ -25,133 +25,109 @@ class EauAdapter(val c: Context, val eauList:MutableList<Eau>) : RecyclerView.Ad
 
 
 
-    inner  class UserViewHolder(val v: View):RecyclerView.ViewHolder(v){
-        var quantiteTV : TextView
-        var dateEauTV : TextView
+    inner  class UserViewHolder(val v: View):RecyclerView.ViewHolder(v) {
+        var quantiteTV: TextView
+        var objectifTV: TextView
+        var dateEauTV: TextView
+        var cancelEau:ImageView
+
         //  var mMenus : ImageView
+
         init {
             quantiteTV = v.findViewById(R.id.quantite)
+            objectifTV = v.findViewById(R.id.objectif)
             dateEauTV = v.findViewById(R.id.dateEau)
-         //   mMenus = v.findViewById(R.id.mMenus)
-         //   mMenus.setOnClickListener { popupMenus(it) }
-        }
-       /* @SuppressLint("DiscouragedPrivateApi", "NotifyDataSetChanged")
-        private fun popupMenus(v:View) {
+            cancelEau = v.findViewById(R.id.cancelEau)
+            //   mMenus = v.findViewById(R.id.mMenus)
+            //   mMenus.setOnClickListener { popupMenus(it) }
             val retrofit = RetrofitClient.getInstance()
             retrofitInterface = retrofit.create(RetrofitInterface::class.java)
 
-            val position = alimentsList[adapterPosition]
-            val popupMenus = PopupMenu(c,v)
-            popupMenus.inflate(R.menu.show_menu)
-            popupMenus.setOnMenuItemClickListener {
-                when(it.itemId){
-                    R.id.editText ->{
-                        val v = LayoutInflater.from(c).inflate(R.layout.add_item,null)
-
-                        val nomAlimentET = v.findViewById<EditText>(R.id.nomAliment)
-                        val caloriesET = v.findViewById<EditText>(R.id.calories)
-                        val proteinesET = v.findViewById<EditText>(R.id.proteines)
-                        val glucidesET = v.findViewById<EditText>(R.id.glucides)
-                        val lipidesET = v.findViewById<EditText>(R.id.lipides)
-
-                        nomAlimentET.setText(position.nomAliment)
-                        caloriesET.setText(position.calories)
-                        proteinesET.setText(position.proteines)
-                        glucidesET.setText(position.glucides)
-                        lipidesET.setText(position.lipides)
-
-                        AlertDialog.Builder(c)
-                            .setView(v)
-                            .setPositiveButton("Update"){
-                                    dialog,_->
-                                position.nomAliment = nomAlimentET.text.toString()
-                                position.calories = caloriesET.text.toString()
-                                position.proteines = proteinesET.text.toString()
-                                position.glucides = glucidesET.text.toString()
-                                position.lipides = lipidesET.text.toString()
-                                val map = HashMap<String?, String?>()
-
-                                map["nomAliment"] = nomAlimentET.text.toString()
-                                map["calories"] = caloriesET.text.toString()
-                                map["proteines"] =proteinesET.text.toString()
-                                map["glucides"] = glucidesET.text.toString()
-                                map["lipides"] = lipidesET.text.toString()
-                                val call = retrofitInterface!!.executeUpdateAliment(map,position._id)
-                                call!!.enqueue(object : Callback<Void?>{
-                                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-                                        if (response.code()==200){
-                                            Toast.makeText(c, "success", Toast.LENGTH_LONG).show()
-                                            notifyDataSetChanged()
-                                        }else if (response.code()==400){
-                                            Toast.makeText(c, "error1", Toast.LENGTH_LONG).show()
-                                        }
-                                    }
-                                    override fun onFailure(call: Call<Void?>, t: Throwable) {
-                                        Toast.makeText(c, t.message, Toast.LENGTH_LONG).show()
-                                    }
-
-                                })
-                                dialog.dismiss()
+            cancelEau.setOnClickListener {
+                val position = eauList[adapterPosition]
+                AlertDialog.Builder(c)
+                    .setTitle("Delete")
+                    .setIcon(R.drawable.ic_warning)
+                    .setMessage("Are You Sure To Delete This Information")
+                    .setPositiveButton("Yes") { dialog, _ ->
+                        val call = retrofitInterface!!.executeDeleteEau(position._id)
+                        call!!.enqueue(object : Callback<Void?> {
+                            override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                                if (response.code() == 200) {
+                                    Toast.makeText(c, "Successfuly deleted Eau", Toast.LENGTH_LONG).show()
+                                } else if (response.code() == 400) {
+                                    Toast.makeText(c, "errrror", Toast.LENGTH_LONG)
+                                }
                             }
-                            .setNegativeButton("Cancel"){
-                                    dialog,_->
-                                dialog.dismiss()
+
+                            override fun onFailure(call: Call<Void?>, t: Throwable) {
+                                Toast.makeText(c, t.message, Toast.LENGTH_LONG).show()
                             }
-                            .create()
-                            .show()
-                        true
+
+                        })
+                        eauList.removeAt(adapterPosition)
+                        notifyDataSetChanged()
+                        Toast.makeText(c, "Deleted This Information", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
                     }
-                    R.id.delete ->{
-                        AlertDialog.Builder(c)
-                            .setTitle("Delete")
-                            .setIcon(R.drawable.ic_warning)
-                            .setMessage("Are You Sure To Delete This Information")
-                            .setPositiveButton("Yes"){
-                                    dialog,_->
-                                val call = retrofitInterface!!.executeDeleteAliment(position._id)
-                                call!!.enqueue(object :Callback<Void?>{
-                                    override fun onResponse(
-                                        call: Call<Void?>,
-                                        response: Response<Void?>
-                                    ) {
-                                        if (response.code()==200){
-                                            Toast.makeText(c,"Successfuly deleted aliment",Toast.LENGTH_LONG).show()
-                                        }else if (response.code()==400){
-                                            Toast.makeText(c,"errrror",Toast.LENGTH_LONG)
-                                        }
-                                    }
-
-                                    override fun onFailure(call: Call<Void?>, t: Throwable) {
-                                        Toast.makeText(
-                                            c, t.message,
-                                            Toast.LENGTH_LONG
-                                        ).show()
-                                    }
-
-                                })
-                                alimentsList.removeAt(adapterPosition)
-                                notifyDataSetChanged()
-                                Toast.makeText(c,"Deleted This Information",Toast.LENGTH_SHORT).show()
-                                dialog.dismiss()
-                            }
-                            .setNegativeButton("No"){
-                                    dialog,_->
-                                dialog.dismiss()
-                            }
-                            .create()
-                            .show()
-                        true
+                    .setNegativeButton("No") { dialog, _ ->
+                        dialog.dismiss()
                     }
-                    else -> true
-                }
+                    .create()
+                    .show()
+                true
+
 
             }
-            popupMenus.show()
-            val popup = PopupMenu::class.java.getDeclaredField("mPopup")
-            popup.isAccessible = true
-            val menu = popup.get(popupMenus)
-            menu.javaClass.getDeclaredMethod("setForceShowIcon",Boolean::class.java)
-                .invoke(menu,true)
+        }
+
+
+
+       /* R.id.delete
+        {
+            AlertDialog.Builder(c)
+                .setTitle("Delete")
+                .setIcon(R.drawable.ic_warning)
+                .setMessage("Are You Sure To Delete This Information")
+                .setPositiveButton("Yes") { dialog, _ ->
+                    val call = retrofitInterface!!.executeDeleteAliment(position._id)
+                    call!!.enqueue(object : Callback<Void?> {
+                        override fun onResponse(
+                            call: Call<Void?>,
+                            response: Response<Void?>
+                        ) {
+                            if (response.code() == 200) {
+                                Toast.makeText(c, "Successfuly deleted aliment", Toast.LENGTH_LONG)
+                                    .show()
+                            } else if (response.code() == 400) {
+                                Toast.makeText(c, "errrror", Toast.LENGTH_LONG)
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Void?>, t: Throwable) {
+                            Toast.makeText(
+                                c, t.message,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                    })
+                    alimentsList.removeAt(adapterPosition)
+                    notifyDataSetChanged()
+                    Toast.makeText(c, "Deleted This Information", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+                .setNegativeButton("No") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .create()
+                .show()
+            true
+        }
+
+
+
+
 
         }*/
     }
@@ -168,6 +144,7 @@ class EauAdapter(val c: Context, val eauList:MutableList<Eau>) : RecyclerView.Ad
 
         val newList = eauList[position]
         holder.quantiteTV.text = newList.quantite.toString()+" L"
+        holder.objectifTV.text = newList.objectif.toString()+" L"
         holder.dateEauTV.text=newList.createAt
 
 

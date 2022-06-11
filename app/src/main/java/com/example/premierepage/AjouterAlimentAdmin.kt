@@ -34,7 +34,7 @@ class AjouterAlimentAdmin : AppCompatActivity() {
     private val permissions = ArrayList<String>()
     private val ALL_PERMISSIONS_RESULT = 107
     lateinit var fabCamera: Button
-
+    lateinit var imageViewA: ImageView
     lateinit var mBitmap: Bitmap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,13 +42,14 @@ class AjouterAlimentAdmin : AppCompatActivity() {
         /**-------------------------------------retrofit and myshared -------------------------------------------------- */
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
+
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
         var role =myshared?.getString("role","")
         var nameImg =myshared?.getString("nameImg2","")
 
         /**.........................................findViewById................................................*/
-        val imageViewG = findViewById<ImageView>(R.id.imageViewG)
+        imageViewA = findViewById(R.id.imageViewA)
         val nomAlimentET = findViewById<EditText>(R.id.nomAliment)
         val caloriesET = findViewById<EditText>(R.id.calories)
         val quantiteET = findViewById<EditText>(R.id.quantite)
@@ -66,7 +67,7 @@ class AjouterAlimentAdmin : AppCompatActivity() {
         }
         val save_aliment= findViewById<Button>(R.id.save_aliment)
         save_aliment.setOnClickListener {
-            mBitmap = (imageViewG.drawable as BitmapDrawable).bitmap
+            mBitmap = (imageViewA.drawable as BitmapDrawable).bitmap
             multipartImageUpload()
             /**-------------------------------- creation de map de requet---------------------------------*/
             val nomAliment = nomAlimentET.text.toString()
@@ -92,7 +93,7 @@ class AjouterAlimentAdmin : AppCompatActivity() {
             }
         }
     }
-
+    /**-------------------------------------------fin onCreate----------------------------------------*/
 
     fun AddNotreAliment(map: java.util.HashMap<String?, String?>?){
         val call = retrofitInterface!!.executeAddNotreAliment(map)
@@ -132,14 +133,10 @@ class AjouterAlimentAdmin : AppCompatActivity() {
 
 
 
-
-
-
-
     private fun multipartImageUpload() {
         try {
 
-            val body=buildImageBodyPart("upload.jpg", mBitmap!!)
+            val body=buildImageBodyPart("upload", mBitmap!!)
             val name = RequestBody.create("text/plain".toMediaTypeOrNull(), "upload")
             val req: Call<Image>? = retrofitInterface!!.postImage(body,name)
             req!!.enqueue(object : Callback<Image> {
@@ -177,7 +174,7 @@ class AjouterAlimentAdmin : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
-            imageViewG.setImageURI(data?.data) // handle chosen image
+            imageViewA.setImageURI(data?.data) // handle chosen image
         }
     }
 

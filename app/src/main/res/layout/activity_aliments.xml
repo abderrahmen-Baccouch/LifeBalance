@@ -5,16 +5,16 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".aliments">
+    tools:context=".Nutrition">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tablayout"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        app:tabIndicatorColor="#2DE8FF"
+        app:tabIndicatorColor="#00F7FF"
         app:tabIndicatorHeight="35dp"
-        app:tabSelectedTextColor="#D81B60"
+        app:tabSelectedTextColor="#FFFFFF"
         app:tabIndicatorGravity="center"
         app:tabIndicator="@drawable/circle"
         app:tabIndicatorFullWidth="true"

@@ -72,6 +72,7 @@ class PetitDejAdmin : AppCompatActivity() {
                                 i.putExtra("glucides",listRepas.get(position).glucides)
                                 i.putExtra("lipides",listRepas.get(position).lipides)
                                 i.putExtra("temps",listRepas.get(position).temps)
+                                i.putExtra("imageURL",listRepas.get(position).imageURL)
 
 
                                 startActivity(i)

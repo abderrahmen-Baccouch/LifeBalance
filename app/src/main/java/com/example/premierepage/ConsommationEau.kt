@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,18 +29,25 @@ class ConsommationEau : AppCompatActivity() {
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
+        var poids =myshared?.getString("poids","")
         val addEauBtn: ImageView =findViewById(R.id.addEauBtn)
         val quantiteEau:EditText=findViewById(R.id.quantite)
+        val objectifTV:TextView=findViewById(R.id.objectif)
+        val objectif= poids!!.toFloat()*30/1000
+
+        objectifTV.setText(objectif.toString()+"L/J")
 
 
         addEauBtn.setOnClickListener {
             val map = HashMap<String?, String?>()
             map["quantite"] = quantiteEau.text.toString()
+            map["objectif"] = objectif.toString()
             val call = retrofitInterface!!.executeAddEau(token,map)
             call!!.enqueue(object : Callback<Void?> {
                 override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                     if (response.code() == 200) {
-                        finish()
+finish()
+                        //getEaux(token!!)
                     } else if (response.code() == 400) {
                         Toast.makeText(this@ConsommationEau, "an error occured while saving Eau", Toast.LENGTH_LONG).show()
                     }
@@ -49,6 +57,12 @@ class ConsommationEau : AppCompatActivity() {
                 }
             })
         }
+        getEaux(token!!)
+    }
+    override fun onResume() {
+        super.onResume()
+        myshared=getSharedPreferences("myshared",0)
+        var token =myshared?.getString("token","")
         getEaux(token!!)
     }
 

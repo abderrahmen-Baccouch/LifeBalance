@@ -164,7 +164,7 @@
             android:name=".Defit"
             android:exported="false" />
         <activity
-            android:name=".aliments"
+            android:name=".Nutrition"
             android:exported="false" />
         <activity
             android:name=".workoutGoal"

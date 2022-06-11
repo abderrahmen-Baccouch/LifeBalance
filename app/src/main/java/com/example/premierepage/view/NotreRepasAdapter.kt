@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.premierepage.R
 import com.example.premierepage.RetrofitClient
 import com.example.premierepage.RetrofitInterface
@@ -29,6 +30,7 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val
         var proteinesTV : TextView
         var glucidesTV : TextView
         var lipidesTV : TextView
+        var imageIV:ImageView
         var mMenus : ImageView
 
 
@@ -37,6 +39,7 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val
             caloriesTV = v.findViewById<TextView>(R.id.calories)
             proteinesTV = v.findViewById<TextView>(R.id.proteines)
             glucidesTV = v.findViewById<TextView>(R.id.glucides)
+            imageIV=v.findViewById<ImageView>(R.id.imageRecette)
             lipidesTV = v.findViewById<TextView>(R.id.lipides)
             mMenus = v.findViewById(R.id.mMenus)
             mMenus.setOnClickListener { popupMenus(it) }
@@ -55,38 +58,26 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val
             popupMenus.inflate(R.menu.show_menu)
             popupMenus.setOnMenuItemClickListener {
                 when(it.itemId){
-               /*     R.id.editText ->{
-                        //val v = LayoutInflater.from(c).inflate(R.layout.add_item,null)
+                    R.id.editText ->{
+                        val v = LayoutInflater.from(c).inflate(R.layout.activity_ajouter_repas_admin,null)
+                        val nomRepasET = v.findViewById<EditText>(R.id.nomRepas)
+                        val tempsPreparationET = v.findViewById<EditText>(R.id.tempsPreparation)
 
-                        val nomAlimentET = v.findViewById<EditText>(R.id.nomAliment)
-                        val caloriesET = v.findViewById<EditText>(R.id.calories)
-                        val proteinesET = v.findViewById<EditText>(R.id.proteines)
-                        val glucidesET = v.findViewById<EditText>(R.id.glucides)
-                        val lipidesET = v.findViewById<EditText>(R.id.lipides)
-
-                        nomAlimentET.setText(position.nomAliment)
-                        caloriesET.setText(position.calories)
-                        proteinesET.setText(position.proteines)
-                        glucidesET.setText(position.glucides)
-                        lipidesET.setText(position.lipides)
+                        nomRepasET.setText(position.nomRecette)
+                     //   tempsPreparationET.setText(position.temps)
 
                         AlertDialog.Builder(c)
                             .setView(v)
                             .setPositiveButton("Update"){
                                     dialog,_->
-                                position.nomAliment = nomAlimentET.text.toString()
-                                position.calories = caloriesET.text.toString()
-                                position.proteines = proteinesET.text.toString()
-                                position.glucides = glucidesET.text.toString()
-                                position.lipides = lipidesET.text.toString()
-                                val map = HashMap<String?, String?>()
+                                nomRecetteTV.setText(nomRepasET.text.toString())
 
-                                map["nomAliment"] = nomAlimentET.text.toString()
-                                map["calories"] = caloriesET.text.toString()
-                                map["proteines"] =proteinesET.text.toString()
-                                map["glucides"] = glucidesET.text.toString()
-                                map["lipides"] = lipidesET.text.toString()
-                                val call = retrofitInterface!!.executeUpdateAliment(map,position._id)
+
+                                val map = HashMap<String?, String?>()
+                                map["nomRecette"] = nomRepasET.text.toString()
+                                map["temps"] = tempsPreparationET.text.toString()
+
+                                val call = retrofitInterface!!.executeUpdateExercice(map,position._id)
                                 call!!.enqueue(object : Callback<Void?> {
                                     override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                                         if (response.code()==200){
@@ -110,7 +101,7 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val
                             .create()
                             .show()
                         true
-                    }*/
+                    }
                     R.id.delete ->{
                         AlertDialog.Builder(c)
                             .setTitle("Delete")
@@ -174,6 +165,7 @@ class NotreRepasAdapter(val c: Context, val repasList: MutableList<RecetteX>,val
         holder.proteinesTV.text = newList.proteines.toString()+" g"
         holder.glucidesTV.text = newList.glucides.toString()+" g"
         holder.lipidesTV.text = newList.lipides.toString()+" g"
+        Glide.with(c).load(newList.imageURL).into(holder.imageIV)
         /* holder.proteinesTV.text = newList.proteines
          holder.glucidesTV.text = newList.glucides
          holder.lipidesTV.text = newList.lipides*/

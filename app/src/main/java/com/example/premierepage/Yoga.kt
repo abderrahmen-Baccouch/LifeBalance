@@ -62,13 +62,12 @@ class Yoga : AppCompatActivity() {
                 override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
                     if (response.code()==200){
                         Toast.makeText(this@Yoga,"exercicetermine ajoute",Toast.LENGTH_LONG).show()
+                        finish()
                     }
                     else if (response.code()==400){
                         Toast.makeText(this@Yoga,"errrrror",Toast.LENGTH_LONG).show()
                     }
-
                 }
-
                 override fun onFailure(call: Call<Void?>, t: Throwable) {
                     Toast.makeText(this@Yoga, t.message, Toast.LENGTH_LONG).show()
                 }

@@ -17,11 +17,11 @@
     <style name="TabLayoutTextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
-        <item name="fontFamily">@font/chewyy</item>
+        <item name="fontFamily">@font/montserrat_subrayada</item>
         <item name="android:textColor">@color/bl</item>
         <item name="colorPrimaryVariant">#00897B</item>
     </style>
     <style name="NewFontStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/chewyy</item>
+        <item name="android:fontFamily">@font/montserrat_subrayada</item>
     </style>
 </resources>

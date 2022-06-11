@@ -17,7 +17,7 @@
     </style>
 <style name="TextAppearance.AppCompat.Widget.ActionBar.Title" parent="@android:style/TextAppearance">
     <item name="android:fontFamily">
-        @font/chewyy
+        @font/montserrat_alternates_medium
     </item>
     <item name="android:textSize">20dp</item>
     <item name="colorPrimary">#69BAB1</item>

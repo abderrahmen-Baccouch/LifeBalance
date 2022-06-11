@@ -150,6 +150,10 @@ interface RetrofitInterface {
                                  @Header("authorization") authHeader: String?)
             :Call<Exercices>
 
+    @DELETE("exercicetermine/deleteExerciceTermine/{id}")
+    fun executeDeleteExerciceTermine( @Path("id") id:String?)
+    :Call<Void>
+
     /**----------------------------------------------------Recette-------------------------------------------*/
 
     @GET("recette/allRecettes")
@@ -216,40 +220,43 @@ interface RetrofitInterface {
     @POST("/diary/createBreakfast")
     fun executeCreateBreakfast(
         @Header("authorization") authHeader: String?,
+        @Body map:HashMap<String?,String?>?
     )
             :Call<BreakfastX>
 
     @POST("/diary/createDinner")
     fun executeCreateDinner(
         @Header("authorization") authHeader: String?,
+        @Body map:HashMap<String?,String?>?
     )
             :Call<BreakfastX>
 
     @POST("/diary/createLunch")
     fun executeCreateLunch(
         @Header("authorization") authHeader: String?,
+        @Body map:HashMap<String?,String?>?
     )
             :Call<BreakfastX>
 
-    @POST("diary/addBreakfast/{idbreakfast}/{idrecette}")
+    @POST("diary/addBreakfast/{idrecette}")
     fun executeAddBreakfast(
         @Header("authorization") authHeader: String?,
-        @Path("idbreakfast") idbreakfast: String?,
         @Path("idrecette") idrecette: String?,
+        @Body map:HashMap<String?,String?>?
     ):Call<Void>
 
-    @POST("diary/addDinner/{iddinner}/{idrecette}")
+    @POST("diary/addDinner/{idrecette}")
     fun executeAddDinner(
         @Header("authorization") authHeader: String?,
-        @Path("iddinner") iddinner: String?,
         @Path("idrecette") idrecette: String?,
+        @Body map:HashMap<String?,String?>?
     ):Call<Void>
 
-    @POST("diary/addLunch/{idlunch}/{idrecette}")
+    @POST("diary/addLunch/{idrecette}")
     fun executeAddLunch(
         @Header("authorization") authHeader: String?,
-        @Path("idlunch") idlunch: String?,
         @Path("idrecette") idrecette: String?,
+        @Body map:HashMap<String?,String?>?
     ):Call<Void>
 
 
@@ -258,12 +265,14 @@ interface RetrofitInterface {
                             @Body map:HashMap<String?,String?>?)
             :Call<MutableList<BreakfastX>>
 
-    @GET("diary/allDinner")
-    fun executeAllDinner(@Header("authorization") authHeader: String?)
+    @POST("diary/allDinner")
+    fun executeAllDinner(@Header("authorization") authHeader: String?,
+                         @Body map:HashMap<String?,String?>?)
             :Call<MutableList<BreakfastX>>
 
-    @GET("diary/allLunch")
-    fun executeAllLunch(@Header("authorization") authHeader: String?)
+    @POST("diary/allLunch")
+    fun executeAllLunch(@Header("authorization") authHeader: String?,
+                        @Body map:HashMap<String?,String?>?)
             :Call<MutableList<BreakfastX>>
 
 
@@ -315,6 +324,15 @@ interface RetrofitInterface {
                        @Body map:HashMap<String?,String?>?)
     :Call<Void>//momken tetbadel ki bech naamlou notification
 
+    @GET("task/allTasks")
+    fun executeAllTasks(@Header("authorization") authHeader: String?,)
+    :Call<MutableList<Task>>
+
+    @DELETE("task/deleteTask/{id}")
+    fun executeDeleteTask(@Path("id") id: String?)
+            :Call<Void>
+
+
 
 
     /***********************************Eau**********************************************/
@@ -327,6 +345,11 @@ interface RetrofitInterface {
     @GET("eau/alleau")
     fun executeAllEau(@Header("authorization") authHeader: String?,)
     :Call<MutableList<Eau>>
+
+
+    @DELETE("eau/deleteEau/{idEau}")
+    fun executeDeleteEau(@Path("idEau") iddefit: String?)
+    :Call<Void>
 
 
 

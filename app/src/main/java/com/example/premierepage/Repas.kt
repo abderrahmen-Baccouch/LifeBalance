@@ -37,8 +37,8 @@ class Repas : AppCompatActivity() {
         var addDinner:Button=findViewById(R.id.addDinner)
 
 
-        addBreakFast.setOnClickListener {
-            val call = retrofitInterface!!.executeAddBreakfast(token,idbreakfast,idRecette)
+       /* addBreakFast.setOnClickListener {
+            val call = retrofitInterface!!.executeAddBreakfast(token,idRecette,map)
             call.enqueue(object : retrofit2.Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
                     Toast.makeText(this@Repas,response.code().toString(),Toast.LENGTH_LONG).show()
@@ -95,6 +95,6 @@ class Repas : AppCompatActivity() {
 
 
 
-
+*/
     }
 }

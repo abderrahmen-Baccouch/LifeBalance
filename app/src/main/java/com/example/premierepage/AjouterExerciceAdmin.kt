@@ -58,7 +58,7 @@ import android.database.Cursor
 import android.database.Cursor.FIELD_TYPE_STRING
 import android.graphics.drawable.BitmapDrawable
 import com.example.premierepage.model.Image
-import kotlinx.android.synthetic.main.activity_ajouter_exercice_admin.*
+
 
 
 class AjouterExerciceAdmin : AppCompatActivity() {
@@ -76,6 +76,7 @@ class AjouterExerciceAdmin : AppCompatActivity() {
     lateinit var fabCamera: Button
     lateinit var fabUpload:Button
     lateinit var mBitmap: Bitmap
+    lateinit var  imageViewE: ImageView
     var textView: TextView? = null
 
     private var retrofitInterface: RetrofitInterface? = null
@@ -94,22 +95,26 @@ class AjouterExerciceAdmin : AppCompatActivity() {
         /**.................................   .findViewById.   ...............................................*/
         val nomExerciceET = findViewById<EditText>(R.id.nomExercice)
         val caloriesET = findViewById<EditText>(R.id.calories)
-        val imageViewG = findViewById<ImageView>(R.id.imageViewG)
+        val dureeET = findViewById<EditText>(R.id.duree)
+        imageViewE = findViewById(R.id.imageViewE)
         fabCamera = findViewById(R.id.addImage);
         fabUpload = findViewById(R.id.uploadImage);
 
         /************************************  Upload d'image   ***********************************/
         fabCamera.setOnClickListener{
             openGalleryForImage()
+
         }
         fabUpload.setOnClickListener{
-             mBitmap = (imageViewG.drawable as BitmapDrawable).bitmap
+            mBitmap = (imageViewE.drawable as BitmapDrawable).bitmap
             multipartImageUpload()
             val nomExercice = nomExerciceET.text.toString()
+            val duration = dureeET.text.toString()
             val calories = caloriesET.text.toString()
             val map = HashMap<String?, String?>()
             map["nomExercice"] = nomExercice
             map["calories"] = calories
+            map["duration"] =duration
             map["name"]=nameImg.toString()
 
             val call = retrofitInterface!!.executeAddExercice(map)
@@ -262,7 +267,7 @@ class AjouterExerciceAdmin : AppCompatActivity() {
     private fun multipartImageUpload() {
         try {
 
-            val body=buildImageBodyPart("upload.jpg", mBitmap!!)
+            val body=buildImageBodyPart("upload", mBitmap!!)
             val name = RequestBody.create("text/plain".toMediaTypeOrNull(), "upload")
             val req: Call<Image>? = retrofitInterface!!.postImage(body,name)
             req!!.enqueue(object : Callback<Image> {
@@ -300,7 +305,7 @@ class AjouterExerciceAdmin : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
-            imageViewG.setImageURI(data?.data) // handle chosen image
+            imageViewE.setImageURI(data?.data) // handle chosen image
         }
     }
     private fun buildImageBodyPart(fileName: String, bitmap: Bitmap):  MultipartBody.Part {
@@ -315,7 +320,7 @@ class AjouterExerciceAdmin : AppCompatActivity() {
 
         //Convert bitmap to byte array
         val bos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0 /*ignored for PNG*/, bos)
+       bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos)
         val bitMapData = bos.toByteArray()
 
         //write the bytes in file

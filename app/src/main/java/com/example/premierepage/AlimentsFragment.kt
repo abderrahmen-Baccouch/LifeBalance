@@ -37,14 +37,13 @@ class AlimentsFragment : Fragment(R.layout.fragment_aliments){
         /**set find Id*/
         addingBtn = view!!.findViewById(R.id.addingBtn)
         recv = view!!.findViewById(R.id.alimentsRecycler)
-        /**-------------------------------------retrofit-------------------------------------------------- */
+        /**-------------------------------------retrofit et myshared-------------------------------------------------- */
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
-
-        /**-------------------------------------myshared-------------------------------------------------- */
         myshared=context?.getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
         var role=myshared?.getString("role","")
+
         val intent = Intent(context,AjouterAlimentAdmin::class.java)
 
 

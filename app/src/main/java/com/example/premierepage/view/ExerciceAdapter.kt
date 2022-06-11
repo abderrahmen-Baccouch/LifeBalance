@@ -35,7 +35,7 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
             v.setOnClickListener{
                 listener.onItemClick(adapterPosition)
             }
-            if(role!="1"){
+            if(role=="0"){
                 mMenus.visibility= View.GONE
             }
         }
@@ -63,7 +63,7 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
 
                         AlertDialog.Builder(c)
                             .setView(v)
-                            .setPositiveButton("Update"){
+                            .setPositiveButton("Modifier"){
                                     dialog,_->
                                 position.nomExercice = nomExerciceET.text.toString()
                                 position.calories = caloriesET.text.toString()+" cal"
@@ -98,34 +98,51 @@ class ExerciceAdapter(val c: Context, val exercicesList:MutableList<Exercices>,v
                     }
                     R.id.delete ->{
                         AlertDialog.Builder(c)
-                            .setTitle("Delete")
+                            .setTitle("Supprimer")
                             .setIcon(R.drawable.ic_warning)
-                            .setMessage("Are You Sure To Delete This Information")
-                            .setPositiveButton("Yes"){
+                            .setMessage("Étes-vous certain de vouloir supprimer cette information")
+                            .setPositiveButton("Oui"){
                                     dialog,_->
-                                val call = retrofitInterface!!.executeDeleteExercice(position._id)
-                                call!!.enqueue(object : Callback<Void?> {
-                                    override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
-                                        if (response.code()==200){
-                                            Toast.makeText(c,"Successfuly deleted aliment", Toast.LENGTH_LONG).show()
-                                        }else if (response.code()==400){
-                                            Toast.makeText(c,"errrror", Toast.LENGTH_LONG)
+                                if(role=="1") {
+                                    val call = retrofitInterface!!.executeDeleteExercice(position._id)
+                                    call!!.enqueue(object : Callback<Void?> {
+                                        override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                                            if (response.code() == 200) {
+                                                System.out.println("Exercice  deleted 200")
+                                            } else if (response.code() == 400) {
+                                                System.out.println("400 123")
+                                            }
                                         }
-                                        Toast.makeText(c,response.code().toString(), Toast.LENGTH_LONG).show()
-                                        Toast.makeText(c,response.errorBody().toString(), Toast.LENGTH_LONG).show()
-                                    }
+                                        override fun onFailure(call: Call<Void?>, t: Throwable) {
+                                            System.out.println("failure:"+t.message)
+                                        }
 
-                                    override fun onFailure(call: Call<Void?>, t: Throwable) {
-                                        Toast.makeText(c, t.message, Toast.LENGTH_LONG).show()
-                                    }
+                                    })
+                                }else{
+                                    val call = retrofitInterface!!.executeDeleteExerciceTermine(position._id)
+                                    call!!.enqueue(object : Callback<Void?> {
+                                        override fun onResponse(call: Call<Void?>, response: Response<Void?>) {
+                                            if (response.code() == 200) {
+                                                System.out.println("Exercice termine deleted 200")
 
-                                })
+                                            } else if (response.code() == 400) {
+                                                System.out.println("400")
+                                                System.out.println(response.errorBody())
+                                            }
+                                        }
+                                        override fun onFailure(call: Call<Void?>, t: Throwable) {
+                                            System.out.println("failure")
+                                        }
+
+                                    })
+                                }
                                 exercicesList.removeAt(adapterPosition)
                                 notifyDataSetChanged()
                                 Toast.makeText(c,"Deleted This Information", Toast.LENGTH_SHORT).show()
+
                                 dialog.dismiss()
                             }
-                            .setNegativeButton("No"){
+                            .setNegativeButton("Non"){
                                     dialog,_->
                                 dialog.dismiss()
                             }

@@ -48,7 +48,7 @@
         android:layout_height="33dp"
         android:layout_marginBottom="356dp"
         android:fontFamily="@font/dekko"
-        android:text="Duration"
+        android:text="durée"
         android:textColor="#00897B"
         android:textColorHint="#E53935"
         android:textSize="25dp"
@@ -93,7 +93,6 @@
 
     <EditText
         android:id="@+id/duration"
-
         android:layout_width="385dp"
         android:layout_height="59dp"
         android:layout_alignParentStart="true"
@@ -104,7 +103,7 @@
         android:drawablePadding="12dp"
         android:ems="10"
         android:fontFamily="sans-serif-condensed-medium"
-        android:hint=" Duration (Min)"
+        android:hint=" durée (min)"
         android:inputType="number"
 
         android:paddingStart="12dp"
@@ -122,7 +121,7 @@
         android:layout_marginBottom="148dp"
         android:background="@drawable/button_save"
         android:fontFamily="@font/kite"
-        android:text="SAVE"
+        android:text="ENREGISTRER"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:textStyle="normal"

@@ -35,6 +35,7 @@ class AjouterRepasAdmin : AppCompatActivity() {
     private val permissions = ArrayList<String>()
     private val ALL_PERMISSIONS_RESULT = 107
     private val REQUEST_CODE=200
+    lateinit var imageViewR: ImageView
     lateinit var mBitmap: Bitmap
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +47,9 @@ class AjouterRepasAdmin : AppCompatActivity() {
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
         var role =myshared?.getString("role","")
-        val imageViewG = findViewById<ImageView>(R.id.imageViewG)
+        imageViewR = findViewById(R.id.imageViewR)
         val typeRepas=intent.getStringExtra("typeRepas")
+        var nameImg =myshared?.getString("nameImg","")
        val fabCamera:Button = findViewById(R.id.camera);
         fabCamera.setOnClickListener{
             // startActivityForResult(getPickImageChooserIntent(), IMAGE_RESULT);
@@ -60,7 +62,7 @@ class AjouterRepasAdmin : AppCompatActivity() {
         val nomRepasET:EditText = findViewById(R.id.nomRepas)
         val  tempsPreparationET:EditText = findViewById(R.id. tempsPreparation)
         val saveRecette:Button=findViewById(R.id.saveRecette)
-        val cancelRecette:Button=findViewById(R.id.cancelRecette)
+        val cancelRecette:ImageView=findViewById(R.id.cancelRecette)
         addIngredient = findViewById(R.id.addIngredient)
         addIngredient.setOnClickListener {
             val i=Intent(this@AjouterRepasAdmin,ListeAliments::class.java)
@@ -128,11 +130,12 @@ class AjouterRepasAdmin : AppCompatActivity() {
 
 
         saveRecette.setOnClickListener {
-            mBitmap = (imageViewG.drawable as BitmapDrawable).bitmap
+            mBitmap = (imageViewR.drawable as BitmapDrawable).bitmap
             multipartImageUpload()
             val map = HashMap<String?, String?>()
             map["nomRecette"] = nomRepasET.text.toString()
             map["temps"] = tempsPreparationET.text.toString()
+            map["name"]=nameImg.toString()
             val call = retrofitInterface!!.executeSaveRecette(myshared?.getString("idrecette",""),map)
             call.enqueue(object : Callback<Void> {
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
@@ -218,7 +221,7 @@ class AjouterRepasAdmin : AppCompatActivity() {
     /**-------------------------------------Button1---------------------------------------*/
     private fun multipartImageUpload() {
         try {
-            val body=buildImageBodyPart("upload.jpg", mBitmap!!)
+            val body=buildImageBodyPart("upload", mBitmap!!)
             val name = RequestBody.create("text/plain".toMediaTypeOrNull(), "upload")
             val req: Call<Image>? = retrofitInterface!!.postImage(body,name)
             req!!.enqueue(object : Callback<Image> {
@@ -250,7 +253,7 @@ class AjouterRepasAdmin : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE){
-            imageViewG.setImageURI(data?.data) // handle chosen image
+            imageViewR.setImageURI(data?.data) // handle chosen image
         }
     }
     private fun buildImageBodyPart(fileName: String, bitmap: Bitmap):  MultipartBody.Part {
@@ -265,7 +268,7 @@ class AjouterRepasAdmin : AppCompatActivity() {
 
         //Convert bitmap to byte array
         val bos = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0 /*ignored for PNG*/, bos)
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0 /*ignored for PNG*/, bos)
         val bitMapData = bos.toByteArray()
 
         //write the bytes in file

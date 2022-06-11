@@ -5,6 +5,7 @@ data class RecetteX(
     val _id: String,
     val calories: Int,
     var proteines :Int,
+    var imageURL:String,
     var glucides : Int,
     var lipides : Int,
     var temps : Int,

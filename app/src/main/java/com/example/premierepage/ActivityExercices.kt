@@ -29,22 +29,23 @@ class ActivityExercices : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercices)
-        /**------------------------------------------Retrofit--------------------------*/
+        /**------------------------------------------Retrofit et myshared --------------------------*/
         val retrofit = RetrofitClient.getInstance()
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
-
-        recv = findViewById(R.id.exercicesRecycler)
         myshared=getSharedPreferences("myshared",0)
         var role=myshared?.getString("role","")
+
+        /**------------------------------------------findViewById--------------------------*/
+        recv = findViewById(R.id.exercicesRecycler)
 
         getExercices(role.toString())
 
         myCustomActivity.setOnClickListener {
-            val intent =Intent(this,customActivity::class.java)
+            val intent =Intent(this,workoutGoal::class.java)
             startActivity(intent)
         }
-
     }
+    /**-------------------------------------------fin onCreate----------------------------------------*/
 
     fun getExercices(role:String){
         val call = retrofitInterface!!.executeAllExercices()
@@ -54,7 +55,7 @@ class ActivityExercices : AppCompatActivity() {
                     listExercice=response.body()
                     recv.apply {
                         recv.layoutManager = LinearLayoutManager(this@ActivityExercices)
-                        adapter= ExerciceAdapter(this@ActivityExercices,response.body()!!,role,object:ExerciceAdapter.onItemClickListener{
+                        adapter= ExerciceAdapter(this@ActivityExercices,response.body()!!,"0",object:ExerciceAdapter.onItemClickListener{
                             override fun onItemClick(position: Int) {
                                 val i =Intent(this@ActivityExercices,Yoga::class.java)
                                 i.putExtra("nomExercice",listExercice?.get(position)?.nomExercice)

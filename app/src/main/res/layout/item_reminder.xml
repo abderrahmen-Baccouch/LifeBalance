@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="155dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         app:cardCornerRadius="5dp"
         app:cardElevation="7dp"
@@ -21,13 +21,13 @@
 
         <LinearLayout
             android:layout_width="2dp"
-            android:layout_height="match_parent"
+            android:layout_height="170dp"
             android:background="#C8C2C2"
             android:layout_marginLeft="70dp"/>
 
         <TextView
-            android:id="@+id/title"
-            android:layout_width="200dp"
+            android:id="@+id/nomTask"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -38,52 +38,57 @@
             android:layout_marginTop="15dp"/>
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:id="@+id/descTask"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:text="pompe"
             android:textColor="#858282"
-            android:textSize="17dp"
+            android:textSize="19dp"
             android:textStyle="bold"
             android:fontFamily="@font/montserrat_alternates_medium"
             android:layout_marginLeft="85dp"
-            android:layout_marginTop="50dp"/>
+            android:layout_marginTop="53dp"/>
 
         <TextView
+            android:id="@+id/dateTask"
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:text="17/05/2000"
+            android:textStyle="bold"
+            android:textColor="#858282"
+            android:textSize="18dp"
+            android:layout_marginLeft="85dp"
+            android:layout_marginTop="90dp"
+            android:fontFamily="@font/montserrat_alternates_medium"/>
+
+        <TextView
+            android:id="@+id/timeTask"
             android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_height="25dp"
             android:text="21:54"
             android:textStyle="bold"
             android:textColor="#858282"
             android:textSize="18dp"
             android:layout_marginLeft="87dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="122dp"
             android:fontFamily="@font/montserrat_alternates_medium"/>
-        <TextView
+        <ImageView
             android:layout_width="70dp"
             android:layout_height="match_parent"
-            android:paddingTop="25dp"
-            android:textSize="25dp"
-            android:textColor="#024D71"
-            android:textStyle="italic"
-            android:paddingLeft="7dp"
-            android:fontFamily="@font/roboto_bold"
-            android:text="Wed 15 April"/>
+            android:src="@drawable/sonnerie2"
+            android:paddingLeft="0dp"/>
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/reminder"
-            android:layout_marginTop="90dp"
-            android:layout_marginLeft="300dp" />
+
 
 
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="300dp"
-            android:src="@drawable/ic_more_reminder"/>
+            android:id="@+id/deleteTask"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="350dp"
+            android:src="@drawable/x"/>
 
 
 
@@ -91,4 +96,4 @@
 
 
     </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -12,6 +12,12 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.premierepage.model.Aliments
+import com.example.premierepage.model.Task
+import com.example.premierepage.view.AlimentAdapter
+import com.example.premierepage.view.TaskAdapter
 import kotlinx.android.synthetic.main.activity_reminder.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,6 +46,7 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
     var myshared: SharedPreferences?=null
     private lateinit var alarmManager: AlarmManager
     private lateinit var pendingIntent: PendingIntent
+    private lateinit var recv: RecyclerView
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +63,7 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
         val descTask:EditText=findViewById(R.id.descTask)
         val addTask:LinearLayout=findViewById(R.id.addTask)
 
+          recv= findViewById(R.id.tasksRecycler)
 
         addTask.setOnClickListener {
             val map = HashMap<String?, String?>()
@@ -70,13 +78,38 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
             editor.putString("nomTask",nomTask.text.toString())
             editor.putString("descTask",descTask.text.toString())
             editor.commit()
-            Toast.makeText(this@reminder,savedYear.toString(),Toast.LENGTH_LONG).show()
+
             AddTask(token!!,map)
+            System.out.println("aaaaaaa")
+            getTasks(token!!)
         }
+        getTasks(token!!)
 
     }
+    fun getTasks(t:String){
+        //5edmet l affichage mte3 les aliments
+        val call = retrofitInterface!!.executeAllTasks(t)
+        call.enqueue(object : Callback<MutableList<Task>> {
+            override fun onResponse(call: Call<MutableList<Task>>, response: Response<MutableList<Task>>) {
+                System.out.println(response.code().toString())
+                if (response.code()==200){
+                    System.out.println("200")
+                    recv.apply {
+                        recv.layoutManager = LinearLayoutManager(this@reminder)
+                        adapter= TaskAdapter(context,response.body()!!)
+                    }
+                }else if (response.code()==400){
+System.out.println("400")
+                }
+            }
+            override fun onFailure(call: Call<MutableList<Task>>, t: Throwable) {
+                Toast.makeText(this@reminder, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
     @SuppressLint("NewApi")
-    private fun getDateTimeCalendar(){
+  /*  private fun getDateTimeCalendar(){
         val cal : Calendar = Calendar.getInstance()
         var year = cal.get(Calendar.YEAR)
         var month = cal.get(Calendar.MONTH)
@@ -84,11 +117,16 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
         var hour = cal.get(Calendar.HOUR)
         var minute = cal.get(Calendar.MINUTE)
 
-    }
+    }*/
 
     private fun pickDate(){
+        //Calendar
+        val c = java.util.Calendar.getInstance()
+        var year = c.get(java.util.Calendar.YEAR)
+        var month = c.get(java.util.Calendar.MONTH)
+        var day = c.get(java.util.Calendar.DAY_OF_MONTH)
         btn_timePicker.setOnClickListener {
-            getDateTimeCalendar()
+           // getDateTimeCalendar()
             DatePickerDialog(this, this,year,month,day).show()
         }
     }
@@ -98,7 +136,7 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
         savedMonth = month+1
         savedYear = year
 
-        getDateTimeCalendar()
+       // getDateTimeCalendar()
         TimePickerDialog(this, this,hour, minute, true).show()
     }
 
@@ -106,7 +144,7 @@ class reminder : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePi
        savedHour = hourOfDay
         savedMinute = minute
 
-        tv_textTime.text = "$savedDay-$savedMonth-$savedYear\n Heure: $savedHour Minute: $savedMinute"
+        tv_textTime.text = "${savedDay.toString().padStart(2, '0')}-${savedMonth.toString().padStart(2, '0')}-$savedYear\n   ${savedHour.toString().padStart(2, '0')} : ${savedMinute.toString().padStart(2, '0')}"
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

@@ -5,14 +5,13 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.premierepage.model.Aliments
-import com.example.premierepage.model.Ingredient
-import com.example.premierepage.model.Recette
-import com.example.premierepage.model.RecetteX
+import com.bumptech.glide.Glide
+import com.example.premierepage.model.*
 import com.example.premierepage.view.AlimentAdapter
 import com.example.premierepage.view.IngredientAdapter
 import com.example.premierepage.view.NotreRepasAdapter
@@ -32,8 +31,10 @@ class Breakfast1 : AppCompatActivity() {
         retrofitInterface = retrofit.create(RetrofitInterface::class.java)
         myshared=getSharedPreferences("myshared",0)
         var token =myshared?.getString("token","")
+        val dateUser=myshared?.getString("dateUser","")
         var role =myshared?.getString("role","")
         var nomRepas=intent.getStringExtra("nomRepas")
+
 
         var calories=intent.getIntExtra("calories",0)
         var proteines=intent.getIntExtra("proteines",0)
@@ -41,7 +42,9 @@ class Breakfast1 : AppCompatActivity() {
         var lipides=intent.getIntExtra("lipides",0)
         var tempsPreparation=intent.getIntExtra("temps",0)
         var idRepas=intent.getStringExtra("idRepas")
+        var imageURL=intent.getStringExtra("imageURL")
 
+        var idRecette=intent.getStringExtra("idRepas")
 
         /******************************findViewById********************************************/
         var nomRepasTV: TextView =findViewById<TextView>(R.id.nomRepas)
@@ -53,12 +56,115 @@ class Breakfast1 : AppCompatActivity() {
 
 
 
+
         nomRepasTV.text=nomRepas
         caloriesTV.text=calories.toString()+"cal"
         lipidesTV.text=lipides.toString()+"g"
         proteinesTV.text=proteines.toString()+"g"
         glucidesTV.text=glucides.toString()+"g"
         tempsPreparationTV.text=tempsPreparation.toString()+"min"
+
+        var addBreakFast:androidx.cardview.widget.CardView=findViewById(R.id.addBreakFast)
+        var addDejeuner:androidx.cardview.widget.CardView=findViewById(R.id.addDejeuner)
+        var addDinner:androidx.cardview.widget.CardView=findViewById(R.id.addDinner)
+
+
+        val map = HashMap<String?, String?>()
+        map["createAt"] = dateUser
+
+        addBreakFast.setOnClickListener {
+            val call0 = retrofitInterface!!.executeCreateBreakfast(token,map)
+            call0.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                    val call = retrofitInterface!!.executeAddBreakfast(token,idRecette,map)
+                    call.enqueue(object : retrofit2.Callback<Void>{
+                        override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                            if (response.code()==200){
+                                finish()
+                            }else if (response.code()==400){
+                                System.out.println("400")
+                            }
+                        }
+                        override fun onFailure(call: Call<Void>, t: Throwable) {
+                            System.out.println(t.message)
+                        }
+                    })
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@Breakfast1, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+        }
+
+
+
+        addDejeuner.setOnClickListener {
+            val call0 = retrofitInterface!!.executeCreateLunch(token,map)
+            call0.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                    //if (response.code()==200){
+                        val call = retrofitInterface!!.executeAddLunch(token,idRecette,map)
+                        call.enqueue(object : retrofit2.Callback<Void> {
+                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                                if (response.code()==200){
+                                    finish()
+                                }else if (response.code()==400){
+                                    System.out.println("400")
+                                }
+                            }
+                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                                Toast.makeText(this@Breakfast1, t.message, Toast.LENGTH_LONG).show()
+                            }
+                        })
+                   /* }else if (response.code()==400){
+                        Toast.makeText(this@Breakfast1,"400",Toast.LENGTH_LONG).show()
+                    }*/
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@Breakfast1, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+
+
+
+        }
+
+        addDinner.setOnClickListener {
+            val call0 = retrofitInterface!!.executeCreateDinner(token,map)
+            call0.enqueue(object : retrofit2.Callback<BreakfastX> {
+                override fun onResponse(call: Call<BreakfastX>, response: Response<BreakfastX>) {
+                  System.out.println(response.code().toString())
+                    if (response.code()==200){
+                        val call = retrofitInterface!!.executeAddDinner(token,idRecette,map)
+                        call.enqueue(object : retrofit2.Callback<Void> {
+                            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                                System.out.println(response.code().toString())
+                                System.out.println(response.errorBody().toString())
+                                if (response.code()==200){
+                                    finish()
+                                }else if (response.code()==400){
+                                    Toast.makeText(this@Breakfast1,"400",Toast.LENGTH_LONG).show()
+                                }
+                            }
+                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                                Toast.makeText(this@Breakfast1, t.message, Toast.LENGTH_LONG).show()
+                                System.out.println(t.message)
+                            }
+                        })
+                    }else if (response.code()==400){
+                        Toast.makeText(this@Breakfast1,"400",Toast.LENGTH_LONG).show()
+                    }
+                }
+                override fun onFailure(call: Call<BreakfastX>, t: Throwable) {
+                    Toast.makeText(this@Breakfast1, t.message, Toast.LENGTH_LONG).show()
+                }
+            })
+
+
+
+        }
+
+
 
 
         getIngredients(idRepas!!)
