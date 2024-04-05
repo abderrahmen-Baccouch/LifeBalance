@@ -36,37 +36,22 @@ Contributions are welcome! If you'd like to contribute to LifeBalance, please fo
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Screenshots
-![suppEx1 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/486dfb8c-4e25-4cd6-9924-9e7657d5eddd)
-![suppEx1 (2)](https://github
-![39 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/7ac753ce-c666-41a7-a7b1-cb4b16bd8829)
-.com/abderrahmen-Baccouch/LifeBalance/as
-![47 (1)](https://github.com/a
-![38 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/13d87d60-f7aa-44eb-bbb3-494a8ff223f1)
-bderrahmen-Baccouch/LifeBalance/assets/97245446/b5a6721c-4dba-44ae-be79-84e5d1f77e5f)
-sets/97245446/323d3d92-5a52-4579-8af2-0e606971b4b8)
-![suppEx1 (3)](https://github.
-![Uploading modifier r
-![46 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/eb1284da-ce8d-4c4b-862d-57b7f8d5f4fc)
-
-![Uploading repas modifier client (
-![45 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/5d79b982-6077-42dd-9567-c12a95ffcc05)
-1).JPG…]()
-epas client (1).JPG…]()
-
-![51 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/8ca8c25e-0d4f-4e0c-ad85-42884b81baee)
-
-![57 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/1a36e7a2-87f5-4d26-ac09-d031cbcd5a66)
-com/abderrahmen-Baccouch/LifeBalance/assets
-![54 (4)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/67529850-d51d-4b4a-808f-33ad611bdcd9)
-/9724
-![53 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/53eaf3b5-c46b-42c8-a7e1-57739af6bd14)
-5
-![suppEx2 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/9e76641e-af73-43c3-a582-e50603c5c640)
-
-![exEnreg (1)](https://github.co
-![listeEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/7eed39d9-9579-43e3-94ee-3b1d819d4f31)
-m/abderrahmen-Baccouch/LifeBalance/assets/972
-![saveEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/555dd65c-32c8-475b-8026-b7129f361587)
-45446/3c54bdbf-a7a5-4c21-b879-b515c4fcee32)
-446/77cd2c72-a886-42b2-8b61-159b8ec92ff8)
-![ajouEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/18627340-5df4-4a05-bfe5-527f0d266985)
+![54 (4)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/048f7291-9cfe-4d04-9add-d50932a158b4)
+![39 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/9cd9bb71-9e3b-4687-80b8-9dc22222c4a4)
+![saveEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/a452657d-7cb3-4145-9e18-3b1a54e89d13)
+![46 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/8c909c3d-ffff-4270-9c89-5eb762463fe5)
+![51 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/0465192a-fbf0-4f14-8db1-3c5a78417de1)
+![listeEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/32a42e6c-e733-4396-8ddd-0d064d2385a5)
+![suppEx1 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/05fc7156-1a5e-4b56-a939-2c8c40b152f2)
+![suppEx1 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/e99871a4-d575-4207-80db-d5312bbdf629)
+![suppEx1 (3)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/4ed3b3b7-a613-4adb-a00c-fe5c18e9c6f8)
+![exEnreg (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/65242c74-37fb-4d02-b0ab-0c1a0c197533)
+![47 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/e01f9a4a-704b-4862-b232-bac6c47df1e3)
+![repas modifier client (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/70048abf-9ace-4d47-a024-317663c94d1c)
+![modifier repas client (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/bee3eea8-6e9e-4ce6-95e1-8d4170d5192c)
+![53 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/90f9d027-ea1b-4729-8091-3250ed5ec70d)
+![suppEx2 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/f9f00932-8e5d-44a8-abd9-86072f66a0a3)
+![45 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/103217a4-bec3-475e-b5b4-2de7e075f073)
+![38 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/cfacff85-3b3b-4e33-9d3d-55e42e24516b)
+![57 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/3b790d28-e083-4170-b00a-007c91ff2926)
+![ajouEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/f54b8833-a529-41ae-af76-747f73bd8d16)
