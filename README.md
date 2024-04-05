@@ -42,8 +42,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ![46 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/8c909c3d-ffff-4270-9c89-5eb762463fe5)
 ![51 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/0465192a-fbf0-4f14-8db1-3c5a78417de1)
 ![listeEx (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/32a42e6c-e733-4396-8ddd-0d064d2385a5)
-![suppEx1 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/05fc7156-1a5e-4b56-a939-2c8c40b152f2)
-![suppEx1 (2)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/e99871a4-d575-4207-80db-d5312bbdf629)
 ![suppEx1 (3)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/4ed3b3b7-a613-4adb-a00c-fe5c18e9c6f8)
 ![exEnreg (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/65242c74-37fb-4d02-b0ab-0c1a0c197533)
 ![47 (1)](https://github.com/abderrahmen-Baccouch/LifeBalance/assets/97245446/e01f9a4a-704b-4862-b232-bac6c47df1e3)
